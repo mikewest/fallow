@@ -1,7 +1,9 @@
 module Fallow
   class Article
     def render ( env )
-      if !env['MATCH_GROUP'] then return Fallow::ErrorPage.new.render( env );
+      if !env['MATCH_GROUP'] then
+        return Fallow::ErrorPage.new.render( env )
+      end
 
       year  = env['MATCH_GROUP'][1]
       month = env['MATCH_GROUP'][1]

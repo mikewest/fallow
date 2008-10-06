@@ -14,8 +14,7 @@ module Fallow
       env['MATCH_GROUP']  = nil
       URI_TYPES.each {|type, regex|
         if
-          !env['MATCH_GROUP']
-          &&
+          !env['MATCH_GROUP'] &&
           env['MATCH_GROUP'] = regex.match(requested_uri)
         then
           uri_type = type;
