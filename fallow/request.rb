@@ -10,24 +10,25 @@ module Fallow
     def call ( env )
       requested_uri = env['PATH_INFO']
       uri_type      = nil
-      
-      env['MATCH_GROUP']  = nil
-      URI_TYPES.each {|type, regex|
-        if
-          !env['MATCH_GROUP'] &&
-          env['MATCH_GROUP'] = regex.match(requested_uri)
-        then
-          uri_type = type;
-        end
-      }
-      
-      renderer = nil
-      case uri_type
-        when 'article'  then renderer = Fallow::Article.new
-        when 'archive'  then renderer = Fallow::Archive.new
-        when 'homepage' then renderer = Fallow::Homepage.new
-        else renderer = Fallow::ErrorPage.new
+
+      if requested_uri =~ %r{^/(\d{4})/(\d{2})/([^/]+)/?$} then
+        env['PAGE_TYPE']    = 'article'
+        env['MATCH_GROUP']  = $~
+        renderer            = Fallow::Article.new
+      elsif requested_uri =~ %r{^/(\d{4})/?(?:(\d{2})/?)?$} then
+        env['PAGE_TYPE']    = 'archive'
+        env['MATCH_GROUP']  = $~
+        renderer            = Fallow::Archive.new
+      elsif requested_uri =~ %r{^/?$} then
+        env['PAGE_TYPE']    = 'homepage'
+        env['MATCH_GROUP']  = $~
+        renderer            = Fallow::Homepage.new
+      else
+        env['PAGE_TYPE']    = 'error'
+        env['MATCH_GROUP']  = nil
+        renderer            = Fallow::ErrorPage.new
       end
+
       renderer.render( env )
     end
   end

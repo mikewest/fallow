@@ -6,8 +6,8 @@ module Fallow
       end
 
       year  = env['MATCH_GROUP'][1]
-      month = env['MATCH_GROUP'][1]
-      slug  = env['MATCH_GROUP'][1]
+      month = env['MATCH_GROUP'][2]
+      slug  = env['MATCH_GROUP'][3]
     
       @path   = "/#{year}/#{month}/#{slug}"
       @exists = File.exist?( DATA_DIR + "/#{@path}.markdown" )

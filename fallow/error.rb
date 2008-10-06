@@ -3,7 +3,7 @@ module Fallow
     def render ( env )
       result = '<ul>'
       env.each { |item|
-        result += "<li><strong>#{item[0]}</strong> => #{item[1]}</li>"
+        result += "<li><strong>#{item[0].to_s}</strong> => #{item[1].to_s}</li>"
       }
       result += '</ul>'
     

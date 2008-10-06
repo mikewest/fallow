@@ -1,5 +1,5 @@
 module Fallow
-  class Article
+  class Archive
     def render ( env )
       Fallow::ErrorPage.new.render( env );
     end
