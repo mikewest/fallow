@@ -11,9 +11,11 @@ module Fallow
       @exists = File.exist?( DATA_DIR + "/#{@path}.markdown" )
     
       if @exists
-        [ 200, {'Content-Type' => 'text/html'}, ["#{@path} is totally an article.  Hooray!"] ]
+        [ 200, "#{@path} is totally an article.  Hooray!" ]
       else
-        [ 404, {'Content-Type' => 'text/html'}, ["#{@path} isn't an article.  Soz."] ]
+        request.env['ERROR_TEXT'] = "#{@path} isn't an article.  Soz.";
+        request.env['ERROR_CODE'] = 404;
+        Fallow::ErrorPage.new.render( request )
       end
     end
   end

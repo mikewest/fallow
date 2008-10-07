@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby -wKU
 
-%w(fileutils stringio time rubygems maruku rack).each { |lib| require lib }
+%w(fileutils stringio time rubygems maruku rack thin).each { |lib| require lib }
+
+Thin::Logging.silent = false;
 
 module Fallow
   ROOT_DIR  = File.expand_path(File.dirname(__FILE__))

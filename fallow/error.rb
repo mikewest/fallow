@@ -1,13 +1,17 @@
 module Fallow
   class ErrorPage
     def render ( request )
-      result = '<ul>'
-      request.env.each { |item|
-        result += "<li><strong>#{item[0].to_s}</strong> => #{item[1].to_s}</li>"
-      }
-      result += '</ul>'
+      if request.env.has_key?('ERROR_CODE') then
+        [ request.env['ERROR_CODE'], request.env['ERROR_TEXT'] ]
+      else
+        result = '<ul>'
+        request.env.each { |key,value|
+          result += "<li><strong>#{key.to_s}</strong> => #{value.to_s}</li>"
+        }
+        result += '</ul>'
     
-      [ 500, {'Content-Type' => 'text/html'}, [result] ]
+        [ 500, result ]
+      end
     end
   end
 end

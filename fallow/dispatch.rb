@@ -32,7 +32,8 @@ module Fallow
         renderer            = Fallow::ErrorPage.new
       end
 
-      renderer.render( request )
+      code, body = renderer.render( request )[0..1]
+      Rack::Response.new( body, code ).finish
     end
   end
 end
