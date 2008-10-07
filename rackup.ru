@@ -4,7 +4,7 @@ require 'fallow'
 
 app = Rack::Builder.new {
   use Rack::Lint 
-  run Fallow::Request.new 
+  run Fallow::Dispatch.new 
 } 
 
 run app

@@ -1,5 +1,5 @@
 module Fallow
-  class Request
+  class Dispatch
     URI_TYPES = {
       'article'   =>  %r{^/(\d{4})/(\d{2})/([^/])/?$},
       'archive'   =>  %r{^/(\d{4})/?(?:(\d{2})/?)?$},
@@ -8,7 +8,10 @@ module Fallow
 
     # Main entry point into Fallow from the Rack-based server
     def call ( env )
-      requested_uri = env['PATH_INFO']
+      request = Rack::Request.new( env )
+
+      requested_uri = request.path_info
+
       uri_type      = nil
 
       if requested_uri =~ %r{^/(\d{4})/(\d{2})/([^/]+)/?$} then
@@ -29,7 +32,7 @@ module Fallow
         renderer            = Fallow::ErrorPage.new
       end
 
-      renderer.render( env )
+      renderer.render( request )
     end
   end
 end

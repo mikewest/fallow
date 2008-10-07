@@ -1,13 +1,11 @@
 module Fallow
   class Article
-    def render ( env )
-      if !env['MATCH_GROUP'] then
-        return Fallow::ErrorPage.new.render( env )
+    def render ( request )
+      if !request.env['MATCH_GROUP'] then
+        return Fallow::ErrorPage.new.render( request )
       end
 
-      year  = env['MATCH_GROUP'][1]
-      month = env['MATCH_GROUP'][2]
-      slug  = env['MATCH_GROUP'][3]
+      year, month, slug = request.env['MATCH_GROUP'][1..3]
     
       @path   = "/#{year}/#{month}/#{slug}"
       @exists = File.exist?( DATA_DIR + "/#{@path}.markdown" )

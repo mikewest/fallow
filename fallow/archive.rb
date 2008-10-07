@@ -1,7 +1,7 @@
 module Fallow
   class Archive
-    def render ( env )
-      Fallow::ErrorPage.new.render( env );
+    def render ( request )
+      Fallow::ErrorPage.new.render( request );
     end
   end
 end
