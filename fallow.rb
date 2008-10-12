@@ -15,7 +15,6 @@ module Fallow
   ARCHIVE_ROOT  = PUBLIC_ROOT + '/archive'
   TAGS_ROOT     = PUBLIC_ROOT + '/tags'
   
-  
   autoload :Dispatch,   'fallow/dispatch'
   
   autoload :Article,    'fallow/article'
@@ -26,39 +25,6 @@ module Fallow
 
   autoload :ErrorPage,  'fallow/error'
 
-#   def request_for(path, &block)
-#     uri_component = /(?::(\w+))/
-#     uri_components = {
-#       :year   => '\d{4}',
-#       :month  => '\d{2}',
-#       :slug   => '[0-9A-Za-z-_]+'
-#     }
-#     path.each { |path|
-#       path.gsub( uri_component ) { |match|
-#         
-#       }
-#     }
-#   end
-# 
-# #
-# # Potential Page Types (vaguely like Sinatra)
-# #
-#   request_for ['/'] do
-#     # Homepage
-#   end
-#   
-#   request_for ['/:year/:month/:slug/?'] do
-#     # Article
-#   end
-#   
-#   request_for ['/:year/?','/:year/:month/?'] do
-#     raise Redirect
-#   end
-#   
-#   request_for ['/archive/?','/archive/:year/?','/archive/:year/:month/?'] do
-#     # Archive
-#   end
-  
 #
 # Potential Error States
 #

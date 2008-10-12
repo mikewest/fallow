@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Oh Noes!</title>
+    <title>Oh Noes!  It's a rampaging %error_code% code!</title>
     <link rel="stylesheet" href="%STATIC_ROOT%/common.css" type="text/css" media="screen">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.mikewest.org/mikewest/"> 
 </head>
@@ -10,7 +10,8 @@
 @include 'universal_header'
     <div class="content">
         <div class="article">
-            <h2>Error!</h2>
+            <h2>Oh noes, a %error_code% code is coming <em>right for us</em>!</h2>
+            %error_message%
             %debug_data%
         </div>
 
