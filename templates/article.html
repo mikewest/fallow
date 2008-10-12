@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>&ldquo;%article_title%&rdquo; &mdash; Mike West</title>
+    <link rel="stylesheet" href="%STATIC_ROOT%/common.css" type="text/css" media="screen">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.mikewest.org/mikewest/"> 
+</head>
+<body>
+@include 'universal_header'
+    <div class="content">
+        <div class="article">
+@include 'article_body'
+@include 'article_metadata'
+        </div>
+
+    </div>
+@include 'universal_footer'
+</body>
+</html>

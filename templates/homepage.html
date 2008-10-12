@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>%page_title{Mike West}%</title>
+    <link rel="stylesheet" href="%STATIC_ROOT%/common.css" type="text/css" media="screen">
+</head>
+<body>
+@include 'universal_header'
+    <div class="content">
+@include 'bio'
+        <div class="diversions">
+@include 'recent_writing_list'
+@include 'recent_link_list'
+@include 'recent_photo_list'
+@include 'recent_tweet_list'
+        </div>
+    </div>
+@include 'universal_footer'
+</body>
+</html>

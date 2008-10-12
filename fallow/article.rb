@@ -8,7 +8,7 @@ module Fallow
       year, month, slug = request.env['MATCH_GROUP'][1..3]
     
       @path   = "/#{year}/#{month}/#{slug}"
-      @exists = File.exist?( DATA_DIR + "/#{@path}.markdown" )
+      @exists = File.exist?( DATA_ROOT + "/#{@path}.markdown" )
     
       if @exists
         [ 200, "#{@path} is totally an article.  Hooray!" ]

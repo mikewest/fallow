@@ -5,8 +5,15 @@
 Thin::Logging.silent = false;
 
 module Fallow
-  ROOT_DIR  = File.expand_path(File.dirname(__FILE__))
-  DATA_DIR  = ROOT_DIR + '/data'
+  ROOT_DIR      = File.expand_path(File.dirname(__FILE__))
+  DATA_ROOT     = ROOT_DIR + '/data'
+  TEMPLATE_ROOT = ROOT_DIR + '/templates'
+  
+  PUBLIC_ROOT   = ''
+  STATIC_ROOT   = '/static'
+  
+  ARCHIVE_ROOT  = PUBLIC_ROOT + '/archive'
+  TAGS_ROOT     = PUBLIC_ROOT + '/tags'
   
   
   autoload :Dispatch,   'fallow/dispatch'
@@ -19,31 +26,38 @@ module Fallow
 
   autoload :ErrorPage,  'fallow/error'
 
-  def request_for(path, &block)
-    URI_COMPONENTS = {
-      :year   => '\d{4}',
-      :month  => '\d{2}',
-      :slug   => '[0-9A-Za-z-_]+'
-    }
-    path.each { |path|
-      URI.encode(path)
-    }
-  end
-
-#
-# Potential Page Types (vaguely like Sinatra)
-#
-  request_for ['/'] {
-    # Homepage
-  }
-  
-  request_for ['/:year/:month/:slug/?'] {
-    # Article
-  }
-  
-  request_for ['/archive/','/archive/:year/?'] {
-    # Archive
-  }
+#   def request_for(path, &block)
+#     uri_component = /(?::(\w+))/
+#     uri_components = {
+#       :year   => '\d{4}',
+#       :month  => '\d{2}',
+#       :slug   => '[0-9A-Za-z-_]+'
+#     }
+#     path.each { |path|
+#       path.gsub( uri_component ) { |match|
+#         
+#       }
+#     }
+#   end
+# 
+# #
+# # Potential Page Types (vaguely like Sinatra)
+# #
+#   request_for ['/'] do
+#     # Homepage
+#   end
+#   
+#   request_for ['/:year/:month/:slug/?'] do
+#     # Article
+#   end
+#   
+#   request_for ['/:year/?','/:year/:month/?'] do
+#     raise Redirect
+#   end
+#   
+#   request_for ['/archive/?','/archive/:year/?','/archive/:year/:month/?'] do
+#     # Archive
+#   end
   
 #
 # Potential Error States
