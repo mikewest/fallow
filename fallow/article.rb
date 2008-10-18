@@ -25,7 +25,7 @@ module Fallow
       result = templater.render({
         'article_title' =>  @header['Title'],
         'article_body'  =>  Maruku.new(@body).to_html,
-        'published'     =>  @header['Published'],
+        'published'     =>  Time.at(@header['Published']).strftime('%B %d, %Y at %H:%M'),
         :lists          =>  {
           'article_tag' =>  tags
         }
