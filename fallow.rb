@@ -25,6 +25,17 @@ module Fallow
   autoload :ErrorPage,  'fallow/error'
 
 #
+# String Functions
+#
+  def Fallow.urlify( the_string )
+    url = the_string.clone
+    url.downcase!
+    url.gsub!(/\s+/, '-')
+    url.gsub!(/[^a-z0-9_\-]/, '')
+    url
+  end
+
+#
 # Logging
 #
   def Fallow.log( message )

@@ -18,7 +18,7 @@ module Fallow
       
       tags = []
       @header['Tags'].each {|tag|
-        tags << { 'tag' => tag }
+        tags << { 'tag' => tag, 'normalized_tag' => Fallow.urlify( tag ) }
       }
       
       templater = Fallow::Template.new( 'article' )
