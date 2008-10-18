@@ -24,7 +24,7 @@ module Fallow
       templater = Fallow::Template.new( 'article' )
       result = templater.render({
         'article_title' =>  @header['Title'],
-        'article_body'  =>  @body,
+        'article_body'  =>  Maruku.new(@body).to_html,
         'published'     =>  @header['Published'],
         :lists          =>  {
           'article_tag' =>  tags
