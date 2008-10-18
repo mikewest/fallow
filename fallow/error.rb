@@ -13,9 +13,16 @@ module Fallow
 
       error_message = error_messages.has_key?( error_code ) ? error_messages[ error_code ] : error_messages[ 500 ]
 
-      debug = '<ul>'
+
+      debug = '<h3>Environment</h3><ul>'
       request.env.each { |key,value|
         debug += "<li><strong>#{key.to_s}</strong> => #{value.to_s}</li>"
+      }
+      debug += '</ul>'
+      
+      debug += '<h3>Fallow State</h3><ul>'
+      Fallow.constants.each { |const|
+        debug += "<li><strong>#{const}</strong> => #{Fallow.const_get(const)}</li>"
       }
       debug += '</ul>'
       
@@ -25,7 +32,7 @@ module Fallow
         'error_message' =>  error_message,
         'debug_data'    =>  debug
       })
-      [ error_code, result ]
+      Rack::Response.new( result, error_code ).finish
     end
   end
 end

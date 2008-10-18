@@ -1,5 +1,12 @@
 module Fallow
   class Dispatch
+    @@request     = nil
+    
+    def Dispatch.request
+      @@request
+    end
+    
+    SUCCESS_CODE  = 200
 #
 #   Stole the idea completely from Sinatra
 #
@@ -10,9 +17,9 @@ module Fallow
 
       uri_component = /:([A-Za-z0-9_\-]+)/
       uri_components = {
-        'year'   => '\d{4}',
-        'month'  => '\d{2}',
-        'slug'   => '[0-9A-Za-z_\-]+'
+        'year'   => '(\d{4})',
+        'month'  => '(\d{2})',
+        'slug'   => '([0-9A-Za-z_\-]+)'
       }
       url_patterns.map { |path|
         path.gsub!( uri_component ) { |match|
@@ -29,38 +36,52 @@ module Fallow
     end
    
     def dispatch( request )
-      found = nil
+      found       = nil
+      match_group = nil
       @dispatch_patterns.each { |pattern_group|
         if !found && request.path_info.match( pattern_group[0] )
-          found = pattern_group[1]
+          match_group = $~
+          found       = pattern_group[1]
         end
       }
-      unless found.nil?
-        renderer = found.call
-        code, body = renderer.render( request )[0..1]
-      else
-        code, body = Fallow::ErrorPage.new.render( request, 404 )[0..1]
-      end
-      Rack::Response.new( body, code ).finish
+      raise Fallow::ServerError if found.nil?
+
+      match_group = match_group.to_a[1..-1]
+
+      Rack::Response.new( found.call( match_group ), SUCCESS_CODE ).finish
     end
 
     # Main entry point into Fallow from the Rack-based server
     def call ( env )
-      request = Rack::Request.new( env )
+      @@request = Rack::Request.new( env )
 
-      define_request_path('/:year/:month/:slug') do |request|
-        Fallow::Article.new
+      define_request_path('/:year/:month/:slug') do |request_data|
+        if request_data.nil?
+          year, month, slug = ['','','']
+        else
+          year, month, slug = request_data[0..2]
+        end
+        
+        Fallow::Article.new( year, month, slug ).render
       end
 
-      define_request_path('/') do |request|
-        Fallow::Homepage.new
+      define_request_path('/') do |request_data|
+        Fallow::Homepage.new.render()
       end
 
-      define_request_path(['/:year','/:year/:month']) do |request|
+      define_request_path(['/:year','/:year/:month']) do |request_data|
         Fallow::Archive.new
       end
       
-      dispatch( request )
+      result = nil
+      begin
+        result = dispatch( @@request )
+      rescue Fallow::NotFound
+        result = Fallow::ErrorPage.new.render( @@request, 404 )
+      rescue Fallow::ServerError
+        result = Fallow::ErrorPage.new.render( @@request, 500 )
+      end
+      result
     end
     
     private :dispatch, :define_request_path
