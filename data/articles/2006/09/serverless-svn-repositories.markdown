@@ -2,9 +2,9 @@
 ArticleID:  35
 Published:  1159452420
 Modified:   1159453484
-Title:      Serverless SVN Repositories
-Slug:       serverless-svn-repositories
-OneLine:    You don't _need_ a powerful SVN server in order to reap the benifits of version control.  This article explains how to set up repositories on any machine you have SSH access into.
+Title:      "Serverless SVN Repositories"
+Slug:       "serverless-svn-repositories"
+OneLine:    "You don't _need_ a powerful SVN server in order to reap the benifits of version control.  This article explains how to set up repositories on any machine you have SSH access into."
 Tags:       
     - HOWTO
     - Subversion

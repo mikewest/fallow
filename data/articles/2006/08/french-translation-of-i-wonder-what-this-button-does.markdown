@@ -2,9 +2,9 @@
 ArticleID:  28
 Published:  1154448180
 Modified:   1154452342
-Title:      French Translation of ‘I Wonder What This Button Does’
-Slug:       french-translation-of-i-wonder-what-this-button-does
-OneLine:    John Garner has translated the revision control article I wrote for A List Apart into French!  Exciting!
+Title:      "French Translation of ‘I Wonder What This Button Does’"
+Slug:       "french-translation-of-i-wonder-what-this-button-does"
+OneLine:    "John Garner has translated the revision control article I wrote for A List Apart into French!  Exciting!"
 Tags:       
     - Subversion
 

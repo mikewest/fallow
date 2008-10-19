@@ -2,9 +2,9 @@
 ArticleID:  21
 Published:  1150920504
 Modified:   1150920504
-Title:      Pimp My JavaScript &#8212; Duff&#8217;s Edition
-Slug:       pimp-my-javascript-duffs-edition
-OneLine:    Your code can be faster!  Here are a few tips to help you speed up the toughest pieces of your JavaScript.
+Title:      "Pimp My JavaScript &#8212; Duff&#8217;s Edition"
+Slug:       "pimp-my-javascript-duffs-edition"
+OneLine:    "Your code can be faster!  Here are a few tips to help you speed up the toughest pieces of your JavaScript."
 Tags:       
     - HOWTO
     - JavaScript
@@ -58,7 +58,7 @@ Happily, we can get the totals quite simply.  We get the total number of columns
     
 And then we can calculate the number of rows by dividing the total number of cells we have by the total number of columns:
 
-	var totalRows	= cells.length / totalCols;
+    var totalRows    = cells.length / totalCols;
 
 All that's left is to map our flat array to the two-dimensional table structure.  This probably makes more sense visually, so, imagine a 5x5 table.  If we grab a flat array of all the cells in the table, the array indexes map onto the table as follows:
 
@@ -92,11 +92,11 @@ The initial `for` loop is required, since we're not able to create the row's arr
 So our new algorithm looks like:
 
 
-	var table = document.getElementById('theTable');
-				
-	cells		= table.getElementsByTagName('td');
-	totalCols   = cells[0].parentNode.getElementsByTagName('td').length;
-	totalRows	= cells.length/totalCols;
+    var table = document.getElementById('theTable');
+                
+    cells        = table.getElementsByTagName('td');
+    totalCols   = cells[0].parentNode.getElementsByTagName('td').length;
+    totalRows    = cells.length/totalCols;
 
     for (rowNum = 0; rowNum < totalRows; rowNum++) {
         _data[rowNum] = [];
@@ -173,48 +173,48 @@ What if you don't know ahead of time how many iterations you need to go through?
     
 It's a little verbose, but I think it's fairly clear what's going on.  Let's apply this to our table parsing code, and see what we get.  We've got two loops, so we'll unroll both like so:
 
-    var rowNum		= 0;
-    var iterations	= totalRows;
-    var counter		= iterations % 8;
+    var rowNum        = 0;
+    var iterations    = totalRows;
+    var counter        = iterations % 8;
     if (counter>0) {
-    	do {
-    		_data[rowNum++] = [];
-    	} while (--counter);
+        do {
+            _data[rowNum++] = [];
+        } while (--counter);
     }
     counter = parseInt(iterations / 8);
     if (counter>0) {
-    	do {
-    		_data[rowNum++] = [];
-    		_data[rowNum++] = [];
-    		_data[rowNum++] = [];
-    		_data[rowNum++] = [];
-    		_data[rowNum++] = [];
-    		_data[rowNum++] = [];
-    		_data[rowNum++] = [];
-    		_data[rowNum++] = [];
-    	} while (--counter);
+        do {
+            _data[rowNum++] = [];
+            _data[rowNum++] = [];
+            _data[rowNum++] = [];
+            _data[rowNum++] = [];
+            _data[rowNum++] = [];
+            _data[rowNum++] = [];
+            _data[rowNum++] = [];
+            _data[rowNum++] = [];
+        } while (--counter);
     }
 
-    var cellNum	= 0;
-    iterations	= cells.length;
-    counter		= iterations % 8;
+    var cellNum    = 0;
+    iterations    = cells.length;
+    counter        = iterations % 8;
     if (counter>0) {
-    	do {
-    		_data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
-    	} while (--counter);
+        do {
+            _data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
+        } while (--counter);
     }
     n = parseInt(iterations / 8);
     if (counter>0) {
-    	do {
-    		_data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
-    		_data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
-    		_data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
-    		_data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
-    		_data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
-    		_data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
-    		_data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
-    		_data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
-    	} while (--counter);
+        do {
+            _data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
+            _data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
+            _data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
+            _data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
+            _data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
+            _data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
+            _data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
+            _data[parseInt(cellNum/totalCols)][cellNum%totalCols] = parseFloat(cells[cellNum++].innerHTML);
+        } while (--counter);
     }
     
 Over 5 runs, it averaged 1728 milliseconds to process a 1000x10 table of random numbers: a 44% improvement over the initial pass.  Nice work.  

@@ -2,9 +2,9 @@
 ArticleID:  60
 Published:  1177502783
 Modified:   1177502783
-Title:      Fun Apple Remote Tricks
-Slug:       fun-apple-remote-tricks
-OneLine:    Funny, funny coworkers can be stymied by pairing your Apple Remote with your mac.
+Title:      "Fun Apple Remote Tricks"
+Slug:       "fun-apple-remote-tricks"
+OneLine:    "Funny, funny coworkers can be stymied by pairing your Apple Remote with your mac."
 Tags:       
     - HOWTO
     - Yahoo

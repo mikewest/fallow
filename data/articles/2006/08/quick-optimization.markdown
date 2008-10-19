@@ -2,9 +2,9 @@
 ArticleID:  29
 Published:  1157013660
 Modified:   1157330507
-Title:      Quick Optimization
-Slug:       quick-optimization
-OneLine:    DOM calls are expensive; this article walks through one quick way to optimize them out of your code.
+Title:      "Quick Optimization"
+Slug:       "quick-optimization"
+OneLine:    "DOM calls are expensive; this article walks through one quick way to optimize them out of your code."
 Tags:       
     - JavaScript
 

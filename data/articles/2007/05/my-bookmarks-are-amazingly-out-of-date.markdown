@@ -2,9 +2,9 @@
 ArticleID:  65
 Published:  1178467061
 Modified:   1178467061
-Title:      My bookmarks are amazingly out of date.
-Slug:       my-bookmarks-are-amazingly-out-of-date
-OneLine:    I'm removing the bookmarks from this site on a temporary basis.  That should drive me insane enough to actually do something about the fact that they haven't changed since last year.
+Title:      "My bookmarks are amazingly out of date."
+Slug:       "my-bookmarks-are-amazingly-out-of-date"
+OneLine:    "I'm removing the bookmarks from this site on a temporary basis.  That should drive me insane enough to actually do something about the fact that they haven't changed since last year."
 Tags:       
     - Personal
 

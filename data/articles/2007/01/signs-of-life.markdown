@@ -2,9 +2,9 @@
 ArticleID:  54
 Published:  1170100832
 Modified:   1170100832
-Title:      Signs of Life
-Slug:       signs-of-life
-OneLine:    It's great to see that SSHKeychain isn't dead.
+Title:      "Signs of Life"
+Slug:       "signs-of-life"
+OneLine:    "It's great to see that SSHKeychain isn't dead."
 Tags:       
 
 ...

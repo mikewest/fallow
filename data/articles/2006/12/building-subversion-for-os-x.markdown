@@ -2,9 +2,9 @@
 ArticleID:  41
 Published:  1166552040
 Modified:   1169811240
-Title:      Building Subversion 1.4.3 for OS X
-Slug:       building-subversion-for-os-x
-OneLine:    Metissian's pre-build Subversion binaries are out of date, and Dan Benjamin's excellent guide to building Subversion yourself runs into a wall for 1.4+.  You, however, are an impatient pioneer.  You want to build the latest stable (impatient, not _imprude
+Title:      "Building Subversion 1.4.3 for OS X"
+Slug:       "building-subversion-for-os-x"
+OneLine:    "Metissian's pre-build Subversion binaries are out of date, and Dan Benjamin's excellent guide to building Subversion yourself runs into a wall for 1.4+.  You, however, are an impatient pioneer.  You want to build the latest stable (impatient, not _imprude"
 Tags:       
     - Subversion
     - HOWTO

@@ -2,9 +2,9 @@
 ArticleID:  10
 Published:  1144581240
 Modified:   1224337002
-Title:      mcw_templates — Import/Export Textpattern Templates
-Slug:       mcw-templates
-OneLine:    mcw_templates is a TextPattern plugin allowing the export/import of pages, forms, and css rules to files for external editing.
+Title:      "mcw_templates — Import/Export Textpattern Templates"
+Slug:       "mcw-templates"
+OneLine:    "mcw_templates is a TextPattern plugin allowing the export/import of pages, forms, and css rules to files for external editing."
 Tags:       
     - TextPattern
 

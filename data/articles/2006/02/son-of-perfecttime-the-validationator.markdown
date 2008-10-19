@@ -2,9 +2,9 @@
 ArticleID:  1
 Published:  1139918940
 Modified:   1143836819
-Title:      Son of PerfectTime: The Validationator!
-Slug:       son-of-perfecttime-the-validationator
-OneLine:    The PerfectTime JavaScript class gets updated to support the hCalendar format.
+Title:      "Son of PerfectTime: The Validationator!"
+Slug:       "son-of-perfecttime-the-validationator"
+OneLine:    "The PerfectTime JavaScript class gets updated to support the hCalendar format."
 Tags:       
     - JavaScript
 

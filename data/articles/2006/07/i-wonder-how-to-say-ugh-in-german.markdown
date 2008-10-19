@@ -2,9 +2,9 @@
 ArticleID:  25
 Published:  1153307580
 Modified:   1153817638
-Title:      I wonder how to say “ugh” in German?
-Slug:       i-wonder-how-to-say-ugh-in-german
-OneLine:    I _hate_ being sick.
+Title:      "I wonder how to say “ugh” in German?"
+Slug:       "i-wonder-how-to-say-ugh-in-german"
+OneLine:    "I _hate_ being sick."
 Tags:       
     - Personal
 

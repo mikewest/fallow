@@ -2,9 +2,9 @@
 ArticleID:  44
 Published:  1167853677
 Modified:   1167853677
-Title:      Using YUI in Greasemonkey Scripts
-Slug:       using-yui-in-greasemonkey-scripts
-OneLine:    Carlo Zottman has a great article out on Yahoo's User Interface blog.  Nice work!
+Title:      "Using YUI in Greasemonkey Scripts"
+Slug:       "using-yui-in-greasemonkey-scripts"
+OneLine:    "Carlo Zottman has a great article out on Yahoo's User Interface blog.  Nice work!"
 Tags:       
     - JavaScript
 

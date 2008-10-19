@@ -2,9 +2,9 @@
 ArticleID:  13
 Published:  1146071640
 Modified:   1150558906
-Title:      mcw_ma_gnolia
-Slug:       mcwmagnolia
-OneLine:    `mcw_ma_gnolia` is a TextPattern plugin that generates a customizable Ma.gnolia link roll for use on your website.
+Title:      "mcw_ma_gnolia"
+Slug:       "mcwmagnolia"
+OneLine:    "`mcw_ma_gnolia` is a TextPattern plugin that generates a customizable Ma.gnolia link roll for use on your website."
 Tags:       
     - TextPattern
 

@@ -2,9 +2,9 @@
 ArticleID:  6
 Published:  1139787240
 Modified:   1143667215
-Title:      Showing Perfect Time (Unobtrusively)
-Slug:       showing-perfect-time-unobtrusively
-OneLine:    We can use JavaScript to deal with the nasty annoyance of displaying times in a user's local time-zone.
+Title:      "Showing Perfect Time (Unobtrusively)"
+Slug:       "showing-perfect-time-unobtrusively"
+OneLine:    "We can use JavaScript to deal with the nasty annoyance of displaying times in a user's local time-zone."
 Tags:       
     - JavaScript
 

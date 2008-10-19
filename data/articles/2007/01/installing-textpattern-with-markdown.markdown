@@ -2,9 +2,9 @@
 ArticleID:  48
 Published:  1168772640
 Modified:   1169340405
-Title:      Installing Textpattern 4.0.4 with Markdown
-Slug:       installing-textpattern-with-markdown
-OneLine:    This site is built on top of the Textpattern engine, running Markdown instead of Textile.  Here's how to make that happen.
+Title:      "Installing Textpattern 4.0.4 with Markdown"
+Slug:       "installing-textpattern-with-markdown"
+OneLine:    "This site is built on top of the Textpattern engine, running Markdown instead of Textile.  Here's how to make that happen."
 Tags:       
     - HOWTO
     - TextPattern

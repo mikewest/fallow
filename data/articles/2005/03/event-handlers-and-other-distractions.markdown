@@ -2,9 +2,9 @@
 ArticleID:  5
 Published:  1110770700
 Modified:   1143665282
-Title:      Event Handlers and Other Distractions
-Slug:       event-handlers-and-other-distractions
-OneLine:    Attaching behaviors to the semantic elements in your HTML document isn't nearly so hard as it sounds.
+Title:      "Event Handlers and Other Distractions"
+Slug:       "event-handlers-and-other-distractions"
+OneLine:    "Attaching behaviors to the semantic elements in your HTML document isn't nearly so hard as it sounds."
 Tags:       
     - JavaScript
 

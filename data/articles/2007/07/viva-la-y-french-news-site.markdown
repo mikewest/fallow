@@ -2,9 +2,9 @@
 ArticleID:  76
 Published:  1183479059
 Modified:   1183479059
-Title:      Viva la Y! French News Site!
-Slug:       viva-la-y-french-news-site
-OneLine:    
+Title:      "Viva la Y! French News Site!"
+Slug:       "viva-la-y-french-news-site"
+OneLine:    ""
 Tags:       
     - Yahoo
 

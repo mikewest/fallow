@@ -2,9 +2,9 @@
 ArticleID:  30
 Published:  1157330400
 Modified:   1159534233
-Title:      Articles about Interviewing
-Slug:       articles-about-interviewing
-OneLine:    A short list of articles worth reading for interviewers or interviewees.
+Title:      "Articles about Interviewing"
+Slug:       "articles-about-interviewing"
+OneLine:    "A short list of articles worth reading for interviewers or interviewees."
 Tags:       
     - Personal
 

@@ -2,9 +2,9 @@
 ArticleID:  49
 Published:  1168948550
 Modified:   1169339034
-Title:      Auto-configuring Proxy Settings with a PAC File
-Slug:       auto-configuring-proxy-settings-with-a-pac-file
-OneLine:    Configuring a browser's proxy settings manually is inflexible; proxy auto-config (PAC) files are much more flexible.
+Title:      "Auto-configuring Proxy Settings with a PAC File"
+Slug:       "auto-configuring-proxy-settings-with-a-pac-file"
+OneLine:    "Configuring a browser's proxy settings manually is inflexible; proxy auto-config (PAC) files are much more flexible."
 Tags:       
     - HOWTO
 

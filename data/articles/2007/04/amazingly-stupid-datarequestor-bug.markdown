@@ -2,9 +2,9 @@
 ArticleID:  58
 Published:  1176753684
 Modified:   1176753684
-Title:      Amazingly Stupid DataRequestor Bug
-Slug:       amazingly-stupid-datarequestor-bug
-OneLine:    James Moberg pointed out that I'm a complete idiot, and shipped DataRequestor 1.6 with some debug code left in.
+Title:      "Amazingly Stupid DataRequestor Bug"
+Slug:       "amazingly-stupid-datarequestor-bug"
+OneLine:    "James Moberg pointed out that I'm a complete idiot, and shipped DataRequestor 1.6 with some debug code left in."
 Tags:       
     - DataRequestor
     - JavaScript

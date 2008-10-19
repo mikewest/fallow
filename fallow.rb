@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -wKU
 
-%w(fileutils stringio time rubygems maruku rack thin pp yaml fileutils sqlite3).each { |lib| require lib }
+%w(fileutils stringio time rubygems rdiscount rack thin pp yaml fileutils sqlite3).each { |lib| require lib }
 
 module Fallow
   ROOT_DIR      = File.expand_path(File.dirname(__FILE__))

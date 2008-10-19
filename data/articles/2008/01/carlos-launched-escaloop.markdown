@@ -2,9 +2,9 @@
 ArticleID:  87
 Published:  1200259742
 Modified:   1200259805
-Title:      Carlo’s launched Escaloop 
-Slug:       carlos-launched-escaloop
-OneLine:    Carlo's just launched his latest lifestream-badge-making project: Escaloop.
+Title:      "Carlo’s launched Escaloop "
+Slug:       "carlos-launched-escaloop"
+OneLine:    "Carlo's just launched his latest lifestream-badge-making project: Escaloop."
 Tags:       
     - Personal
 

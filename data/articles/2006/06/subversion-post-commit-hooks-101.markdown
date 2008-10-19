@@ -2,9 +2,9 @@
 ArticleID:  17
 Published:  1150140900
 Modified:   1189157540
-Title:      Subversion Post-Commit Hooks 101
-Slug:       subversion-post-commit-hooks-101
-OneLine:    The "Hello World!" of Subversion `post-commit` hooks is the use of `SVNnotify` to send e-mails out to a project team every time a new revision is committed to the repository.  This is easier than it sounds.
+Title:      "Subversion Post-Commit Hooks 101"
+Slug:       "subversion-post-commit-hooks-101"
+OneLine:    "The \"Hello World!\" of Subversion `post-commit` hooks is the use of `SVNnotify` to send e-mails out to a project team every time a new revision is committed to the repository.  This is easier than it sounds."
 Tags:       
     - HOWTO
     - Subversion

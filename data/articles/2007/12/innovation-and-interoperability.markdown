@@ -2,9 +2,9 @@
 ArticleID:  86
 Published:  1198083685
 Modified:   1198083705
-Title:      Innovation and Interoperability
-Slug:       innovation-and-interoperability
-OneLine:    Briefly, my thoughts on the current dustup over the W3C's CSS Working Group.
+Title:      "Innovation and Interoperability"
+Slug:       "innovation-and-interoperability"
+OneLine:    "Briefly, my thoughts on the current dustup over the W3C's CSS Working Group."
 Tags:       
     - Personal
 
@@ -15,8 +15,8 @@ This is a long way of saying that his most recent post, [Year Zero][], is both c
 
 The exception is this: Jeremy notes [Alex Russell's central theme][alex] ("In order for the future to be better by a large amount, it must be different by a large amount."), and agrees with it.  Sort of.
 
->	"[Alex] is absolutely right. But here’s the thing... I don’t want the
->	future to change by a large amount. The present isn’t that bad."
+>    "[Alex] is absolutely right. But here’s the thing... I don’t want the
+>    future to change by a large amount. The present isn’t that bad."
 
 I find this to be a shortsighted conclusion.  The present certainly isn't that bad, because people like Alex and Jeremy have done a tremendous amount of work with the technology we have available to show us how to level out the capabilities of the browsers we currently rely on.  The playing field is relatively even; it's _work_ to create a quality web site or application, no doubt about it, but it's not like the early days, where "optimized for X" was a way of life.  Insofar as this is true, I think Alex's concerns are overblown, and Jeremy's position makes sense.
 

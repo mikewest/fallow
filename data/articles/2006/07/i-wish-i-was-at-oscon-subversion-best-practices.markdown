@@ -2,9 +2,9 @@
 ArticleID:  27
 Published:  1154079780
 Modified:   1154080749
-Title:      I wish I was at OSCON: “Subversion Best Practices”
-Slug:       i-wish-i-was-at-oscon-subversion-best-practices
-OneLine:    Brad Choate has a great summary of what looks like a _wonderful_ presentation on Subversion best practices, given at OSCON 2006 by Ben Collins-Sussman & Brian W. Fitzpatrick
+Title:      "I wish I was at OSCON: “Subversion Best Practices”"
+Slug:       "i-wish-i-was-at-oscon-subversion-best-practices"
+OneLine:    "Brad Choate has a great summary of what looks like a _wonderful_ presentation on Subversion best practices, given at OSCON 2006 by Ben Collins-Sussman & Brian W. Fitzpatrick"
 Tags:       
     - Subversion
 

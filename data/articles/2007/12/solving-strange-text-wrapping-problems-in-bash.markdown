@@ -2,9 +2,9 @@
 ArticleID:  84
 Published:  1197474890
 Modified:   1197475298
-Title:      Solving strange text wrapping problems in `bash`
-Slug:       solving-strange-text-wrapping-problems-in-bash
-OneLine:    I started having strange text wrapping problems after implementing implementing the beautifully colored bash prompt I discussed on Monday.  After fidgeting around a bit, I think I've come up with a solution.
+Title:      "Solving strange text wrapping problems in `bash`"
+Slug:       "solving-strange-text-wrapping-problems-in-bash"
+OneLine:    "I started having strange text wrapping problems after implementing implementing the beautifully colored bash prompt I discussed on Monday.  After fidgeting around a bit, I think I've come up with a solution."
 Tags:       
     - Personal
 

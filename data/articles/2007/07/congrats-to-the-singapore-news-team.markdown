@@ -2,9 +2,9 @@
 ArticleID:  75
 Published:  1183370321
 Modified:   1183370321
-Title:      Congrats to the Singapore News Team!
-Slug:       congrats-to-the-singapore-news-team
-OneLine:    Singapore launched their News site today using the code we've been working on here in Munich as a base.  Nice work!
+Title:      "Congrats to the Singapore News Team!"
+Slug:       "congrats-to-the-singapore-news-team"
+OneLine:    "Singapore launched their News site today using the code we've been working on here in Munich as a base.  Nice work!"
 Tags:       
     - Yahoo
 

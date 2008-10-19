@@ -2,9 +2,9 @@
 ArticleID:  2
 Published:  1111370580
 Modified:   1151403164
-Title:      Slidable Select Widgets Explained
-Slug:       slidable-select-widgets-explained
-OneLine:    A walkthrough of the process I used to make an accessible slider widget from a SELECT element.
+Title:      "Slidable Select Widgets Explained"
+Slug:       "slidable-select-widgets-explained"
+OneLine:    "A walkthrough of the process I used to make an accessible slider widget from a SELECT element."
 Tags:       
     - JavaScript
 

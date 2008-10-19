@@ -2,9 +2,9 @@
 ArticleID:  61
 Published:  1177595963
 Modified:   1177596144
-Title:      I used to be so pretty.
-Slug:       i-used-to-be-so-pretty
-OneLine:    A few days ago, my landlord asked me if I was losing hair.  *sigh*
+Title:      "I used to be so pretty."
+Slug:       "i-used-to-be-so-pretty"
+OneLine:    "A few days ago, my landlord asked me if I was losing hair.  *sigh*"
 Tags:       
     - Personal
 

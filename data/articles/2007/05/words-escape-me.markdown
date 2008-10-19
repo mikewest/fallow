@@ -2,9 +2,9 @@
 ArticleID:  66
 Published:  1179341911
 Modified:   1179420243
-Title:      Words Escape Me
-Slug:       words-escape-me
-OneLine:    I'm bored, and even though I should be overflowing with things to write about, I'm not.
+Title:      "Words Escape Me"
+Slug:       "words-escape-me"
+OneLine:    "I'm bored, and even though I should be overflowing with things to write about, I'm not."
 Tags:       
     - Personal
 

@@ -2,9 +2,9 @@
 ArticleID:  19
 Published:  1150559160
 Modified:   1150559372
-Title:      `mcw_ma_gnolia` version 0.4 is out
-Slug:       mcwmagnolia-version-04-is-out
-OneLine:    A new version of `mcw_ma_gnolia` fixes an issue with parsing Ma.gnolia's new linkroll format.
+Title:      "`mcw_ma_gnolia` version 0.4 is out"
+Slug:       "mcwmagnolia-version-04-is-out"
+OneLine:    "A new version of `mcw_ma_gnolia` fixes an issue with parsing Ma.gnolia's new linkroll format."
 Tags:       
     - TextPattern
 

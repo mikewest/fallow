@@ -2,9 +2,9 @@
 ArticleID:  20
 Published:  1150626420
 Modified:   1150626477
-Title:      Install SQLite Locally on OS X
-Slug:       install-sqlite-locally-on-os-x
-OneLine:    SQLite is a nice little database engine that can be incredibly fast as a website backend.  Installing it on OS X is equally quick.
+Title:      "Install SQLite Locally on OS X"
+Slug:       "install-sqlite-locally-on-os-x"
+OneLine:    "SQLite is a nice little database engine that can be incredibly fast as a website backend.  Installing it on OS X is equally quick."
 Tags:       
     - HOWTO
 
@@ -28,15 +28,15 @@ SQLite is built into php 5.1.X, so you can simply install [Marc Liyanage's excel
 
     <?php
         $db = new SQLiteDatabase(":memory:");
-    	$db->query("
-    		BEGIN;
-    			CREATE TABLE hello_world (text varchar(12));
-    			INSERT INTO hello_world VALUES ('Hello World!');
-    		COMMIT;
-    	");
+        $db->query("
+            BEGIN;
+                CREATE TABLE hello_world (text varchar(12));
+                INSERT INTO hello_world VALUES ('Hello World!');
+            COMMIT;
+        ");
         $result = $db->query("SELECT * FROM hello_world");
         $row = $result->current();
-    	print $row[0];
+        print $row[0];
     ?>
 
 Unfortunately, my [PHP distribution of choice][entropy] seems to have dropped the PDO drivers for SQLite in the [5.1.4 release][entropy_5_1_4].  That's a shame, as [TextDrive][textdrive] wants me to use the PDO drivers to access SQLite 3+ databases.  

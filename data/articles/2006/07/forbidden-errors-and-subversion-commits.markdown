@@ -2,16 +2,16 @@
 ArticleID:  23
 Published:  1152177471
 Modified:   1152177471
-Title:      &#8220;Forbidden&#8221; Errors and Subversion Commits
-Slug:       forbidden-errors-and-subversion-commits
-OneLine:    A wayward `mod_rewrite` rule broke my Subversion commits with 403 ("Forbidden") errors.  Here's how I fixed it.
+Title:      "&#8220;Forbidden&#8221; Errors and Subversion Commits"
+Slug:       "forbidden-errors-and-subversion-commits"
+OneLine:    "A wayward `mod_rewrite` rule broke my Subversion commits with 403 (\"Forbidden\") errors.  Here's how I fixed it."
 Tags:       
     - Subversion
 
 ...
 So, I got pretty clever with my [`mod_rewrite` rules][rewrite] to deal with some of the programs out there that nefarious types use to find vulnerable targets for exploits.  At least, I thought I was being clever.  As it turns out, I ended up shooting myself in the foot with the following rule:
 
-    RewriteCond %{REQUEST_URI}	^(.*)main.php$  [NC]
+    RewriteCond %{REQUEST_URI}    ^(.*)main.php$  [NC]
     RewriteRule ^(.*)           -               [F,L]
     
 It's intention was to stop a bot from hammering me with requests for `main.php` in a wide variety of directories in the hopes that I had a broken version of [Horde][horde] installed.  These requests were generating tons of 404 ("Not Found") errors, making my log files pretty much worthless.  Sending 403 ("Forbidden") responses solved the immediate problem, but caused me some headaches yesterday when I tried to import a new project into [Subversion][svn].  Specifically, I was getting the following error:
@@ -24,9 +24,9 @@ In context, this is obvious.  The file I was trying to import was triggering the
 
 I added the following rule to the top of my `.htaccess` file's list of `mod_rewrite` rules:
 
-	RewriteCond %{REQUEST_URI}	^/svn
-	RewriteRule	^(.*)			-		[L]
-	
+    RewriteCond %{REQUEST_URI}    ^/svn
+    RewriteRule    ^(.*)            -        [L]
+    
 That simply stops the engine from rewriting anything under my `/svn/` directory, which solved the problem completely.  One more thing to look out for...
 
 [rewrite]: http://mikewest.org/archive/leveraging-modrewrite "Leveraging `mod_rewrite`"

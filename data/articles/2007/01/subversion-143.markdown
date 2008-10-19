@@ -2,9 +2,9 @@
 ArticleID:  52
 Published:  1169811632
 Modified:   1169811651
-Title:      Subversion 1.4.3
-Slug:       subversion-143
-OneLine:    
+Title:      "Subversion 1.4.3"
+Slug:       "subversion-143"
+OneLine:    ""
 Tags:       
     - Subversion
 

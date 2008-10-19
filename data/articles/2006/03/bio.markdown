@@ -2,9 +2,9 @@
 ArticleID:  7
 Published:  1143674400
 Modified:   1168291550
-Title:      Mike West is…
-Slug:       bio
-OneLine:    
+Title:      "Mike West is…"
+Slug:       "bio"
+OneLine:    ""
 Tags:       
 
 ...

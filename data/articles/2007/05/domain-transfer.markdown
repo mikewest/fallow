@@ -2,9 +2,9 @@
 ArticleID:  64
 Published:  1178400534
 Modified:   1178467116
-Title:      Domain Transfer
-Slug:       domain-transfer
-OneLine:    I'm (finally) hopping off GoDaddy and onto Gandi.  Hopefully nothing explodes...
+Title:      "Domain Transfer"
+Slug:       "domain-transfer"
+OneLine:    "I'm (finally) hopping off GoDaddy and onto Gandi.  Hopefully nothing explodes..."
 Tags:       
     - Personal
 

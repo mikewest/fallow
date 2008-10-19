@@ -2,9 +2,9 @@
 ArticleID:  70
 Published:  1181471119
 Modified:   1181471119
-Title:      Short-form Link Blogging
-Slug:       short-form-link-blogging
-OneLine:    Blogging is hard for me, mostly because I have an irrational desire to make each of my posts "important" and "interesting".  I'm working out ways to solve that problem for myself...
+Title:      "Short-form Link Blogging"
+Slug:       "short-form-link-blogging"
+OneLine:    "Blogging is hard for me, mostly because I have an irrational desire to make each of my posts \"important\" and \"interesting\".  I'm working out ways to solve that problem for myself..."
 Tags:       
     - Personal
     - Yahoo

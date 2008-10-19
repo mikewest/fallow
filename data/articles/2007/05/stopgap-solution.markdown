@@ -2,9 +2,9 @@
 ArticleID:  62
 Published:  1178118677
 Modified:   1178187399
-Title:      Stopgap Solution
-Slug:       stopgap-solution
-OneLine:    I bought a Treo 600 on Ebay.  And it's huge.  HUGE!  But also very powerful and nice.
+Title:      "Stopgap Solution"
+Slug:       "stopgap-solution"
+OneLine:    "I bought a Treo 600 on Ebay.  And it's huge.  HUGE!  But also very powerful and nice."
 Tags:       
     - Personal
 

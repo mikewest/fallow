@@ -2,9 +2,9 @@
 ArticleID:  38
 Published:  1159982206
 Modified:   1169341214
-Title:      Apartments in Munich
-Slug:       apartments-in-munich
-OneLine:    Help me find an apartment, please?
+Title:      "Apartments in Munich"
+Slug:       "apartments-in-munich"
+OneLine:    "Help me find an apartment, please?"
 Tags:       
     - Personal
 

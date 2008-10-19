@@ -2,9 +2,9 @@
 ArticleID:  77
 Published:  1184170264
 Modified:   1184170264
-Title:      Playing with Pownce&#8230;
-Slug:       playing-with-pownce
-OneLine:    Pownce looks like a more interesting Twittr.
+Title:      "Playing with Pownce&#8230;"
+Slug:       "playing-with-pownce"
+OneLine:    "Pownce looks like a more interesting Twittr."
 Tags:       
     - Personal
 

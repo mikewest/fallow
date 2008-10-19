@@ -2,9 +2,9 @@
 ArticleID:  56
 Published:  1175598749
 Modified:   1175599642
-Title:      It’s live.
-Slug:       its-live
-OneLine:    Today, we relaunched Yahoo! News in the UK.  Finally.
+Title:      "It’s live."
+Slug:       "its-live"
+OneLine:    "Today, we relaunched Yahoo! News in the UK.  Finally."
 Tags:       
     - Yahoo
     - Personal

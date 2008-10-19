@@ -2,9 +2,9 @@
 ArticleID:  53
 Published:  1169998354
 Modified:   1207586924
-Title:      Benchmarking Your Site with `http_load`
-Slug:       benchmarking-your-site-with-http_load
-OneLine:    http_load is a great benchmarking utility that gives you a quick overview of your web server's performance.  This article describes how to install and use it.
+Title:      "Benchmarking Your Site with `http_load`"
+Slug:       "benchmarking-your-site-with-http_load"
+OneLine:    "http_load is a great benchmarking utility that gives you a quick overview of your web server's performance.  This article describes how to install and use it."
 Tags:       
     - HOWTO
 
@@ -72,23 +72,23 @@ Hooray for bash scripting!
 
 It looks like Leopard introduces some quirks to the process.  If you're getting an error like:
 
-	rm -f /usr/local/bin/http_load
-	cp http_load /usr/local/bin
-	rm -f /usr/local/man/man1/http_load.1
-	cp http_load.1 /usr/local/man/man1
-	cp: /usr/local/man/man1: No such file or directory
-	make: *** [install] Error 1
-	
+    rm -f /usr/local/bin/http_load
+    cp http_load /usr/local/bin
+    rm -f /usr/local/man/man1/http_load.1
+    cp http_load.1 /usr/local/man/man1
+    cp: /usr/local/man/man1: No such file or directory
+    make: *** [install] Error 1
+    
 Then do the following to fix up the problem:
 
-	sudo rm /usr/local/bin
-	sudo mkdir -p /usr/local/bin/
-	sudo mkdir -p /usr/local/share/man/man1/
-	sudo ln -s /usr/local/share/man/ /usr/local/man
-	make clean
-	make
-	sudo make install
-	
+    sudo rm /usr/local/bin
+    sudo mkdir -p /usr/local/bin/
+    sudo mkdir -p /usr/local/share/man/man1/
+    sudo ln -s /usr/local/share/man/ /usr/local/man
+    make clean
+    make
+    sudo make install
+    
 In a nutshell, Leopard doesn't come with a `/usr/local/bin` directory, and seems to have moved the location of local manual pages from `/usr/local/man/` to /usr/local/share/man/`.  The commands above will create the binary and manual page directories you'll need, and sets up a [symlink][symlink] mapping the old directory structure to the new one.
 
 Magic!

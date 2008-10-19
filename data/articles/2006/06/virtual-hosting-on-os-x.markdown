@@ -2,9 +2,9 @@
 ArticleID:  15
 Published:  1150454760
 Modified:   1150477892
-Title:      Virtual Hosting on OS X
-Slug:       virtual-hosting-on-os-x
-OneLine:    Setting up virtual domains on your local OS X Apache installation is pretty easy.  Here's a quick description of the process.
+Title:      "Virtual Hosting on OS X"
+Slug:       "virtual-hosting-on-os-x"
+OneLine:    "Setting up virtual domains on your local OS X Apache installation is pretty easy.  Here's a quick description of the process."
 Tags:       
     - HOWTO
 
@@ -13,7 +13,7 @@ Tags:
 
 I don't, and luckily, this sort of thing is really not that hard at all to do on your own with your good friend, the text editor.  You'll just need to edit two files, restart Apache, and then you're done.
 
-[1]:	http://headdress.twinsparc.com/ "Headdress"
+[1]:    http://headdress.twinsparc.com/ "Headdress"
 
 ### Map a domain to your local machine ###
 
@@ -25,11 +25,11 @@ The easiest way to do this is to pop open `/etc/hosts` and add in a line mapping
 
 If you're using TextMate, then from the terminal, you can type:
 
-	mate /etc/hosts
-	
+    mate /etc/hosts
+    
 to open the hosts file for editing.  You'll see some mappings already in there, _please don't touch them_.  Instead, add a line at the end of the file for each domain you plan to host locally in the following format:
 
-	127.0.0.1		domainname.dev
+    127.0.0.1        domainname.dev
 
 Type the names and addresses in, one per line.  When you're finished, it should look something like:
 
@@ -44,9 +44,9 @@ It's important to note, however, that this has absolutely no effect whatsoever o
 
 You'll almost certainly have to restart your web browser in order to clear it's cache, and you might even have to flush the system's DNS cache by typing the following into terminal:
 
-	lookupd -flushcache
+    lookupd -flushcache
 
-###	Tell Apache what to do with the domain ###
+###    Tell Apache what to do with the domain ###
 
 Now you've gotten your development domain set up to point to your machine, but Apache doesn't know anything about it; We'll need to set up some virtual hosts by editing the Apache configuration.
 
@@ -62,22 +62,22 @@ and uncomment it by removing the leading [octothorpe][pound] `#`.  It should loo
 This explains to Apache that you're going to be hosting multiple domains on your computer, and that it needs to use the name of each domain to distinguish which directory to serve files from.  Now, we need to tell it which names to expect.  For each of your domains, add in a virtual host definition that looks like this:
 
     <VirtualHost *:80>
-        DocumentRoot	/path/to/your/project
-        ServerName		projectname.dev
+        DocumentRoot    /path/to/your/project
+        ServerName        projectname.dev
     </VirtualHost>
     
 The `DocumentRoot` is the directory in which your project lives.  The `ServerName` is the name that Apache should respond to.  I lay out my projects as subdirectories of `/Users/mwest/Projects/`, so my configuration looks like:
 
     <VirtualHost *:80>
-        DocumentRoot	/Users/mwest/Projects/org_mikewest
-        ServerName		mikewest.dev
+        DocumentRoot    /Users/mwest/Projects/org_mikewest
+        ServerName        mikewest.dev
     </VirtualHost>
 
     ...
 
     <VirtualHost *:80>
-        DocumentRoot	/Users/mwest/Projects/org_lddebate
-        ServerName		lddebate.dev
+        DocumentRoot    /Users/mwest/Projects/org_lddebate
+        ServerName        lddebate.dev
     </VirtualHost>
 
 Once you've added in all the virtual host definitions that you need, save the configuration file, then hop back into Terminal to restart Apache by typing:

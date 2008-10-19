@@ -2,9 +2,9 @@
 ArticleID:  63
 Published:  1178192028
 Modified:   1178467152
-Title:      ¡Es vivo!
-Slug:       es-vivo
-OneLine:    We launched the Yahoo! News site in Spain today.  Finally!
+Title:      "¡Es vivo!"
+Slug:       "es-vivo"
+OneLine:    "We launched the Yahoo! News site in Spain today.  Finally!"
 Tags:       
     - Yahoo
     - Personal

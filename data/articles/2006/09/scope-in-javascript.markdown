@@ -2,9 +2,9 @@
 ArticleID:  32
 Published:  1158049740
 Modified:   1158049804
-Title:      Scope in JavaScript
-Slug:       scope-in-javascript
-OneLine:    My latest article for Digital Web, 'Scope In JavaScript', is up and waiting for you to read it.
+Title:      "Scope in JavaScript"
+Slug:       "scope-in-javascript"
+OneLine:    "My latest article for Digital Web, 'Scope In JavaScript', is up and waiting for you to read it."
 Tags:       
     - JavaScript
     - Digital-Web

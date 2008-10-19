@@ -2,9 +2,9 @@
 ArticleID:  42
 Published:  1166632260
 Modified:   1170099442
-Title:      Building SSHKeychain as an Intel Binary
-Slug:       building-sshkeychain-as-an-intel-binary
-OneLine:    I've seen a few Universal Binary builds of SSHKeychain floating around, but I'm paranoid, so I built my own.  It's easier than I expected.
+Title:      "Building SSHKeychain as an Intel Binary"
+Slug:       "building-sshkeychain-as-an-intel-binary"
+OneLine:    "I've seen a few Universal Binary builds of SSHKeychain floating around, but I'm paranoid, so I built my own.  It's easier than I expected."
 Tags:       
     - HOWTO
 

@@ -2,9 +2,9 @@
 ArticleID:  59
 Published:  1177404645
 Modified:   1177440012
-Title:      Just the stats
-Slug:       just-the-stats
-OneLine:    A List Apart is running a survey to gather demographic info from web professionals; I think it could be a worthwhile enterprise.
+Title:      "Just the stats"
+Slug:       "just-the-stats"
+OneLine:    "A List Apart is running a survey to gather demographic info from web professionals; I think it could be a worthwhile enterprise."
 Tags:       
     - Personal
 

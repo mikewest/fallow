@@ -2,9 +2,9 @@
 ArticleID:  80
 Published:  1195937770
 Modified:   1195939420
-Title:      Just back from London
-Slug:       just-back-from-london
-OneLine:    I'm back from London after @media Ajax with some security papers for you to read, and not much else yet.
+Title:      "Just back from London"
+Slug:       "just-back-from-london"
+OneLine:    "I'm back from London after @media Ajax with some security papers for you to read, and not much else yet."
 Tags:       
     - Personal
     - JavaScript

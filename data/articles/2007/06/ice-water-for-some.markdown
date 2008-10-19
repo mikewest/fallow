@@ -2,9 +2,9 @@
 ArticleID:  71
 Published:  1181586491
 Modified:   1181586491
-Title:      Ice Water for Some&#8230;
-Slug:       ice-water-for-some
-OneLine:    Safari's coming to Windows.  Welcome to the party...
+Title:      "Ice Water for Some&#8230;"
+Slug:       "ice-water-for-some"
+OneLine:    "Safari's coming to Windows.  Welcome to the party..."
 Tags:       
     - JavaScript
     - Yahoo

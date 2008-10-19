@@ -2,9 +2,9 @@
 ArticleID:  72
 Published:  1181912094
 Modified:   1181912094
-Title:      Escaping Curly Braces in XSLT Attributes
-Slug:       escaping-curly-braces-in-xslt-attributes
-OneLine:    Curly braces in the attributes of XSLT document's elements are interpreted as XPATH expressions to be evaluated.  This sometimes causes problems...
+Title:      "Escaping Curly Braces in XSLT Attributes"
+Slug:       "escaping-curly-braces-in-xslt-attributes"
+OneLine:    "Curly braces in the attributes of XSLT document's elements are interpreted as XPATH expressions to be evaluated.  This sometimes causes problems..."
 Tags:       
     - JavaScript
     - Yahoo

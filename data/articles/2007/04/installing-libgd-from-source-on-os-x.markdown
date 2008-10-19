@@ -2,9 +2,9 @@
 ArticleID:  57
 Published:  1176725777
 Modified:   1176725911
-Title:      Installing `libgd` from source on OS X
-Slug:       installing-libgd-from-source-on-os-x
-OneLine:    `libgd` is a pain in the ass to install from source.  Here's a step by step guide in case I ever have to do it again.
+Title:      "Installing `libgd` from source on OS X"
+Slug:       "installing-libgd-from-source-on-os-x"
+OneLine:    "`libgd` is a pain in the ass to install from source.  Here's a step by step guide in case I ever have to do it again."
 Tags:       
     - HOWTO
 

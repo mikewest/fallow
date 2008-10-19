@@ -2,9 +2,9 @@
 ArticleID:  46
 Published:  1168373760
 Modified:   1168373985
-Title:      iWant.
-Slug:       iwant
-OneLine:    I want an iPhone.  Just like everyone else.
+Title:      "iWant."
+Slug:       "iwant"
+OneLine:    "I want an iPhone.  Just like everyone else."
 Tags:       
 
 ...

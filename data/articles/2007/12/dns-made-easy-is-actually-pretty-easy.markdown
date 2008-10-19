@@ -2,9 +2,9 @@
 ArticleID:  85
 Published:  1197727598
 Modified:   1197727796
-Title:      DNS Made Easy is actually pretty easy
-Slug:       dns-made-easy-is-actually-pretty-easy
-OneLine:    In a spontaneous burst of productivity, spawned mostly by my complete and utter failure as a sysadmin, I moved my parent's email account off my server.  DNS Made Easy made this a trivial task.
+Title:      "DNS Made Easy is actually pretty easy"
+Slug:       "dns-made-easy-is-actually-pretty-easy"
+OneLine:    "In a spontaneous burst of productivity, spawned mostly by my complete and utter failure as a sysadmin, I moved my parent's email account off my server.  DNS Made Easy made this a trivial task."
 Tags:       
     - Personal
 
@@ -24,8 +24,8 @@ So, two thumbs up for [DNS Made Easy][dns].  They're absolutely living up to the
 
 Relatedly, the `lookupd` command is gone in Leopard.  If you want to clear your DNS cache under 10.5, you need to use `dscacheutil`.  I've added a quick alias to my `~/.bash_login` file, because I'm sure I'm going to forget this in about 10 minutes.
 
-	alias flushcache='sudo dscacheutil -flushcache';
-	
+    alias flushcache='sudo dscacheutil -flushcache';
+    
 I'd suggest you do the same, if you plan on mucking about with DNS settings, or editing your hosts file.
 
 [apps]: http://www.google.com/a/org/ "Google Apps"

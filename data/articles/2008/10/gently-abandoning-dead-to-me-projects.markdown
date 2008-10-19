@@ -2,9 +2,9 @@
 ArticleID:  91
 Published:  1224335692
 Modified:   1224336343
-Title:      Gently abandoning dead (to me) projects
-Slug:       gently-abandoning-dead-to-me-projects
-OneLine:    I've had a few bits of code floating around on the site for 2-3 years now without any serious investment of effort on my part.  It's time to throw in the towel, admit that I'm never actually going to touch them again, and set those loose.
+Title:      "Gently abandoning dead (to me) projects"
+Slug:       "gently-abandoning-dead-to-me-projects"
+OneLine:    "I've had a few bits of code floating around on the site for 2-3 years now without any serious investment of effort on my part.  It's time to throw in the towel, admit that I'm never actually going to touch them again, and set those loose."
 Tags:       
     - DataRequestor
     - Personal

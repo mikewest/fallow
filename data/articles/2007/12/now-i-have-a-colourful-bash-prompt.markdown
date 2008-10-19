@@ -2,9 +2,9 @@
 ArticleID:  83
 Published:  1197321853
 Modified:   1197475721
-Title:      Now I have a colourful `bash` prompt
-Slug:       now-i-have-a-colourful-bash-prompt
-OneLine:    My jealousy of Adriano's pretty `bash` prompt has been assuaged by the construction of my own, _prettier_ and _more functional_ prompt.  So there!
+Title:      "Now I have a colourful `bash` prompt"
+Slug:       "now-i-have-a-colourful-bash-prompt"
+OneLine:    "My jealousy of Adriano's pretty `bash` prompt has been assuaged by the construction of my own, _prettier_ and _more functional_ prompt.  So there!"
 Tags:       
     - Personal
 
@@ -22,29 +22,29 @@ Here's how it works
 
 The terminal prompt is controlled via the `PS1` environment variable in `bash`.  You simply need to construct a particular string, and assign it to that variable by adding a line to your `.bash_login` file like the following:
 
-	export PS1="<your formatting string goes here>"
+    export PS1="<your formatting string goes here>"
 
 This prompt in particular is:
 
-	export PS1="\[\033]2;\u@\h\a[\[\033[37;44;1m\]\t\[\033[0m\]] \[\033[32m\]\w\[\033[0m\] \$ \[\033[0m\]"
-	
+    export PS1="\[\033]2;\u@\h\a[\[\033[37;44;1m\]\t\[\033[0m\]] \[\033[32m\]\w\[\033[0m\] \$ \[\033[0m\]"
+    
 This breaks down into:
-	
-	\[\033]2;\u@\h\a					#	which writes the `user@host` string
-									    #	into the terminal window's title bar
-					
-	[\[\033[37;44;1m\]\t\[\033[0m\]]	#	which writes (in white-on-blue)
-									    #	`[HH:MM:SS]` at the beginning of
-									    #	each line, so that I know exactly
-									    #	when I executed a command
-	
-	\[\033[32m\]\w\[\033[0m\]			#	which writes (in a pleasant green) 
-									    #	the current working directory
-									
-	\$						    		#	which writes "$" if I'm logged in as
-									    #	a normal user, and "#" if I'm logged
-									    #	in as `root`.
-	
+    
+    \[\033]2;\u@\h\a                    #    which writes the `user@host` string
+                                        #    into the terminal window's title bar
+                    
+    [\[\033[37;44;1m\]\t\[\033[0m\]]    #    which writes (in white-on-blue)
+                                        #    `[HH:MM:SS]` at the beginning of
+                                        #    each line, so that I know exactly
+                                        #    when I executed a command
+    
+    \[\033[32m\]\w\[\033[0m\]            #    which writes (in a pleasant green) 
+                                        #    the current working directory
+                                    
+    \$                                    #    which writes "$" if I'm logged in as
+                                        #    a normal user, and "#" if I'm logged
+                                        #    in as `root`.
+    
 To build your own, I'd suggest taking a look at [Daniel Robbins' "Prompt Magic" article on IBM developerWorks][ibm].  It's a well put-together article that walks you through the whole, terrifically geeky process.
 
 Update

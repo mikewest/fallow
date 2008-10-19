@@ -2,9 +2,9 @@
 ArticleID:  22
 Published:  1151869620
 Modified:   1152001897
-Title:      Digital Web and Me
-Slug:       digital-web-and-me
-OneLine:    I've joined Digital Web Magazine's editorial team.  Yay!
+Title:      "Digital Web and Me"
+Slug:       "digital-web-and-me"
+OneLine:    "I've joined Digital Web Magazine's editorial team.  Yay!"
 Tags:       
     - Personal
 

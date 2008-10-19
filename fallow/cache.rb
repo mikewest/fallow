@@ -72,14 +72,17 @@ module Fallow
         sql = <<-SQL
           INSERT OR REPLACE INTO `tags` ( `tag`, `normalized_tag`, `path` ) VALUES ( :tag, :normalized, :path )
         SQL
-        header['Tags'].each {|tag|
-          db.execute(
-            sql,
-            'tag'         =>  tag,
-            'normalized'  =>  Fallow.urlify( tag ),
-            'path'        =>  path
-          )
-        }
+        
+        unless header['Tags'].nil?
+          header['Tags'].each {|tag|
+            db.execute(
+              sql,
+              'tag'         =>  tag,
+              'normalized'  =>  Fallow.urlify( tag ),
+              'path'        =>  path
+            )
+          }
+        end
       end
       
       def Cache.get_article
@@ -88,7 +91,6 @@ module Fallow
         pp @@db.execute('SELECT * FROM `articles`')
         pp @@db.execute('SELECT * FROM `tags`')
       end
-
     end
     
 private

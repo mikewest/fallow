@@ -2,9 +2,9 @@
 ArticleID:  79
 Published:  1195325602
 Modified:   1195325602
-Title:      Looking forward to @media 
-Slug:       looking-forward-to-media
-OneLine:    I'm looking forward to @media Ajax
+Title:      "Looking forward to @media "
+Slug:       "looking-forward-to-media"
+OneLine:    "I'm looking forward to @media Ajax"
 Tags:       
 
 ...

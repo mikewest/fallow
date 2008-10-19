@@ -2,9 +2,9 @@
 ArticleID:  12
 Published:  1145784660
 Modified:   1150141089
-Title:      Preparing a Mac for Resale
-Slug:       preparing-a-mac-for-resale
-OneLine:    Describes the easy process of setting up a mac for resale (patches, etc) while keeping the Setup Assistant experience for the new owner.
+Title:      "Preparing a Mac for Resale"
+Slug:       "preparing-a-mac-for-resale"
+OneLine:    "Describes the easy process of setting up a mac for resale (patches, etc) while keeping the Setup Assistant experience for the new owner."
 Tags:       
     - HOWTO
 

@@ -2,9 +2,9 @@
 ArticleID:  16
 Published:  1149526620
 Modified:   1151479801
-Title:      Working with Subversion File Properties
-Slug:       working-with-subversion-file-properties
-OneLine:    Subversion has a very powerful system for associating metadata with the files you have under version control.  This article describes how to automate the process of adding properties to the files you put under version control using `auto-props`.
+Title:      "Working with Subversion File Properties"
+Slug:       "working-with-subversion-file-properties"
+OneLine:    "Subversion has a very powerful system for associating metadata with the files you have under version control.  This article describes how to automate the process of adding properties to the files you put under version control using `auto-props`."
 Tags:       
     - HOWTO
     - Subversion

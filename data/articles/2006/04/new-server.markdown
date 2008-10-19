@@ -2,9 +2,9 @@
 ArticleID:  9
 Published:  1144269000
 Modified:   1144582985
-Title:      New Server, New Design
-Slug:       new-server
-OneLine:    I've redesigned, and moved the site to a new server.  Exciting, eh?
+Title:      "New Server, New Design"
+Slug:       "new-server"
+OneLine:    "I've redesigned, and moved the site to a new server.  Exciting, eh?"
 Tags:       
     - Personal
     - TextPattern

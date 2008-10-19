@@ -2,9 +2,9 @@
 ArticleID:  68
 Published:  1179733174
 Modified:   1179733395
-Title:      Stupid i18n Mistake.
-Slug:       stupid-i18n-mistake
-OneLine:    Italian (and other languages) are full of single-quotes.  Maybe I should escape them...
+Title:      "Stupid i18n Mistake."
+Slug:       "stupid-i18n-mistake"
+OneLine:    "Italian (and other languages) are full of single-quotes.  Maybe I should escape them..."
 Tags:       
     - Yahoo
     - Personal

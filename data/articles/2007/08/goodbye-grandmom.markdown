@@ -2,9 +2,9 @@
 ArticleID:  78
 Published:  1186035403
 Modified:   1186035403
-Title:      Goodbye Grandmom
-Slug:       goodbye-grandmom
-OneLine:    My grandmom died today.
+Title:      "Goodbye Grandmom"
+Slug:       "goodbye-grandmom"
+OneLine:    "My grandmom died today."
 Tags:       
     - Personal
 

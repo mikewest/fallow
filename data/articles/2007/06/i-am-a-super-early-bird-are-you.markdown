@@ -2,9 +2,9 @@
 ArticleID:  73
 Published:  1182787345
 Modified:   1182788192
-Title:      I am a Super Early Bird.  Are you?
-Slug:       i-am-a-super-early-bird-are-you
-OneLine:    
+Title:      "I am a Super Early Bird.  Are you?"
+Slug:       "i-am-a-super-early-bird-are-you"
+OneLine:    ""
 Tags:       
     - Personal
     - Yahoo

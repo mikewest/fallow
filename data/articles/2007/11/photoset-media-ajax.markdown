@@ -2,9 +2,9 @@
 ArticleID:  81
 Published:  1196111901
 Modified:   1196111901
-Title:      Photoset: @media Ajax
-Slug:       photoset-media-ajax
-OneLine:    I still haven't written anything useful about the @media Ajax conference, but here are some lovely pictures.  Should be worth about 64,000 words, right?
+Title:      "Photoset: @media Ajax"
+Slug:       "photoset-media-ajax"
+OneLine:    "I still haven't written anything useful about the @media Ajax conference, but here are some lovely pictures.  Should be worth about 64,000 words, right?"
 Tags:       
     - Personal
 

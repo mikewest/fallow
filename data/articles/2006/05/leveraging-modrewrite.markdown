@@ -2,9 +2,9 @@
 ArticleID:  14
 Published:  1147615980
 Modified:   1178693368
-Title:      Leveraging `mod_rewrite`
-Slug:       leveraging-modrewrite
-OneLine:    I have three kinds of `mod_rewrite` rules in my `.htaccess` file, this article explains each, and lays out best practices for managing your site's URL scheme.
+Title:      "Leveraging `mod_rewrite`"
+Slug:       "leveraging-modrewrite"
+OneLine:    "I have three kinds of `mod_rewrite` rules in my `.htaccess` file, this article explains each, and lays out best practices for managing your site's URL scheme."
 Tags:       
     - HOWTO
 
@@ -30,13 +30,13 @@ The right thing to do in this situation is to serve up a [410 ('Gone') HTTP erro
     
 In fact, I have a whole series of rules that return 410 errors.  The relevant section of my `.htaccess` files looks like:
 
-	RewriteCond %{REQUEST_URI}  ^/mint                   	[NC,OR]
-	RewriteCond %{REQUEST_URI}  ^/mp3					 	[NC,OR]
-	RewriteCond %{REQUEST_URI}  ^/matchmaker             	[NC,OR]
-	RewriteCond %{REQUEST_URI}	^/ars/?						[NC]
-	
-	RewriteRule ^(.*)           -                           [G,L]
-	
+    RewriteCond %{REQUEST_URI}  ^/mint                       [NC,OR]
+    RewriteCond %{REQUEST_URI}  ^/mp3                         [NC,OR]
+    RewriteCond %{REQUEST_URI}  ^/matchmaker                 [NC,OR]
+    RewriteCond %{REQUEST_URI}    ^/ars/?                        [NC]
+    
+    RewriteRule ^(.*)           -                           [G,L]
+    
 The `OR` at the end of each `RewriteCond` chains them together in exactly the way you might imagine.  If _any_ of the conditions matches, then the rule triggers, and a 410 error code is returned.  Brilliant!
 
 ### "Go Away" Rules ###
@@ -44,10 +44,10 @@ The `OR` at the end of each `RewriteCond` chains them together in exactly the wa
 Along with 410 error codes, you'll probably also find some use for 403 ('Forbidden') errors.  For example, if you deploy content with CVS or SVN, then you've got files sitting around in your public document root that contain information you'd probably prefer not to share with everyone in the world (see [Dan Benjamin's explanation][hive] for discussion of this very issue with Ruby on Rails' [Capistrano][capistrano]).  The files exist, so you shouldn't send a 404 ('Not Found') or a 410 ('Gone') error, but do you want to forbid access via the web.  The following rules solve the problem:
 
     RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_URI}	^(.*/)?CVS/					[NC,OR]
-	RewriteCond %{REQUEST_URI}	^(.*/)?\.svn/				[NC]
-	RewriteRule ^(.*)           -                           [F,L]
-	
+    RewriteCond %{REQUEST_URI}    ^(.*/)?CVS/                    [NC,OR]
+    RewriteCond %{REQUEST_URI}    ^(.*/)?\.svn/                [NC]
+    RewriteRule ^(.*)           -                           [F,L]
+    
 The first line tests to see whether or not the requested `CVS` or `.svn` file actually exists before throwing a 403 ('Forbidden') error.  It's a bit pedantic, but one ought not return a 'Forbidden' error for a file that's really 'Not Found'.
 
 It's also worth noting here that the `OR` binds more tightly than the implicit `AND` in the first line.  The rules therefore evaluate to something like "If the file exists AND (it's a `CVS` OR `.svn` file)", which makes sense for this application.

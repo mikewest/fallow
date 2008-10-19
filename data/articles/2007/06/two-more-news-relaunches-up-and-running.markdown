@@ -2,9 +2,9 @@
 ArticleID:  74
 Published:  1183037519
 Modified:   1183037519
-Title:      Two more News relaunches, up and running&#8230;
-Slug:       two-more-news-relaunches-up-and-running
-OneLine:    We relaunched Yahoo! Nachrichten in Germany and Yahoo! Notizie in Italy today.  Finally!  :)
+Title:      "Two more News relaunches, up and running&#8230;"
+Slug:       "two-more-news-relaunches-up-and-running"
+OneLine:    "We relaunched Yahoo! Nachrichten in Germany and Yahoo! Notizie in Italy today.  Finally!  :)"
 Tags:       
     - Yahoo
 

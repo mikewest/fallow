@@ -2,9 +2,9 @@
 ArticleID:  33
 Published:  1159003260
 Modified:   1159003385
-Title:      You heard me: `leave`!
-Slug:       you-heard-me-leave
-OneLine:    `leave` is a brilliant little utility that annoys you at a pre-specified time until you log out.
+Title:      "You heard me: `leave`!"
+Slug:       "you-heard-me-leave"
+OneLine:    "`leave` is a brilliant little utility that annoys you at a pre-specified time until you log out."
 Tags:       
     - HOWTO
 

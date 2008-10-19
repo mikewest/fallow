@@ -2,9 +2,9 @@
 ArticleID:  3
 Published:  1110862980
 Modified:   1179514144
-Title:      Component encapsulation using Object-Oriented JavaScript
-Slug:       component-encapsulation-using-object-oriented-javascript
-OneLine:    An introduction to using classes in JavaScript in order to avoid namespace conflicts and gain interesting object-oriented functionality.
+Title:      "Component encapsulation using Object-Oriented JavaScript"
+Slug:       "component-encapsulation-using-object-oriented-javascript"
+OneLine:    "An introduction to using classes in JavaScript in order to avoid namespace conflicts and gain interesting object-oriented functionality."
 Tags:       
     - JavaScript
 

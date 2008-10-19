@@ -2,9 +2,9 @@
 ArticleID:  88
 Published:  1200862055
 Modified:   1200862055
-Title:      Safegarding your data with Parchive
-Slug:       safegarding-your-data-with-parchive
-OneLine:    After a brief mishap with a hard drive, I've gone backup-crazy.  This article looks how I'm using Parchive to give myself an extra bit of confidence in my backups.
+Title:      "Safegarding your data with Parchive"
+Slug:       "safegarding-your-data-with-parchive"
+OneLine:    "After a brief mishap with a hard drive, I've gone backup-crazy.  This article looks how I'm using Parchive to give myself an extra bit of confidence in my backups."
 Tags:       
     - Personal
 

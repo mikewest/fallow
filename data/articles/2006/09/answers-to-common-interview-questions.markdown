@@ -2,9 +2,9 @@
 ArticleID:  31
 Published:  1157365560
 Modified:   1157366875
-Title:      Answers to Common Technical Interview Questions
-Slug:       answers-to-common-interview-questions
-OneLine:    The interview articles I found yesterday had more than a few common "phone screen" questions that I decided to make sure I could answer:  here's what I came up with.
+Title:      "Answers to Common Technical Interview Questions"
+Slug:       "answers-to-common-interview-questions"
+OneLine:    "The interview articles I found yesterday had more than a few common \"phone screen\" questions that I decided to make sure I could answer:  here's what I came up with."
 Tags:       
     - Personal
 

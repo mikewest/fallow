@@ -2,9 +2,9 @@
 ArticleID:  55
 Published:  1171223248
 Modified:   1176753700
-Title:      DataRequestor — Version 1.6
-Slug:       datarequestor-1-dot-6
-OneLine:    After a brief (ha!) hiatus, DataRequestor's 1.6 release fixes many outstanding bugs.  Grab it now!
+Title:      "DataRequestor — Version 1.6"
+Slug:       "datarequestor-1-dot-6"
+OneLine:    "After a brief (ha!) hiatus, DataRequestor's 1.6 release fixes many outstanding bugs.  Grab it now!"
 Tags:       
     - DataRequestor
     - JavaScript

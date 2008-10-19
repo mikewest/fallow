@@ -16,20 +16,25 @@ module Fallow
     def render( caching_enabled = true )
       raise Fallow::NotFound unless @exists
       
-      tags = []
-      @header['Tags'].each {|tag|
-        tags << { 'tag' => tag, 'normalized_tag' => Fallow.urlify( tag ) }
-      }
-      @body_html = Maruku.new(@body).to_html
+      unless @header['Tags'].nil?
+        tags = []
+        @header['Tags'].each {|tag|
+          tags << { 'tag' => tag, 'normalized_tag' => Fallow.urlify( tag ) }
+        }
+        tags = { 'article_tag' => tags }
+      else
+        tags = {}
+      end
+      
+      markdown = Markdown.new( @body, :smart )
+      @body_html = markdown.to_html
       
       templater = Fallow::Template.new( 'article' )
       @page_html = templater.render({
         'article_title' =>  @header['Title'],
         'article_body'  =>  @body_html,
         'published'     =>  Time.at(@header['Published']).strftime('%B %d, %Y at %H:%M'),
-        :lists          =>  {
-          'article_tag' =>  tags
-        }
+        :lists          =>  tags
       })
       
       persist if caching_enabled

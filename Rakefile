@@ -1,24 +1,34 @@
 require 'rake/clean'
+require 'find'
 require 'fallow'
 
-ROOT_DIR = File.expand_path(File.dirname(__FILE__))
-DATA_ROOT = ROOT_DIR + '/data'
-
+ROOT_DIR      = File.expand_path(File.dirname(__FILE__))
+DATA_ROOT     = ROOT_DIR + '/data'
+ARTICLE_ROOT  = DATA_ROOT + '/articles'
 #
-#   Database Tasks
+#   Cache Tasks
 #
 
   desc  'Create DB for cache'
   task :init do
     Fallow::Cache.init!
   end
- 
+  
   desc 'Drop cache DB'
   task :drop do
     Fallow::Cache.drop!
   end
  
   task :reset_db => [ :drop, :init ]
+
+  task :populate => [:reset_db] do
+    Find.find( ARTICLE_ROOT ) do |entry|
+      if File.file?(entry) && entry.match(%r{/(\d{4})/(\d{2})/([0-9A-Za-z_\-]+)\.markdown$})
+        puts "Rendering /#{$1}/#{$2}/#{$3}\n"
+        Fallow::Article.new( $1, $2, $3 ).render
+      end
+    end
+  end
 
 #
 #   Git Tasks

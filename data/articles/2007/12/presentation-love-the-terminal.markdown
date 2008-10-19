@@ -2,9 +2,9 @@
 ArticleID:  82
 Published:  1197218765
 Modified:   1197218814
-Title:      Presentation: Love the Terminal
-Slug:       presentation-love-the-terminal
-OneLine:    When Murray and Norm solicited talks earlier in the year for the Yahoo! Frontend Summit, they somehow neglected to mention that the presentations would end up being hour-long blocks.  :)
+Title:      "Presentation: Love the Terminal"
+Slug:       "presentation-love-the-terminal"
+OneLine:    "When Murray and Norm solicited talks earlier in the year for the Yahoo! Frontend Summit, they somehow neglected to mention that the presentations would end up being hour-long blocks.  :)"
 Tags:       
     - Yahoo
     - Personal

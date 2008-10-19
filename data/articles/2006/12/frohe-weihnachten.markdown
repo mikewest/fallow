@@ -2,9 +2,9 @@
 ArticleID:  43
 Published:  1166957306
 Modified:   1166957306
-Title:      Frohe Weihnachten!
-Slug:       frohe-weihnachten
-OneLine:    
+Title:      "Frohe Weihnachten!"
+Slug:       "frohe-weihnachten"
+OneLine:    ""
 Tags:       
     - Personal
 

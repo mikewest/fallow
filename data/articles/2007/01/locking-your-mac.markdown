@@ -2,9 +2,9 @@
 ArticleID:  51
 Published:  1169079322
 Modified:   1169338958
-Title:      Locking Your Mac
-Slug:       locking-your-mac
-OneLine:    My coworkers love playing pranks on poor, unlocked computers. This is the method I've decided on to quickly and securely walk away from my Mac.
+Title:      "Locking Your Mac"
+Slug:       "locking-your-mac"
+OneLine:    "My coworkers love playing pranks on poor, unlocked computers. This is the method I've decided on to quickly and securely walk away from my Mac."
 Tags:       
     - HOWTO
 

@@ -2,9 +2,9 @@
 ArticleID:  4
 Published:  1111046580
 Modified:   1145011811
-Title:      Type-Ahead search for select elements
-Slug:       type-ahead-search-for-select-elements
-OneLine:    An expansion of earlier unobtrusive JavaScript articles: this time we're adding type-ahead search functionality to SELECT elements.
+Title:      "Type-Ahead search for select elements"
+Slug:       "type-ahead-search-for-select-elements"
+OneLine:    "An expansion of earlier unobtrusive JavaScript articles: this time we're adding type-ahead search functionality to SELECT elements."
 Tags:       
     - JavaScript
 

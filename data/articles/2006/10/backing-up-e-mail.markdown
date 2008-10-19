@@ -2,9 +2,9 @@
 ArticleID:  37
 Published:  1159701900
 Modified:   1159701974
-Title:      Backing Up E-Mail
-Slug:       backing-up-e-mail
-OneLine:    Rui Carmo wrote a great python script to backup e-mail from an IMAP server.
+Title:      "Backing Up E-Mail"
+Slug:       "backing-up-e-mail"
+OneLine:    "Rui Carmo wrote a great python script to backup e-mail from an IMAP server."
 Tags:       
 
 ...

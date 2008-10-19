@@ -2,9 +2,9 @@
 ArticleID:  39
 Published:  1160398920
 Modified:   1160399079
-Title:      Comments With Specificity
-Slug:       comments-with-specificity
-OneLine:    Jack Slocum's new comment system is really inspirational.
+Title:      "Comments With Specificity"
+Slug:       "comments-with-specificity"
+OneLine:    "Jack Slocum's new comment system is really inspirational."
 Tags:       
 
 ...

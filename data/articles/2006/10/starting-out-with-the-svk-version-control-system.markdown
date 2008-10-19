@@ -2,9 +2,9 @@
 ArticleID:  40
 Published:  1161515100
 Modified:   1161515201
-Title:      Starting out with the SVK Version Control System
-Slug:       starting-out-with-the-svk-version-control-system
-OneLine:    SVK is a version control system that sits on top of a Subsverion, CVS, Perforce, etc. repository, and provides the promise of a common interface.  Here's how to install it on OS X.
+Title:      "Starting out with the SVK Version Control System"
+Slug:       "starting-out-with-the-svk-version-control-system"
+OneLine:    "SVK is a version control system that sits on top of a Subsverion, CVS, Perforce, etc. repository, and provides the promise of a common interface.  Here's how to install it on OS X."
 Tags:       
     - HOWTO
     - Subversion

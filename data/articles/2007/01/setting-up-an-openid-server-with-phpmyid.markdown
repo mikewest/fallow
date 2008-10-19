@@ -2,9 +2,9 @@
 ArticleID:  47
 Published:  1168617720
 Modified:   1168617766
-Title:      Setting Up an OpenID Server with phpMyID
-Slug:       setting-up-an-openid-server-with-phpmyid
-OneLine:    
+Title:      "Setting Up an OpenID Server with phpMyID"
+Slug:       "setting-up-an-openid-server-with-phpmyid"
+OneLine:    ""
 Tags:       
     - HOWTO
 

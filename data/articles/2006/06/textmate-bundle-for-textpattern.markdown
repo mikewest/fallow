@@ -2,9 +2,9 @@
 ArticleID:  18
 Published:  1150450659
 Modified:   1150450659
-Title:      TextMate bundle for TextPattern
-Slug:       textmate-bundle-for-textpattern
-OneLine:    A quick note about a TextMate language bundle for Textpattern that integrates with `mcw_templates`.
+Title:      "TextMate bundle for TextPattern"
+Slug:       "textmate-bundle-for-textpattern"
+OneLine:    "A quick note about a TextMate language bundle for Textpattern that integrates with `mcw_templates`."
 Tags:       
     - TextPattern
 

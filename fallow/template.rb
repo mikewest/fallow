@@ -44,7 +44,7 @@ module Fallow
 
           before + replacement_string.join( between ) + after
         else
-          match
+          nil
         end
       }
       @template
@@ -65,7 +65,7 @@ module Fallow
       @template.gsub!( %r{^@include\s+['"](#{VALID_TEMPLATE_CHARS}+)['"]\s*$}o ) { |match|
         to_include = load_template_file( $1 )
         if ( to_include.nil? )
-          match
+          nil
         else
           to_include
         end

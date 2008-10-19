@@ -2,9 +2,9 @@
 ArticleID:  26
 Published:  1153807140
 Modified:   1153807772
-Title:      I Wonder What This Button Does
-Slug:       i-wonder-what-this-button-does
-OneLine:    I've got an article up on A List Apart, introducing my favourite behind-the-scenes development tool: Subversion.
+Title:      "I Wonder What This Button Does"
+Slug:       "i-wonder-what-this-button-does"
+OneLine:    "I've got an article up on A List Apart, introducing my favourite behind-the-scenes development tool: Subversion."
 Tags:       
     - Subversion
     - Personal

@@ -2,9 +2,9 @@
 ArticleID:  90
 Published:  1206694095
 Modified:   1206694095
-Title:      Microformats on Kelkoo
-Slug:       microformats-on-kelkoo
-OneLine:    
+Title:      "Microformats on Kelkoo"
+Slug:       "microformats-on-kelkoo"
+OneLine:    ""
 Tags:       
     - Yahoo
 

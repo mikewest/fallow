@@ -2,9 +2,9 @@
 ArticleID:  24
 Published:  1152601080
 Modified:   1152601210
-Title:      Building Accessible Widgets for the Web
-Slug:       building-accessible-widgets-for-the-web
-OneLine:    I've got an article up on Digital Web, outlining the processes I use to build accessible UI controls for web applications.
+Title:      "Building Accessible Widgets for the Web"
+Slug:       "building-accessible-widgets-for-the-web"
+OneLine:    "I've got an article up on Digital Web, outlining the processes I use to build accessible UI controls for web applications."
 Tags:       
     - Digital-Web
     - JavaScript
