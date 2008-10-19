@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -wKU
 
-%w(fileutils stringio time rubygems maruku rack thin pp yaml).each { |lib| require lib }
+%w(fileutils stringio time rubygems maruku rack thin pp yaml sqlite3).each { |lib| require lib }
 
 module Fallow
   ROOT_DIR      = File.expand_path(File.dirname(__FILE__))
@@ -23,6 +23,8 @@ module Fallow
   autoload :Template,   'fallow/template'
 
   autoload :ErrorPage,  'fallow/error'
+
+  autoload :Cache,      'fallow/cache'
 
 #
 # String Functions
