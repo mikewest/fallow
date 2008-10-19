@@ -1,11 +1,11 @@
 module Fallow
   class Article
     def initialize ( year, month, slug )
-      @path     = "/#{year}/#{month}/#{slug}"
-      @filename = ARTICLE_ROOT + "/#{@path}.markdown"
-      @exists   = File.exist?( @filename )
-      @header   = ''
-      @body     = ''
+      @path       = "/#{year}/#{month}/#{slug}"
+      @filename   = ARTICLE_ROOT + "/#{@path}.markdown"
+      @exists     = File.exist?( @filename )
+      @header     = ''
+      @body       = ''
       read_data if @exists
     end
     
@@ -54,6 +54,10 @@ private
     
     def persist
       Fallow::Cache.update_article( @path, @header )
+      
+      FileUtils.mkdir_p HTML_ROOT + @path
+      html_filename = HTML_ROOT + @path + '/index.html'
+      File.open( html_filename, 'w' ) { |f| f.write( @page_html ) }
     end
     
 
