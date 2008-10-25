@@ -49,7 +49,7 @@ ARTICLE_ROOT  = DATA_ROOT + '/articles'
   desc 'Reset Thin server'
   task :restart_thin => [:remove_logs] do
     sh 'killall thin;'
-    sh 'thin start -R /home/mikewest/public_html/synergistically.de/private/rackup.ru -s1 --socket /tmp/thin.sock;'
+    sh "thin start -R #{ROOT_DIR}/rackup.ru -s1 --socket /tmp/thin.sock;"
   end
   
   desc 'Remove Thin logs'
