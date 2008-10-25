@@ -2,9 +2,10 @@ require 'rake/clean'
 require 'find'
 require 'fallow'
 
-ROOT_DIR      = File.expand_path(File.dirname(__FILE__))
-DATA_ROOT     = ROOT_DIR + '/data'
-ARTICLE_ROOT  = DATA_ROOT + '/articles'
+ROOT_DIR        = File.expand_path(File.dirname(__FILE__))
+DATA_ROOT       = ROOT_DIR + '/data'
+ARTICLE_ROOT    = DATA_ROOT + '/articles'
+EXTERNALS_ROOT  = DATA_ROOT + '/externals'
 #
 #   Cache Tasks
 #
@@ -21,14 +22,25 @@ ARTICLE_ROOT  = DATA_ROOT + '/articles'
  
   task :reset_db => [ :drop, :init ]
 
-  task :populate => [:reset_db] do
+  desc "Render and cache articles."
+  task :populate_articles => [:reset_db] do
+    puts "Rendering and caching articles."
     Find.find( ARTICLE_ROOT ) do |entry|
       if File.file?(entry) && entry.match(%r{/(\d{4})/(\d{2})/([0-9A-Za-z_\-]+)\.markdown$})
-        puts "Rendering /#{$1}/#{$2}/#{$3}\n"
+        puts "   *   Rendering /#{$1}/#{$2}/#{$3}\n"
         Fallow::Article.new( $1, $2, $3 ).render
       end
     end
   end
+  
+  desc "Cache del.icio.us bookmarks."
+  task :populate_delicious => [:reset_db] do
+    puts "Caching del.icio.us bookmarks.\n"
+    Fallow::Bookmarks.update_cache!
+  end
+
+  task :populate => [:reset_db, :populate_articles, :populate_delicious]
+  
 
 #
 #   Git Tasks

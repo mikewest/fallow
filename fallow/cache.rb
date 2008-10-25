@@ -45,6 +45,7 @@ module Fallow
       
       sql = <<-SQL
         DROP TABLE IF EXISTS `articles`;
+        DROP TABLE IF EXISTS `bookmarks`;
         DROP TABLE IF EXISTS `tags`;
         DROP TABLE IF EXISTS `tag_mappings`;
       SQL
@@ -99,7 +100,7 @@ module Fallow
           data['tags'].each {|tag|
             tag = Fallow.urlify( tag )
             tag_id = Cache.get_tag_id( tag )
-            Cache.db.execute( 'INSERT INTO `tag_mappings` (`tag_id`, `path`) VALUES ( ?, ? )', tag_id, path )
+            Cache.db.execute( 'INSERT OR IGNORE INTO `tag_mappings` (`tag_id`, `path`) VALUES ( ?, ? )', tag_id, path )
           }
         end
       
