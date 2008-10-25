@@ -23,17 +23,22 @@ module Fallow
   ARCHIVE_ROOT  = PUBLIC_ROOT + '/archive'
   TAGS_ROOT     = PUBLIC_ROOT + '/tags'
   
+  #
+  #   Core Components
+  #
   autoload :Dispatch,   'fallow/dispatch'
-  
+  autoload :Template,   'fallow/template'
+  autoload :Cache,      'fallow/cache'  
+  autoload :Bookmarks,  'fallow/bookmarks'
+  #
+  #   Page types
+  #
   autoload :Article,    'fallow/article'
   autoload :Archive,    'fallow/archive'
   autoload :Homepage,   'fallow/homepage'
-
-  autoload :Template,   'fallow/template'
-
   autoload :ErrorPage,  'fallow/error'
 
-  autoload :Cache,      'fallow/cache'
+
 
 #
 # String Functions

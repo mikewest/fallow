@@ -17,6 +17,14 @@ module Fallow
           `slug`        TEXT,
           `oneline`     TEXT
         );
+        
+        CREATE TABLE IF NOT EXISTS `bookmarks` (
+          `path`        TEXT PRIMARY KEY,
+          `published`   INTEGER,
+          `title`       TEXT,
+          `url`         TEXT,
+          `desc`        TEXT
+        );
       
         CREATE TABLE IF NOT EXISTS `tags` (
           `tag_id`          INTEGER PRIMARY KEY,
@@ -69,6 +77,32 @@ module Fallow
             Cache.db.execute( 'INSERT INTO `tag_mappings` (`tag_id`, `path`) VALUES ( ?, ? )', tag_id, path )
           }
         end
+      Cache.db.commit
+    end
+    
+    def Cache.update_bookmark( path, data )
+      Cache.connect! unless Cache.connected?
+      
+      Cache.db.transaction
+        Cache.db.execute( 'DELETE FROM `bookmarks`    WHERE `path` = ?', path )
+        Cache.db.execute( 'DELETE FROM `tag_mappings` WHERE `path` = ?', path )
+      
+        Cache.db.execute(
+          'INSERT OR IGNORE INTO `bookmarks` (`path`, `published`, `title`, `url`, `desc`) VALUES (:path, :published, :title, :url, :desc )',
+          "path"      =>  path,
+          "published" =>  data['published'],
+          "title"     =>  data['title'],
+          "url"       =>  data['url'],
+          "desc"      =>  data['desc']
+        )
+        unless data['tags'].nil?
+          data['tags'].each {|tag|
+            tag = Fallow.urlify( tag )
+            tag_id = Cache.get_tag_id( tag )
+            Cache.db.execute( 'INSERT INTO `tag_mappings` (`tag_id`, `path`) VALUES ( ?, ? )', tag_id, path )
+          }
+        end
+      
       Cache.db.commit
     end
     
