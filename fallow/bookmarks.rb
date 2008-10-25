@@ -1,6 +1,61 @@
+module Net::HTTPBroken
+end
+[ Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, 
+  EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, 
+  Net::ProtocolError ].each { |m|
+    m.send(:include, Net::HTTPBroken)
+}
+
 module Fallow
   class Bookmarks
+    
+
+    
     DELICIOUS_ROOT = EXTERNALS_ROOT + '/del.icio.us'
+    
+    def Bookmarks.last_update
+      timestamp = `ls #{DELICIOUS_ROOT} | sort | tail -n1 | sed -e 's#\.yaml##'`
+      if timestamp != ''
+        timestamp = Time.at(timestamp.to_i - 12000)
+      else
+        timestamp = Time.at(0)
+      end
+      timestamp.strftime('%Y-%m-%dT%H:%M:%SZ')
+    end
+    
+    def Bookmarks.sync!
+      require 'net/https'
+      require 'rexml/document'
+      Kernel::load( ROOT_DIR + '/fallow.conf' )
+      http = Net::HTTP.new('api.del.icio.us', 443)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+      res = http.start do |http|
+        req = Net::HTTP::Get.new("/v1/posts/all?fromdt=#{Bookmarks.last_update}", 'User-Agent' => 'Fallow/0.01a')
+        req.basic_auth(@@auth[0], @@auth[1])
+        http.request(req)
+      end
+
+      begin
+        delicious = REXML::Document.new( res.body )
+      rescue Net::HTTPBroken, REXML::ParseException
+        delicious = REXML::Document.new('')
+      end
+      delicious.elements.each('posts/post') do |post|
+        attributes  = post.attributes
+        unix_time   = Time.parse(attributes['time']).to_i
+        bookmark    = {
+          'hash'      =>  attributes['hash'],
+          'url'       =>  attributes['href'],
+          'title'     =>  attributes['description'],
+          'desc'      =>  attributes['extended'],
+          'published' =>  unix_time,
+          'tags'      =>  attributes['tag'].split(' ')
+        }
+        Bookmarks.persist( "/del.icio.us/#{unix_time}", bookmark, true )
+      end
+    end
     
     def Bookmarks.update_cache!
       require 'find'
@@ -24,8 +79,11 @@ private
     
     def Bookmarks.persist( path, data, to_disk = false)
       Fallow::Cache.update_bookmark( path, data )
+      
+      if to_disk
+        filename = EXTERNALS_ROOT + path + '.yaml'
+        File.open( filename, 'w' ) { |f| f.write( data.to_yaml ) }
+      end
     end
-      
-      
   end
 end

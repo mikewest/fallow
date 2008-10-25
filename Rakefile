@@ -38,6 +38,10 @@ EXTERNALS_ROOT  = DATA_ROOT + '/externals'
     puts "Caching del.icio.us bookmarks.\n"
     Fallow::Bookmarks.update_cache!
   end
+  
+  task :sync_delicious do
+    Fallow::Bookmarks.sync!
+  end
 
   task :populate => [:reset_db, :populate_articles, :populate_delicious]
   
