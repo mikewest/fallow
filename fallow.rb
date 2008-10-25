@@ -6,6 +6,10 @@
 
 module Fallow
   extend self
+  
+  #
+  # Exciting configuration constants
+  #
   ROOT_DIR      = File.expand_path(File.dirname(__FILE__))
   DATA_ROOT     = ROOT_DIR + '/data'
   TEMPLATE_ROOT = ROOT_DIR + '/templates'
@@ -57,6 +61,11 @@ module Fallow
   class ServerError < Exception
   end
   
-
-
+#
+# Constructor (for rackup application start)
+#
+  def new
+    Fallow::Dispatch.new 
+  end
+  
 end
