@@ -42,6 +42,10 @@ EXTERNALS_ROOT  = DATA_ROOT + '/externals'
   task :sync_delicious do
     Fallow::Bookmarks.sync!
   end
+  
+  task :homepage do
+    Fallow::Homepage.new.render({})
+  end
 
   task :populate => [:reset_db, :populate_articles, :populate_delicious]
   

@@ -66,7 +66,7 @@ module Fallow
       end
 
       define_request_path('/') do |request_data|
-        Fallow::Homepage.new.render()
+        Fallow::Homepage.new.render
       end
 
       define_request_path(['/:year','/:year/:month']) do |request_data|

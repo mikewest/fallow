@@ -15,7 +15,7 @@ module Fallow
           `modified`    INTEGER,
           `title`       TEXT,
           `slug`        TEXT,
-          `oneline`     TEXT
+          `summary`     TEXT
         );
         
         CREATE TABLE IF NOT EXISTS `bookmarks` (
@@ -53,6 +53,16 @@ module Fallow
     end
 
 #
+#   Generic Getters
+#
+    def Cache.get_recent_articles( num )
+      Cache.get_recent(:articles, num)
+    end
+    def Cache.get_recent_bookmarks( num )
+      Cache.get_recent(:bookmarks, num)
+    end
+
+#
 #   Article Methods
 #
     def Cache.update_article( path, header )
@@ -63,13 +73,13 @@ module Fallow
         Cache.db.execute('DELETE FROM `tag_mappings` WHERE `path` = ?', path)
 
         Cache.db.execute(
-          'INSERT OR IGNORE INTO `articles` (`path`, `published`, `modified`, `title`, `slug`, `oneline`) VALUES (:path, :published, :modified, :title, :slug, :oneline )',
+          'INSERT OR IGNORE INTO `articles` (`path`, `published`, `modified`, `title`, `slug`, `summary`) VALUES (:path, :published, :modified, :title, :slug, :summary )',
           "path"      =>  path,
           "published" =>  header['Published'],
           "modified"  =>  header['Modified'],
           "title"     =>  header['Title'],
           "slug"      =>  header['Slug'],
-          "oneline"   =>  header['OneLine']
+          "summary"   =>  header['OneLine']
         )
         unless header['Tags'].nil?
           header['Tags'].each {|tag|
@@ -124,6 +134,19 @@ private
       ! Cache.db.nil?
     end
 
+    def Cache.get_recent( type, num )
+      Cache.connect! unless Cache.connected?
+      table = case type
+        when :articles: 'articles'
+        when :bookmarks: 'bookmarks'
+        else 'articles'
+      end
+      
+      sql = <<-SQL
+        SELECT * FROM `#{table}` ORDER BY `published` DESC LIMIT #{num};
+      SQL
+      Cache.db.execute( sql )
+    end
     
     def Cache.get_tag_id( tag )
       row  = Cache.db.get_first_value( 'SELECT `tag_id` FROM `tags` WHERE `normalized_tag` = ?', tag )

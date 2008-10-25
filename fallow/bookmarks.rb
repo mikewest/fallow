@@ -1,16 +1,5 @@
-module Net::HTTPBroken
-end
-[ Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, 
-  EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, 
-  Net::ProtocolError ].each { |m|
-    m.send(:include, Net::HTTPBroken)
-}
-
 module Fallow
   class Bookmarks
-    
-
-    
     DELICIOUS_ROOT = EXTERNALS_ROOT + '/del.icio.us'
     
     def Bookmarks.last_update
@@ -39,7 +28,9 @@ module Fallow
 
       begin
         delicious = REXML::Document.new( res.body )
-      rescue Net::HTTPBroken, REXML::ParseException
+      rescue  Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, 
+              EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, 
+              Net::ProtocolError, REXML::ParseException
         delicious = REXML::Document.new('')
       end
       delicious.elements.each('posts/post') do |post|
