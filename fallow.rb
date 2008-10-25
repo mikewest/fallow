@@ -2,7 +2,10 @@
 
 %w(fileutils stringio time rubygems rdiscount rack thin pp yaml fileutils sqlite3).each { |lib| require lib }
 
+
+
 module Fallow
+  extend self
   ROOT_DIR      = File.expand_path(File.dirname(__FILE__))
   DATA_ROOT     = ROOT_DIR + '/data'
   TEMPLATE_ROOT = ROOT_DIR + '/templates'
@@ -31,7 +34,7 @@ module Fallow
 #
 # String Functions
 #
-  def Fallow.urlify( the_string )
+  def urlify( the_string )
     url = the_string.clone
     url.downcase!
     url.gsub!(/\s+/, '-')
@@ -42,7 +45,7 @@ module Fallow
 #
 # Logging
 #
-  def Fallow.log( message )
+  def log( message )
     Thin::Logging.log( message )
   end
 
@@ -53,4 +56,7 @@ module Fallow
   end
   class ServerError < Exception
   end
+  
+
+
 end
