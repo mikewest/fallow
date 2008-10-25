@@ -1,0 +1,13 @@
+--- 
+title: "The Electrofriend: Amazon SimpleDB and CouchDB compared"
+published: 1197837364
+hash: 3547bdf82561609cbc2f76724413c031
+url: http://www.automatthew.com/2007/12/amazon-simpledb-and-couchdb-compared.html
+tags: 
+- couchdb
+- simpledb
+- database
+- webdev
+- development
+- programming
+desc: Here's a good high-level comparison between CouchDB and Amazon's SimpleDB.  They both reject the typical RDBMS model, which is something I'd certainly like to play with, even if I haven't wrapped my head around all the twisty implications yet.

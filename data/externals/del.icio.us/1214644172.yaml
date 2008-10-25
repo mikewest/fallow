@@ -1,0 +1,15 @@
+--- 
+title: "Bug 442333 \xE2\x80\x93 Remove eval's optional second argument"
+published: 1214644172
+hash: a2182c92c101aad244e4c7901a86477f
+url: https://bugzilla.mozilla.org/show_bug.cgi?id=442333
+tags: 
+- modulepattern
+- javascript
+- mozilla
+- eval
+- security
+- eich
+- brandoneich
+- bugzilla
+desc: Huh. `eval` has a forgotten second argument that specifies the scope in which the evaluation should take place, which completely breaks the notion of private variables... Nice to see Brandon Eich calling for it's removal.

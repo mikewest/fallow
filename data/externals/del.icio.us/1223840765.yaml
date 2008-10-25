@@ -1,0 +1,16 @@
+--- 
+title: "Pierre Habouzit: 'git awsome-ness [git rebase --interactive]'"
+published: 1223840765
+hash: 08a7dea157602b0b4d288123353b9b23
+url: http://blog.madism.org/index.php/2007/09/09/138-git-awsome-ness-git-rebase-interactive
+tags: 
+- Habouzit
+- holyshit
+- git
+- dvcs
+- development
+- workflow
+- programming
+- rebase
+- interactive
+desc: Holy. Shit.  Interactive rebase has sold me on `git`, 100%.  Squashing multiple failed bugfix commits into a single, monolithic commit is amazingly useful.  It makes it safe to commit _everything_, _all the time_ without worrying about exposing the world to my idiotic mistakes.

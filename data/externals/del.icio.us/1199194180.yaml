@@ -1,0 +1,14 @@
+--- 
+title: "Zed Shaw: 'Indirection Is Not Abstraction'"
+published: 1199194180
+hash: 6b42a1b44b6a31d8724fbef6d3c5518f
+url: http://www.zedshaw.com/rants/indirection_is_not_abstraction.html
+tags: 
+- zedshaw
+- indirection
+- abstraction
+- architecture
+- programming
+- api
+- interface
+desc: Zed Shaw has written an interesting article about the concepts of indirection and abstraction, noting in particular that they aren't at all the same thing; they have distinct uses, and should be thought about distinctly.

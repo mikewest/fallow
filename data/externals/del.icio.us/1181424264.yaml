@@ -1,0 +1,12 @@
+--- 
+title: google-diff-match-patch - Google Code
+published: 1181424264
+hash: 4e95eaaf50ac3c0047167182b8338d2f
+url: http://code.google.com/p/google-diff-match-patch/
+tags: 
+- diff
+- match
+- patch
+- javascript
+- webdev
+desc: This is really neat stuff; Google has put out a JavaScript implementation of `diff`, `match`, and `patch`.  I'm going to love playing with this... (They released Python and Java implementations as well, but who cares?  :) )

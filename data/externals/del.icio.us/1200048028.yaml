@@ -1,0 +1,13 @@
+--- 
+title: "Mark Dominus: 'Help, help!'"
+published: 1200048028
+hash: addba143a67e09518ba6cceb200b6648
+url: http://blog.plover.com/2008/01/11#Help.pm
+tags: 
+- perl
+- introspection
+- programming
+- markdominus
+- dominus
+- for:carlo
+desc: Perl introspection techniques are scary.  If you're interesting in things like depth-first searches on the $ISA tree, this is the article for you.

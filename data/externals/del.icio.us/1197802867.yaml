@@ -1,0 +1,16 @@
+--- 
+title: "Product: Amazon's SimpleDB"
+published: 1197802867
+hash: 745de53c1bc0f3e3b3b3e8c51a863c7a
+url: http://highscalability.com/product-amazons-simpledb
+tags: 
+- amazon
+- simpledb
+- db
+- sql
+- database
+- webdev
+- development
+- programming
+- rdbms
+desc: High Scalability has a good roundup of reactions to Amazon's announcement yesterday of a new SimpleDB service.  It looks nice indeed, something of a hash table floating in the cloud.  It doesn't kill RDBMS at all, but it's damn interesting.

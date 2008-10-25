@@ -1,0 +1,14 @@
+--- 
+title: imapsync
+published: 1199530699
+hash: 98cfd1cc060221e85b8b8426ca636196
+url: http://freshmeat.net/projects/imapsync/
+tags: 
+- imap
+- email
+- mail
+- linux
+- utilities
+- commandline
+- shell
+desc: Over the weekend, I'm planning on migrating some mailboxes to gmail (because I can't seem to get a decent webmail solution up and running in a stable fashion).  `imapsync` looks like a nice way of making that transition workable.

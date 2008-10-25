@@ -1,0 +1,13 @@
+--- 
+title: "Christophe Dolivet: EditArea"
+published: 1199193666
+hash: b0784a8fa3e145108321d5bf71a55389
+url: http://www.cdolivet.net/editarea/
+tags: 
+- syntax
+- syntaxhighlighting
+- highlighting
+- webdev
+- javascript
+- programming
+desc: A nice looking, syntax highlighting, css validating editor widget that's built on top of a simple `textarea` element.  I havn't looked at the actual code yet, but thanks to Carlo, I'm having visions of cramming this into a greasemonkey script...

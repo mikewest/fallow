@@ -1,0 +1,11 @@
+--- 
+title: Bit Twiddling Hacks
+published: 1183709772
+hash: 124b271e8e9494fdb5bfa3ca63819a36
+url: http://graphics.stanford.edu/~seander/bithacks.html#RoundUpPowerOf2
+tags: 
+- bitwise
+- development
+- programming
+- algorithms
+desc: I don't know enough about bitwise processing, this looks like a great resource to sift through when I have the sneaking suspicion that there's an easier way to do some calculation by twiddling bits than long stretches of arithmetic.

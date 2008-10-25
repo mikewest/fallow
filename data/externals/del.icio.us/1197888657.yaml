@@ -1,0 +1,15 @@
+--- 
+title: "DeHorrible: RESTifying SimpleDB"
+published: 1197888657
+hash: 2b7c53eeb9fca136f991ebd0069be501
+url: http://feeds.labnotes.org/~r/labnotes/RkfZ/~3/201559218/
+tags: 
+- amazon
+- simpledb
+- proxy
+- rest
+- api
+- assafarkin
+- arkin
+- labnotes
+desc: When I saw the SimpleDB API, I wondered how long it would take before someone put together a _real_ REST interface.  2 days, apparently.  Assaf Arkin has put together a local proxy that accepts clean REST-style requests, and returns the same.  Brilliant.

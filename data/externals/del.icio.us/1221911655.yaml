@@ -1,0 +1,15 @@
+--- 
+title: Reprise - As minimal a hAtom blog as possible
+published: 1221911655
+hash: f75dc774ba307350585f202b5d015228
+url: http://github.com/uggedal/reprise/tree/master
+tags: 
+- uggedal
+- eivinduggedal
+- hatom
+- minimal
+- ruby
+- blog
+- webdev
+- programming
+desc: Reprise is blogging software after my own heart.  Eivind Uggedal has built a system with the explicit goal of reducing the complexity and features to the bare minimum.  I like some of the things he's done, I don't like others, but it's interesting to skim through his code while planning mine.

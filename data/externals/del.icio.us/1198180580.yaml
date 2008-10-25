@@ -1,0 +1,13 @@
+--- 
+title: "Clich\xC3\xA9s are hard"
+published: 1198180580
+hash: 6dd8a9075c9583abcfbd94d1ebb37c29
+url: http://happygiraffe.net/blog/articles/2007/12/19/cliches-are-hard
+tags: 
+- dominicmitchell
+- jeremykeith
+- css
+- characterencoding
+- encoding
+- standards
+desc: Dominic Mitchell dives into the CSS spec to determine if "special" characters are valid in identifiers (and, relatedly, in HTML and JavaScript).  Turns out, they are.  Mostly.  Go read for details... [via Jeremy Keith]

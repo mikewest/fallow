@@ -1,0 +1,12 @@
+--- 
+title: "Koz Speaks \xE2\x80\x94 Random Musings on Technology"
+published: 1183622742
+hash: fd098bb29e3dd17b6b0e98458700ce8f
+url: http://www.koziarski.net/archives/2007/5/28/clever-caching
+tags: 
+- caching
+- etag
+- webdev
+- development
+- programming
+desc: Michael Koziarski sparsely outlines the idea of a caching system leveraging memcache's ability to dump the least-recently used values to avoid the painful process of expiring items in the cache.  Good stuff, and well written.

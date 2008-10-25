@@ -1,0 +1,12 @@
+--- 
+title: Downshift Your Code
+published: 1184052579
+hash: e08c94a29aa8e5cc7714b184beb94ba9
+url: http://feeds.yuiblog.com/~r/YahooUserInterfaceBlog/~3/132020652/
+tags: 
+- throttling
+- javascript
+- webdev
+- programming
+- development
+desc: A nice little tip from the YUI blog, detailing a method of throttling the execution of a function that you'd prefer not to execute too often.  A resize handler, for example, gets called almost continuously in IE6; this technique resolves that overload.

@@ -1,0 +1,15 @@
+--- 
+title: "IEBlog : Compatibility and IE8"
+published: 1201023680
+hash: 5fa719c53ede271b707d5bbd43aefffd
+url: http://blogs.msdn.com/ie/archive/2008/01/21/compatibility-and-ie8.aspx
+tags: 
+- ie
+- ienext
+- ie8
+- ie6
+- css
+- webdev
+- development
+- standards
+desc: So, IE8 will create a new meta tag based check to allow developers to tell it what flavour of IE-rendering it should use on a particular page.  I haven't quite decided what I think about this yet.  I think I'm going to think that it's bullshit.

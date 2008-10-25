@@ -1,0 +1,16 @@
+--- 
+title: "IEBlog : Internet Explorer 8 and Acid2: A Milestone"
+published: 1198136593
+hash: 2270ea9bd00317408e3ded87f3c7ae95
+url: http://blogs.msdn.com/ie/archive/2007/12/19/internet-explorer-8-and-acid2-a-milestone.aspx
+tags: 
+- ie
+- ie8
+- ienext
+- microsoft
+- css
+- standards
+- webdev
+- webdevelopment
+- programming
+desc: "The IE8 team has apparently just checked in changes that allow support of the complete ACID2 test: great work! They're still very focused on \"Don't break the web,\" but it looks like they're closer to finding a balance that includes modern standards."

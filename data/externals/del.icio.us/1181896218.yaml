@@ -1,0 +1,13 @@
+--- 
+title: "Slashdot: Yahoo! XSS Flaw Endangers its Users"
+published: 1181896218
+hash: fa6a6766092636393ed1aab9692d42ef
+url: http://it.slashdot.org/it/07/06/15/0528212.shtml
+tags: 
+- slashdot
+- yahoo
+- y!
+- xss
+- javascript
+- hackers
+desc: "This was a wonderful way to start the day: apparently someone pushed a flawed update to Search without running it through our internal testing tools.  The bug was filed and fixed before the Slashdotting, but we still kinda look like idiots.  :)"

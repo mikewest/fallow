@@ -1,0 +1,14 @@
+--- 
+title: "Julien Lecomte: \"Building Web Applications with Apache Ant\""
+published: 1207737997
+hash: 98e9e25941da331ee65c19df249fbc0e
+url: http://www.julienlecomte.net/blog/2007/09/16/
+tags: 
+- julienlecomte
+- yui
+- lecomte
+- ant
+- apacheant
+- java
+- buildprocess
+desc: A nice-looking description of the build process that the YUI team uses to push out new releases of the library.  I'm _not_ a Java guy, but Ant certainly does look more interesting now that I see how it might be used in Real Life.

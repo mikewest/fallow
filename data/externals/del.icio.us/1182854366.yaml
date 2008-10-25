@@ -1,0 +1,16 @@
+--- 
+title: The XMLHttpRequest Object
+published: 1182854366
+hash: c65038fa5e540fad88d2660428229cc9
+url: http://www.w3.org/TR/2007/WD-XMLHttpRequest-20070618/
+tags: 
+- xmlhttprequest
+- xhr
+- ajax
+- javascript
+- w3c
+- standards
+- webdev
+- programming
+- development
+desc: The W3C has pushed out a new revision of the XMLHTTPRequest object's definition, current as of 18 June, 2007.  I kinda wish there was an easily accessible `diff` view... I just want to see what's changed, I don't want to re-read the whole spec.  :)

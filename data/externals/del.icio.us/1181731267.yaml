@@ -1,0 +1,18 @@
+--- 
+title: "Font Rendering: Respecting The Pixel Grid"
+published: 1181731267
+hash: ddab6c6c916eb967a91c4da5e2a12fdc
+url: http://www.codinghorror.com/blog/archives/000885.html
+tags: 
+- jeffatwood
+- font
+- rendering
+- hinting
+- pixel
+- grid
+- osx
+- safari3
+- safari
+- windows
+- cleartype
+desc: Safari 3 for Windows provides a unique opportunity to compare the font rendering style of OS X and ClearType side-by-side. It's interesting to see the tradeoffs each make; Atwood's article is a good roundup of the discussion so far.

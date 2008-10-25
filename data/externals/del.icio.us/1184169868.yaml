@@ -1,0 +1,10 @@
+--- 
+title: "iPhone\xE2\x80\x99s Lack of SDK Explained? \xC2\xAB Shebanation"
+published: 1184169868
+hash: 3ab36f77db300b946e96b3a4b4d1b736
+url: http://shebanation.com/2007/07/10/iphones-lack-of-sdk-explained/
+tags: 
+- iphone
+- root
+- suid
+desc: The comments here are interesting.  It _appears_ that applications on the iPhone are running suid as root, but I've already seen two articles running with this as stone cold fact.  It'll be interesting to see how it plays out...

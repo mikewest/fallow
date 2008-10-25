@@ -1,0 +1,13 @@
+--- 
+title: Bash Pitfalls
+published: 1205742829
+hash: 24b1d4138dca99c118a8fdcca1c62f48
+url: http://wooledge.org:8000/BashPitfalls
+tags: 
+- bash
+- commandline
+- cli
+- scripting
+- mistakes
+- tips
+desc: Bash is a strange language, and it's simply difficult for me to wrap my head around some of it's "features."  This is a nice list of the kinds of errors I'm likely to make; hopefully I won't make them now.  :)

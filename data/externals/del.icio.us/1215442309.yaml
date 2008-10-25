@@ -1,0 +1,15 @@
+--- 
+title: "Bill de h\xC3\x93ra: 3 and 1/2 minutes to sort a Terabyte, and a look at Hadoop's code structure"
+published: 1215442309
+hash: a64b08970836da40b87d222af1ecd597
+url: http://www.dehora.net/journal/2008/07/06/3-12-minutes-to-sort-a-terabyte-hadoops-code-structure/
+tags: 
+- hadoop
+- y!
+- yahoo
+- tb
+- speeed
+- development
+- webdev
+- "Billdeh\xC3\x93ra"
+desc: "Bill de h\xC3\x93ra has put together an interesting analysis of Hadoop's codebase in response to the new record it set in speedily sorting a Terabyte of data.  This is more interesting than it sounds."

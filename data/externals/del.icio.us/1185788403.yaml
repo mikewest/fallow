@@ -1,0 +1,8 @@
+--- 
+title: Lightweight Database Strategies for Perl
+published: 1185788403
+hash: 3f1ca0fc914335a115648f86dfd1b948
+url: http://blog.plover.com/2007/07/28#LWDB
+tags: []
+
+desc: What do you do "When you don't have enough data to be bothered using a high-performance database, or when your data is simple enough that you don't want to bother with a relational database."  Mark Dominus has some answers.

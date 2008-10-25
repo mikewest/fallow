@@ -1,0 +1,10 @@
+--- 
+title: "AjaxEvent: Using YUI custom events with Ajax - Nefarious Designs"
+published: 1184658880
+hash: 52397e1e4a5513fdbda6e52beafcc25c
+url: http://nefariousdesigns.co.uk/archive/2007/07/ajaxevent-using-yui-custom-events-with-ajax/
+tags: 
+- javascript
+- yui
+- events
+desc: Tim Huegdon's `AjaxEvent` looks like an interesting way of using the YUI library's `CustomEvent` and `Connection` modules to handle really complicated interactions between multiple, distinct Ajax calls.

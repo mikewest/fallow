@@ -1,0 +1,11 @@
+--- 
+title: Apple Clarifies Status of ZFS File System In Mac OS -- Apple -- InformationWeek
+published: 1181904624
+hash: 1101785eb826af42b603fb203c47f853
+url: http://www.informationweek.com/news/showArticle.jhtml;jsessionid=JLLAM0P5YKJEAQSNDLRSKHSCJUNN2JVN?articleID=199903525
+tags: 
+- zfs
+- osx
+- leopard
+- PR
+desc: "So.. maybe ZFS is just read-only in 10.5? Maybe they haven't decided: \"We are exploring [ZFS] as a file system option for high-end storage systems with really large storage. As a result, we have included ZFS -- a read-only copy of ZFS -- in Leopard.\""

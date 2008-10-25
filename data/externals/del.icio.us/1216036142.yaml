@@ -1,0 +1,16 @@
+--- 
+title: "Steve Webster: 'The problem with SproutCore'"
+published: 1216036142
+hash: d9cc87493957f5db39d724b99a1bfbbf
+url: http://dynamicflash.com/2008/07/the-problem-with-sproutcore/
+tags: 
+- stevewebster
+- webster
+- sproutcore
+- apple
+- accessibility
+- javascript
+- development
+- webdev
+- progressiveenhancement
+desc: "Steve Webster absolutely nails the issue with SproutCore: it's simply inaccessible by design, and makes a mockery of web standards. Instead of progressively enhancing a page to add exciting functionality, the _whole app_ is built up from nothing with JS."

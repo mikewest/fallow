@@ -1,0 +1,14 @@
+--- 
+title: JSLint, The JavaScript Verifier
+published: 1182704470
+hash: 67e5b9d6753fd816365e8e12add1e83b
+url: http://jslint.com/
+tags: 
+- jslint
+- javascript
+- lint
+- compiler
+- douglascrockford
+- douglas
+- crockford
+desc: JSLint is Douglas Crockford's JavaScript parser, written in JavaScript, disguised as a cleverly helpful `lint`-like tool to ensure that the JavaScript you're writing conforms to his notions of Good JavaScript, and not the messy JavaScript most use.

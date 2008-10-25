@@ -1,0 +1,14 @@
+--- 
+title: Return of the HTTP overhead delay - this time without a server side component
+published: 1184139248
+hash: 58d0678f0bc408896ab8b4644b107239
+url: http://www.wait-till-i.com/index.php?p=465
+tags: 
+- development
+- webdev
+- javascript
+- programming
+- defer
+- delay
+- onload
+desc: A nice upgrade to Christian Heilmann's unobtrusive client-side delay script to increase the speed at which your page _appears_ to load by deferring some images to `onload` events.  Nicely enhanced from yesterday's PHP-based solutions...

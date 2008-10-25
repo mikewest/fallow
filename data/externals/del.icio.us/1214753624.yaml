@@ -1,0 +1,15 @@
+--- 
+title: "Dare Obasanjo: 'Dark Launches, Gradual Ramps and Isolation: Testing the Scalability of New Features on your Web Site'"
+published: 1214753624
+hash: bd8d7fbc7489628efe50d293cd5983bd
+url: http://www.25hoursaday.com/weblog/2008/06/19/DarkLaunchesGradualRampsAndIsolationTestingTheScalabilityOfNewFeaturesOnYourWebSite.aspx
+tags: 
+- dareobasnjo
+- obasnjo
+- darklaunch
+- scalability
+- testing
+- webdev
+- performance
+- development
+desc: "\"Dark launching\" - launching a feature without launching its adherent UI - is a technique I never thought of, but that makes an incredible amount of sense.  Rolling back has no user impact, since they never saw the thing in the first place... Clever indee"

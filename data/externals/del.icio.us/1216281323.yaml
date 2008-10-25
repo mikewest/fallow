@@ -1,0 +1,15 @@
+--- 
+title: Combo Handler Service Available for Yahoo-hosted JS
+published: 1216281323
+hash: e1922d2494ba528f61d61e40c93ffee7
+url: http://feeds.yuiblog.com/~r/YahooUserInterfaceBlog/~3/337340432/
+tags: 
+- performance
+- webdev
+- hosted
+- library
+- yui
+- y!
+- yahoo
+- combohandler
+desc: I love that Yahoo! hosts the YUI libraries for external use; it's a great tool for development, and a great mechanism for speeding up sites using a sharable cached copy of the YUI libs.  Adding the combo handler to the external offerings is a great step.

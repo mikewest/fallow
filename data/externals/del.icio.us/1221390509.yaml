@@ -1,0 +1,15 @@
+--- 
+title: "Using R3:"
+published: 1221390509
+hash: c610aab9dd1fac58241ecacc2204acac
+url: http://usingr3.com/
+tags: 
+- r3
+- yahoo
+- documentation
+- howto
+- webdev
+- templating
+- templates
+- reuse
+desc: R3 is a really interesting templating system that embraces the concepts of reuse and polymorphism in a deeper way than the typical exposure to the concepts you'd get in something like Wordpress or Textpattern.  It's open source, and used internally on a few projects at Yahoo!.  Norm has done a ton of work to put together documentation for the how's and why's of the system, and has just now thrown it up onto the web.  I'm looking forward to diving into it.

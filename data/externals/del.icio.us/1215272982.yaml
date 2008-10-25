@@ -1,0 +1,17 @@
+--- 
+title: "Geoffrey Grosenbach: 'Beanstalk Messaging Queue'"
+published: 1215272982
+hash: 5b9d76ebc8dfaf89839fe8ed92797272
+url: http://nubyonrails.com/articles/about-this-blog-beanstalk-messaging-queue
+tags: 
+- for:ejeliot
+- architecture
+- ruby
+- beanstalk
+- beanstalkd
+- queue
+- scaling
+- asynchronous
+- grosenbach
+- geoffreygrosenbach
+desc: Geoffrey Grosenbach describes how to use Beanstalk (in Ruby) to implement a simple queuing mechanism for checking comments against Akismet in the background, asynchronous to the rails process that accepted the comment.

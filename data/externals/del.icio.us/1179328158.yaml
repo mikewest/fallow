@@ -1,0 +1,13 @@
+--- 
+title: MacFusion | The GUI for MacFUSE
+published: 1179328158
+hash: 56c05de14d9e0b21c772951374cb44ee
+url: http://www.sccs.swarthmore.edu/users/08/mgorbach/MacFusionWeb/index.html
+tags: 
+- macfusion
+- macfuse
+- fuse
+- sshfs
+- sftp
+- gui
+desc: I noticed this excellent GUI for MacFUSE last week when Rui Carmo linked off to it.  I sincerely wish our test server had SFTP enabled so I could play with it...  at the moment, copy and paste is more effective.

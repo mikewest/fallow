@@ -1,0 +1,10 @@
+--- 
+title: A better backup system based on Git
+published: 1208160467
+hash: 7c64c6d23e8e97b68ab0752e0b0a21a3
+url: http://eigenclass.org/hiki/gibak-backup-system-introduction
+tags: 
+- git
+- backup
+- versioncontrol
+desc: I need to start looking around for a new backup solution, as Strongspace is dying, and Joyent in general is getting... strange.  Carlo pointed me to this site, and I think I like the idea of using a VCS for data (and I don't have that much anyway... so).

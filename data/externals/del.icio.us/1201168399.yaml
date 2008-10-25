@@ -1,0 +1,13 @@
+--- 
+title: "Mike Davies: 'Empty Links and Screen Readers - YUI Blog'"
+published: 1201168399
+hash: eef96bf33f1758630ce8e37ef2f8b7cf
+url: http://yuiblog.com/blog/2008/01/23/empty-links/
+tags: 
+- mikedavies
+- davies
+- yuiblog
+- yui
+- accessibility
+- microformats
+desc: A nice article from Mike Davies discussing the results of some accessibility testing regarding various methods for hiding links that he did with Artur and Victor in London.  In a nutshell, links without link text considered harmful.

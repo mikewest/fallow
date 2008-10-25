@@ -1,0 +1,18 @@
+--- 
+title: "Assaf Arkin: 'REST in the front, RPC in the back'"
+published: 1215510817
+hash: 4c64c02b361d025671ef158497255c7c
+url: http://feeds.labnotes.org/~r/labnotes/RkfZ/~3/329632261/
+tags: 
+- assafarkin
+- arkin
+- rest
+- rpc
+- protocolbuffers
+- etch
+- thrift
+- open
+- convenience
+- correctness
+- frameworks
+desc: Inspired by Google's recent release of protocol buffers, Assaf Arkin delivers an inspired discussion of the "convenience over correctness" that  the complete unimportance of protocols in the face of solid frameworks creates.  Good read.

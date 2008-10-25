@@ -1,0 +1,11 @@
+--- 
+title: "CSS Preprocessor \xE2\x80\x93 Take 2"
+published: 1187259521
+hash: 44da489285505169f21627179589752b
+url: http://blog.roberthahn.ca/articles/2006/06/24/css-preprocessor-%E2%80%93-take-2
+tags: 
+- preprocessor
+- css
+- webdev
+- development
+desc: I saw this in the comments on a discussion about the Blueprint CSS framework.  The idea of wrapping CSS files in a macro language, and using that for preprocessing is interesting... I don't really like _this_ implementation, but I love the idea.

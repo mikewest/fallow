@@ -1,0 +1,14 @@
+--- 
+title: "Surfin\xE2\x80\x99 Safari - Blog Archive \xC2\xBB Announcing SunSpider 0.9"
+published: 1198085999
+hash: 95528eced179e57258ec5ad97053516b
+url: http://webkit.org/blog/152/announcing-sunspider-09/
+tags: 
+- javascript
+- benchmark
+- webdev
+- development
+- programming
+- testing
+- performance
+desc: The safari team has put together a benchmark that they claim is "based on real code that does interesting things," and "balanced between different aspects of the JavaScript language."  Looks to be a nice reference point for analysis.

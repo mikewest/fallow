@@ -1,0 +1,16 @@
+--- 
+title: Beanstalkd
+published: 1215272603
+hash: 4edb0e5bd3cf8dd9ac8ac5c69b3f4568
+url: http://xph.us/software/beanstalkd/
+tags: 
+- architecture
+- queue
+- webdev
+- development
+- performance
+- beanstalk
+- beanstalkd
+- messaging
+- asynchronous
+desc: Queuing rapidly becomes a critical architectural decision when systems that receive and process data need to scale.  Beanstalk looks like a solid implementation of the concept, with some great features and good buzz.

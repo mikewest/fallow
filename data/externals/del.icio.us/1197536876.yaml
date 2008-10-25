@@ -1,0 +1,12 @@
+--- 
+title: Simple caching proxy for Google Charts API
+published: 1197536876
+hash: 2088d2ed735c6dc171fcdd6a1270b2f1
+url: http://www.ejeliot.com/blog/121
+tags: 
+- caching
+- googlecharts
+- charts
+- edeliot
+- php
+desc: "Ed Eliot has put together a simple caching system for google charts.  Since chart data probably doesn't change often, it's not worth it to request a new chart on every page view: caching those charts locally makes a lot of sense, and this makes it easy."

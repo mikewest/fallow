@@ -1,0 +1,13 @@
+--- 
+title: Perl 5.10.0 Release Announcement
+published: 1198097059
+hash: e29e8091bf23d3235c413ae043058027
+url: http://dev.perl.org/perl5/news/2007/perl-5.10.0.html
+tags: 
+- perl
+- perl5
+- release
+- regex
+- syntax
+- joy
+desc: As a nice break from the W3C Working Group arguments, Perl 5.10.0 is out!  Joy!  New regex syntax for recursion and named captures!  Switch statements!  Better error messages!  Etc!  Good stuff indeed, I need to go install it now...

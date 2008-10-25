@@ -1,0 +1,14 @@
+--- 
+title: Background Compilation and Background Spell Checking
+published: 1181468213
+hash: 5e460d694cbba0f12b02f1b500091ef5
+url: http://www.codinghorror.com/blog/archives/000864.html
+tags: 
+- development
+- tools
+- jeff
+- atwood
+- background
+- compilation
+- c#
+desc: "Jeff Atwood noted earlier that he misses background compilation in C#.  Here, he defends his choice: \"Intentionally choosing not to use better tools because you're afraid they will become a crutch is ... cruel and patronizing.\""

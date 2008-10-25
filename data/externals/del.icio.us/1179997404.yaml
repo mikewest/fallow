@@ -1,0 +1,12 @@
+--- 
+title: bridgesupport - Trac
+published: 1179997404
+hash: 33f8a15a7b962b56144df3b8797dccf9
+url: http://trac.macosforge.org/projects/BridgeSupport
+tags: 
+- cocoa
+- bridgesupport
+- rubycocoa
+- osx
+- programming
+desc: This is quite cool.  Apple's opensourcing a set of components to make it easier for languages like Ruby or Python to work together with Objective-C.  One more reason to learn Cocoa...

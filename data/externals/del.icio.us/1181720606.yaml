@@ -1,0 +1,13 @@
+--- 
+title: A JavaScript Module Pattern
+published: 1181720606
+hash: 16b17344487020d24ca4beba974d574c
+url: http://feeds.yuiblog.com/~r/YahooUserInterfaceBlog/~3/124305269/
+tags: 
+- crockford
+- yui
+- javascript
+- object
+- pattern
+- designpattern
+desc: Douglas Crockford clearly and succinctly lays out a well-founded pattern for JavaScript objects that avoids globals while providing for public and private methods and data.  Well worth a read.

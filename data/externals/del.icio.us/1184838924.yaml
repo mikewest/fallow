@@ -1,0 +1,11 @@
+--- 
+title: ActsAsUndoable | Javascript
+published: 1184838924
+hash: c5ee773c22a665841473cb4b81da5e5d
+url: http://www.nodetraveller.com/blog/javascript/actasundo/
+tags: 
+- undo
+- javascript
+- lawrencecarvahlo
+- carvalho
+desc: Seriously cool stuff; Lawrence Carvahlo has put together an `undo` implementation based on YUI and the `memento` design pattern.  I'm looking forward to digging into the code to figure out how it's all put together.

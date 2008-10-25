@@ -1,0 +1,11 @@
+--- 
+title: "Schlueterica \xC2\xBB Mounting a BSD home directory on a Mac OS X machine"
+published: 1181146781
+hash: 6433dd813cb6897cd81747d22ed68561
+url: http://isaacschlueter.com/2007/03/mounting-a-bsd-home-directory-on-a-mac-os-x-machine/
+tags: 
+- osx
+- bsd
+- mount
+- home
+desc: The idea of mounting a remote home directory is interesting; not sure how applicable it would be to my work life, since I don't normally have the right permissions on the remote machines without sudo, or how it differs from SSHFS, but I'll look into it.

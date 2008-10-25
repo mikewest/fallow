@@ -1,0 +1,15 @@
+--- 
+title: "Behind the scenes at 37signals: Sysadmin and development - (37signals)"
+published: 1197900682
+hash: 6972e08ced81746fa8f7fe738c462a31
+url: http://www.37signals.com/svn/posts/721-behind-the-scenes-at-37signals-sysadmin-and-development
+tags: 
+- 37signals
+- gettingreal
+- campfire
+- chatapi
+- capistrano
+- subversion
+- commitmessages
+- tinder
+desc: 37signals uses Campfire (predictably) to share commit messages, test suite results, and more across the team.  We use IRC for similar purposes on the webdev team at Y!.  Fewer subversion commits, more talk about going to the pub.  But the idea's there.

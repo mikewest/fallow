@@ -1,0 +1,19 @@
+--- 
+title: ratproxy - Google Code
+published: 1215109637
+hash: d65526f29b1de4efba15405c53198de6
+url: http://code.google.com/p/ratproxy/
+tags: 
+- ratproxy
+- security
+- xss
+- testing
+- http
+- webdev
+- development
+- google
+- proxy
+- zalewski
+- michalzalewski
+- webdevelopment
+desc: Ratproxy looks interesting indeed.  I've put together similar tools to check for less important bugs in a spidery-sort of way, but this has the really interesting characteristic of proxying your requests and scanning on the fly.  Nicely done.

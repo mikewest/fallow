@@ -1,0 +1,12 @@
+--- 
+title: GNU is killing Solaris
+published: 1204450955
+hash: 71d537a0741fd7effd61dc230922e505
+url: http://tomayko.com/weblog/2008/03/02/gnu-is-killing-solaris
+tags: 
+- gnu
+- userland
+- commandline
+- cli
+- utilities
+desc: Ryan Tomoko posts a good discussion of the GNU userspace's dominance of the market, and more usefully, a snippet of his `.bashrc` that safely makes the GNU utilities the default on FreeBSD/Solaris.

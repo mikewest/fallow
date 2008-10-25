@@ -1,0 +1,12 @@
+--- 
+title: WHATWG's Subversion Repository
+published: 1197404112
+hash: 7fab58d64d5231d59819aaa45aa35120
+url: http://svn.whatwg.org/
+tags: 
+- html5
+- subversion
+- svn
+- vcs
+- whatwg
+desc: I'm just now noticing that the webapps and webforms specs maintained on the whatwg site are version controlled, and available to the public via subversion.  This is brilliant, brilliant stuff.  Can someone hack this together for the W3C as well?  :)

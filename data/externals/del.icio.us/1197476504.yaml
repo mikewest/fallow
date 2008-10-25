@@ -1,0 +1,14 @@
+--- 
+title: Iris Syntax Highlighter
+published: 1197476504
+hash: 2962e21784ec8f084044873709b97471
+url: http://duartes.org/iris/highlight.html
+tags: 
+- vim
+- syntax
+- dev
+- webdev
+- syntaxhighlighting
+- highlighting
+- c#
+desc: I don't think I'll actually _use_ this as a highlighter, since it's written in C#, and that's nowhere in my stack, but the simple idea of using vim syntax files is a stroke of brilliance.

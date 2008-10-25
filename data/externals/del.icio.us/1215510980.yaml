@@ -1,0 +1,15 @@
+--- 
+title: "Protocol Buffers: Google's Data Interchange Format"
+published: 1215510980
+hash: dd80800fb89182a0b025a693c27f74bd
+url: http://google-opensource.blogspot.com/2008/07/protocol-buffers-googles-data.html
+tags: 
+- protocolbuffers
+- google
+- programmning
+- protocol
+- rpc
+- opensource
+- xml
+- idl
+desc: Google has released "Protocol Buffers", which is a crap name for a very interesting bit of technology that attempts to enable communication between protocols (or versions thereof) by autogenerating classes from a definition language. They say it's fast.

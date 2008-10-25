@@ -1,0 +1,12 @@
+--- 
+title: Peter's Blog - Lazy Function Definition Pattern
+published: 1187257989
+hash: e779a77a3471bbb1c31b31811967b5e9
+url: http://peter.michaux.ca/article/3556
+tags: 
+- javascript
+- webdev
+- programming
+- development
+- patterns
+desc: This is a really nice application of closures to the cross-browser problem. Capturing the decision about a browser's capability in a closure removes a lot of conditional logic from the final function call; it's good for performance and your sanity.

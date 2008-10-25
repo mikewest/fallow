@@ -1,0 +1,12 @@
+--- 
+title: Everyday GIT With 20 Commands Or So
+published: 1185307340
+hash: fd87bd467f725ee4599dd3ae2d7d40dd
+url: http://www.kernel.org/pub/software/scm/git/docs/everyday.html
+tags: 
+- development
+- git
+- revisioncontrol
+- programming
+- scm
+desc: A listing of useful git commands, arranged more or less by the scenarios in which they're useful.  "Individual Developer (Standalone)", "Individual Developer (Participant)", "Integrator", etc.

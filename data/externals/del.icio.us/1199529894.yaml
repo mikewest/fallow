@@ -1,0 +1,15 @@
+--- 
+title: "Mark Nottingham: 'Cache Channels Beta'"
+published: 1199529894
+hash: 075b9a92b49e2089d38b53e2a9c667a5
+url: http://www.mnot.net/blog/2008/01/04/cache_channels
+tags: 
+- cache
+- atom
+- channels
+- marknottingham
+- mnot
+- caching
+- squid
+- extension
+desc: This is a really interesting caching project from Mark Nottingham.  It's an attempt to combine the control of a low TTL with the efficiency of a high one, and it's really interesting.  My first thought is that a comet-like backend might be a perfect fit.

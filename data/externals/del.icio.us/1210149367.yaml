@@ -1,0 +1,14 @@
+--- 
+title: "nanoc: a Ruby CMS that generates static HTML"
+published: 1210149367
+hash: edc89bd1655bcd4f374ebcbc7bc7c56a
+url: http://nanoc.stoneship.org/
+tags: 
+- ruby
+- cms
+- html
+- blog
+- webdev
+- development
+- markdown
+desc: This looks quite interesting.  I've been playing around with reworking my blog layout; maybe jumping to a new backend would be a nice kick in the pants...  And it supports Markdown!  Hooray!

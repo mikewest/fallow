@@ -1,0 +1,14 @@
+--- 
+title: Two HTTP Caching Extensions
+published: 1197449240
+hash: 50ad55e1310e7a71f73242973904c870
+url: http://www.mnot.net/blog/2007/12/12/stale
+tags: 
+- stalewhilerefresh
+- staleiferror
+- caching
+- http
+- squid
+- cache
+- performance
+desc: Mark Nottingham has written up a solid description of two caching mechanisms used inside Yahoo.  This sort of discussion will only become more important in the future; caching is possibly the most elegant (and easy) way to increase your app's scalability.

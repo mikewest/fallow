@@ -1,0 +1,16 @@
+--- 
+title: "TextMate Blog \xC2\xBB Working With History in Bash"
+published: 1214891457
+hash: 7b95fd5f84880486f387a4a11807215e
+url: http://blog.macromates.com/2008/working-with-history-in-bash/
+tags: 
+- cli
+- commandline
+- bash
+- linux
+- unix
+- shell
+- terminal
+- allanodgaard
+- odgaard
+desc: Allan Odgaard gives some excellent tips regarding `history` in the bash shell.  `history-search-backward` looks like a great addition to my `.bash_profile`... Nice!

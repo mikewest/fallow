@@ -1,0 +1,13 @@
+--- 
+title: BBC Homepage (Beta)
+published: 1197752523
+hash: 4d8a7e69349f27a516d10d505102e524
+url: http://www.bbc.co.uk/home/beta/
+tags: 
+- beta
+- beeb
+- bbc
+- homepage
+- design
+- pretty
+desc: The current BBC beta homepage is nice looking, both on the surface and underneath.  At a glance, the code looks clean, and it does a decent job of degrading without CSS or JavaScript.  Nice job, guys!

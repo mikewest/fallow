@@ -1,0 +1,17 @@
+--- 
+title: "Ryan Tomayko: 'Introducing Rack::Cache'"
+published: 1224929706
+hash: 3b79d761c1a12e77b27bd303a0c3b4ec
+url: http://tomayko.com/writings/rack-cache-announce
+tags: 
+- webdev
+- cache
+- caching
+- http
+- rack
+- ruby
+- github
+- tomayko
+- ryantomayko
+- fallow
+desc: Ryan Tomayko has released a very nice-looking piece of Rack middleware that implements HTTP-header based caching.  If your app generates the right headers, there's nothing to configure; it just works.  I'm looking forward to playing around with this in some of my own projects.

@@ -1,0 +1,15 @@
+--- 
+title: Incremental Feature Search in Applications
+published: 1182160617
+hash: 8e438f1b953718aa27f3e6da58732ad6
+url: http://www.codinghorror.com/blog/archives/000887.html
+tags: 
+- jeff
+- atwood
+- jeffatwood
+- incremental
+- search
+- gui
+- ui
+- hci
+desc: "Great article on incremental search: \"Simple applications may be able to get away with menus and toolbars, or better yet, a ribbon. But as the application grows larger and more complex, it's faster to incrementally search for the feature we need.\""

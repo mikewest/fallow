@@ -1,0 +1,13 @@
+--- 
+title: An introduction to git-svn for Subversion/SVK users and deserters
+published: 1184745426
+hash: 25d30722bd42d9216d9fe30b76dc9ac6
+url: http://utsl.gen.nz/talks/git-svn/intro.html
+tags: 
+- subversion
+- svn
+- git
+- development
+- programming
+- revisioncontrol
+desc: Skimming this, it looks like a great resource for using `git` with an SVN backend, which, to me, makes a whole lot of sense.  I'm _very_ interested in playing around with this...

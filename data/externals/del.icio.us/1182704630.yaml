@@ -1,0 +1,16 @@
+--- 
+title: Top Down Operator Precedence
+published: 1182704630
+hash: 1acf0fbf755b6bf831c15a131bd3d416
+url: http://javascript.crockford.com/tdop/tdop.html
+tags: 
+- pratt
+- vaughanpratt
+- parsetree
+- parse
+- compiler
+- compilation
+- JavaScript
+- crockford
+- douglascrockford
+desc: Douglas Crockford's description of his implementation of Pratt's "Top Down Operator Precedence" parsing method in JavaScript is over my head.  I hate admitting that, so I'm going to keep working with it until the technique makes sense.

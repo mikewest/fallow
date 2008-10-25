@@ -1,0 +1,14 @@
+--- 
+title: John Resig - HTML 5 data- Attributes
+published: 1216022148
+hash: d37aa8b396405dcc6180bc73a91c8103
+url: http://ejohn.org/blog/html-5-data-attributes/
+tags: 
+- customattributes
+- webdev
+- development
+- programming
+- html
+- js
+- javascript
+desc: "I can hear the screams from the London office even now: \"Oh Noes!  Custom attributes are valid in HTML5!\"  I'm pretty much fine with this in certain situations, but I'd prefer to infer as much as possible from context (John's examples seem.. contrived)."

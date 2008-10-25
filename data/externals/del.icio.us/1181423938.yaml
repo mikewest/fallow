@@ -1,0 +1,12 @@
+--- 
+title: "HTML Entity Character Lookup \xE2\x80\xBA Left Logic"
+published: 1181423938
+hash: b0fcdae510591ee929916bd492d24d95
+url: http://leftlogic.com/lounge/articles/entity-lookup/
+tags: 
+- html
+- entity
+- lookup
+- webdev
+- entities
+desc: This is a brilliant little tool to lookup the HTML entity code and unicode code point for characters.  The exceptional part is that it attempts to discern characters you mean by _look_.  "<" brings up "&larr;" as well as "&lt;", for example.  Love it.

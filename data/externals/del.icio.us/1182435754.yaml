@@ -1,0 +1,11 @@
+--- 
+title: "mnot\xE2\x80\x99s Web log: The State of Proxy Caching"
+published: 1182435754
+hash: a4a17c3c5b686dac449b3334baef34d6
+url: http://www.mnot.net/blog/2007/06/20/proxy_caching
+tags: 
+- proxy
+- webdev
+- http
+- cache
+desc: "I don't think about proxies or caching too much, maybe I should: \"...somewhere between 20% and 50% of clients on the internet are behind some kind of proxy...\", and this is a useful study showing, generally, how well they work."

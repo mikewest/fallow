@@ -1,0 +1,12 @@
+--- 
+title: Factor CSS
+published: 1178812854
+hash: cf80894c3ebcd3ce814bc48549cae938
+url: http://zamez.org/factorcss
+tags: 
+- css
+- refactor
+- refactoring
+- stylesheet
+- compression
+desc: Linked off Nik Silver's site, Factor CSS is an interesting little tool that processes a CSS file, and breaks it down into it's components by combining rules that effect the same level of specificity.  This is something I need to play with.

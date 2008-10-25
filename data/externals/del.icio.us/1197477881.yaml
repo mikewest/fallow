@@ -1,0 +1,12 @@
+--- 
+title: dotfiles.org | community for sharing dotfiles like .bashrc, .vimrc, and .bash_profile
+published: 1197477881
+hash: f7906cc1b1aa65abc948fc8f65385fed
+url: http://dotfiles.org/
+tags: 
+- bash
+- commandline
+- config
+- configuration
+- shell
+desc: Upload, download, and share configuration files for programs like `screen`, `vim`, `bash`, and etc.  A nice idea indeed; I'll be sifting through these for a little while, looking for ideas that might make my life on the shell simpler.  :)

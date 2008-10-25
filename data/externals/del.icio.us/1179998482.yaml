@@ -1,0 +1,13 @@
+--- 
+title: When Hardware is Free, Power is Expensive
+published: 1179998482
+hash: f0b69153c338dbb13db0905e051f31b9
+url: http://www.codinghorror.com/blog/archives/000868.html
+tags: 
+- power
+- powersupply
+- electricity
+- efficiency
+- google
+- datacenter
+desc: Did you know that Google designed their own power supplies to increase the efficiency of their datacenter's electricity usage?  It makes perfect sense, given the scale at which they're running, but I still find it somehow amazing.

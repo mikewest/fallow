@@ -1,0 +1,21 @@
+--- 
+title: "Dave Dribin: 'Choosing a Distributed Version Control System'"
+published: 1199101920
+hash: 738ba8f3b8874aa9f5fe4f66bc8d5e97
+url: http://www.dribin.org/dave/blog/archives/2007/12/28/dvcs/
+tags: 
+- bzr
+- bazaar
+- git
+- mercurial
+- hg
+- svn
+- subversion
+- versioncontrol
+- development
+- webdev
+- vcs
+- review
+- dvcs
+- distributed
+desc: "Dave Dribin has put together a really excellent review of the three main distributed version control systems: git, mercurial, and bazaar.  I'm leaning towards git, despite his choice of mercurial, mostly because of git-svn support."

@@ -1,0 +1,15 @@
+--- 
+title: "Parchive: Parity Archive Tool"
+published: 1200852199
+hash: c69699e87a41b169474ef18ec70b1ffc
+url: http://parchive.sourceforge.net/
+tags: 
+- parchive
+- backup
+- parity
+- par
+- par2
+- paranoia
+- commandline
+- unix
+desc: In my continuing descent into backup paranoia, I'm starting to worry about degradation of the DVDs I'm burning.  Parchive looks like a nice way of resolving at least some of that worry by using parity bits as a mechanism for recovering lost data.

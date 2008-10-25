@@ -1,0 +1,18 @@
+--- 
+title: The Secret to Memcached
+published: 1197839752
+hash: 6e8049350c85e858e92f8c7f3efd64e8
+url: http://blog.leetsoft.com/2007/5/22/the-secret-to-memcached
+tags: 
+- memcached
+- cache
+- caching
+- expiry
+- webdev
+- development
+- programming
+- "tobiasl\xC3\xBCtke"
+- !binary |
+  bMO8dGtl
+
+desc: "The caching code we're using at work is in the process of driving me insane, so I'm reading up on memcached in the hopes of a breakthrough.  This isn't it, but Tobias L\xC3\xBCtke has a good summary of what memcached can do for you, and how you should use it."

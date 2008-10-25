@@ -1,0 +1,11 @@
+--- 
+title: git-bisect(1)
+published: 1184702306
+hash: 30e83e78808e4aa4ef6418ea90792c5c
+url: http://www.kernel.org/pub/software/scm/git/docs/git-bisect.html
+tags: 
+- git
+- revisioncontrol
+- development
+- programming
+desc: `bisect` is probably the single best command I've seen yet for revision control.  It's basically a binary search for bugs!  This _really_ makes me interested in `git`.  Even more so than I was this morning...

@@ -1,0 +1,12 @@
+--- 
+title: The Mother of All Database Normalization Debates on Coding Horror | High Scalability
+published: 1216273908
+hash: cb12014b881e629f7d8101d0759da542
+url: http://highscalability.com/mother-all-database-normalization-debates-coding-horror
+tags: 
+- database
+- normalization
+- performance
+- jeffatwood
+- discussion
+desc: Jeff Atwood started a contentious conversation about the value of denormalizing your database.  High Scalability has pulled together some of the more interesting bits of the commentary, which is interesting to skim, if not terribly instructive.
