@@ -27,9 +27,9 @@ module Fallow
           `tag_id`  INTEGER,
           `path`    TEXT
         );
-
+        CREATE UNIQUE INDEX tagmap ON tag_mappings( tag_id, path );
       SQL
-      @@db.execute_batch sql
+      Cache.db.execute_batch sql
     end
     
     def Cache.drop!
@@ -40,22 +40,21 @@ module Fallow
         DROP TABLE IF EXISTS `tags`;
         DROP TABLE IF EXISTS `tag_mappings`;
       SQL
-      @@db.execute_batch sql
+      Cache.db.execute_batch sql
     end
+
 #
 #   Article Methods
 #
     def Cache.update_article( path, header )
       Cache.connect! unless Cache.connected?
 
-      @@db.transaction
-        insert_article = @@db.prepare( 'INSERT OR IGNORE INTO `articles` (`path`, `published`, `modified`, `title`, `slug`, `oneline`) VALUES (:path, :published, :modified, :title, :slug, :oneline )' )
-        map_tag        = @@db.prepare( 'INSERT INTO `tag_mappings` (`tag_id`, `path`) VALUES ( ?, ? )' )
-      
-        @@db.execute('DELETE FROM `articles` WHERE `path` = ?', path)
-        @@db.execute('DELETE FROM `tag_mappings` WHERE `path` = ?', path)
+      Cache.db.transaction
+        Cache.db.execute('DELETE FROM `articles` WHERE `path` = ?', path)
+        Cache.db.execute('DELETE FROM `tag_mappings` WHERE `path` = ?', path)
 
-        insert_article.execute(
+        Cache.db.execute(
+          'INSERT OR IGNORE INTO `articles` (`path`, `published`, `modified`, `title`, `slug`, `oneline`) VALUES (:path, :published, :modified, :title, :slug, :oneline )',
           "path"      =>  path,
           "published" =>  header['Published'],
           "modified"  =>  header['Modified'],
@@ -65,64 +64,40 @@ module Fallow
         )
         unless header['Tags'].nil?
           header['Tags'].each {|tag|
-
             tag = Fallow.urlify( tag )
             tag_id = Cache.get_tag_id( tag )
-            map_tag.execute( tag_id, path )
+            Cache.db.execute( 'INSERT INTO `tag_mappings` (`tag_id`, `path`) VALUES ( ?, ? )', tag_id, path )
           }
         end
-      
-        insert_article.close
-        map_tag.close
-      @@db.commit
-    end
-    
-    def Cache.how_many
-      Cache.connect! unless Cache.connected?
-      @@db.transaction
-        num_articles = @@db.get_first_value('SELECT COUNT(*) FROM `articles`')
-        num_tags     = @@db.get_first_value('SELECT COUNT(*) FROM `tags`')
-        num_mappings = @@db.get_first_value('SELECT COUNT(*) FROM `tag_mappings`')
-      @@db.commit
-      p "Articles: #{num_articles}, Tags: #{num_tags}, Mappings: #{num_mappings}"
-    end
-    
-    def Cache.all_done
-      @@db.close
+      Cache.db.commit
     end
     
 private
     @@db              = nil
+
+    def Cache.db
+      @@db
+    end
 
     def Cache.connect!
       @@db = SQLite3::Database.new( DB_FILE )
       @@db.type_translation = true
       @@db.results_as_hash  = true
     end
-
     
     def Cache.connected?
-      ! @@db.nil?
+      ! Cache.db.nil?
     end
 
     
     def Cache.get_tag_id( tag )
-      get_tag_id  = @@db.prepare( 'SELECT `tag_id` FROM `tags` WHERE `normalized_tag` = ?' )
-      insert_tag  = @@db.prepare( 'INSERT INTO `tags` ( `normalized_tag` ) VALUES ( ? )' )
-      
-      rows  = get_tag_id.execute( tag )
-      row   = rows.next
+      row  = Cache.db.get_first_value( 'SELECT `tag_id` FROM `tags` WHERE `normalized_tag` = ?', tag )
       if row.nil?
-
-        insert_tag.execute( tag )
-        tag_id = @@db.last_insert_row_id
+        Cache.db.execute( 'INSERT INTO `tags` ( `normalized_tag` ) VALUES ( ? )', tag )
+        tag_id = Cache.db.last_insert_row_id
       else
-        tag_id = row['tag_id']
+        tag_id = row
       end
-
-      get_tag_id.close
-      insert_tag.close
-
       tag_id
     end
     

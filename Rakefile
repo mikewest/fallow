@@ -28,11 +28,6 @@ ARTICLE_ROOT  = DATA_ROOT + '/articles'
         Fallow::Article.new( $1, $2, $3 ).render
       end
     end
-    Fallow::Cache.all_done
-  end
-  
-  task :how_many do
-    Fallow::Cache.how_many
   end
 
 #
