@@ -23,6 +23,7 @@ module Fallow
       }
       url_patterns.map { |path|
         path.gsub!( uri_component ) { |match|
+Fallow.log("About to call has_key(#{$1}) on uri_components")
           if ( uri_components.has_key?( $1 ) )
             uri_components[ $1 ]
           else

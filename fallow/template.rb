@@ -80,7 +80,7 @@ module Fallow
       end
     end
     
-    def process_single_replacements( text, replacements = nil)
+    def process_single_replacements( text, replacements = {})
       replaced = text.gsub( %r{%([^%]+?)(?:\{([^%]+)\})?%} ) { |match|
         if ( replacements.has_key?( $1 ) )
           replacements[$1]

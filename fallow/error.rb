@@ -10,7 +10,6 @@ module Fallow
         404 => "<p>You've found a nonexistant page!  That's a sign of luck in many cultures, you know... Just not <em>this</em> one.  Too bad!</p><p>Why not head off to the <a href='/'>homepage</a> to try again?</p>",
         500 => "<p>Oh my, a server error!  That's not good at all.  It either means that you're being naughty, or I'm being a crap programmer.  Odds are high for both.</p>"
       }
-
       error_message = error_messages.has_key?( error_code ) ? error_messages[ error_code ] : error_messages[ 500 ]
 
 

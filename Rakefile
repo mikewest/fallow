@@ -44,7 +44,7 @@ EXTERNALS_ROOT  = DATA_ROOT + '/externals'
   end
   
   task :homepage do
-    Fallow::Homepage.new.render({})
+    Fallow::Homepage.new.render()
   end
 
   task :populate => [:reset_db, :populate_articles, :populate_delicious]
