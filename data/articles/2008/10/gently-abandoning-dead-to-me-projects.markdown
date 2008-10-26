@@ -32,7 +32,7 @@ So, I'm [releasing the code][mcw_code] under the [MIT license][].  It's up on Gi
 
 ### [PerfectTime][pt_code] ###
 
-Could PerfectTime have been more pompously named?  Blame why_, [it was his idea][why].  This is a small JavaScript library that automatically converts timestamps on a page into the user's timezone.  Useful, but not to me.  I've developed [doubts about it's accessibility][abbr], and even more doubts about it's widsom in general.  That said, it's a decent little tool that I'm never going to touch again.
+Could PerfectTime have been more pompously named?  Blame _why, [it was his idea][why].  This is a small JavaScript library that automatically converts timestamps on a page into the user's timezone.  Useful, but not to me.  I've developed [doubts about it's accessibility][abbr], and even more doubts about it's widsom in general.  That said, it's a decent little tool that I'm never going to touch again.
 
 So, I'm [releasing the code][pt_code] under the [MIT license][].  It's up on GitHub now, and it's yours for the forking.
 

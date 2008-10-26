@@ -256,10 +256,10 @@ Additionally, I'll be talking about some more visible improvements that could be
 [Example code for this slider is available at /projects/files/Widgets/SliderSelect/][9]
 
    [1]: http://www.bestkungfu.com/archive/date/2005/03/ajaxessibility/
-   [2]: /DataRequestor/
-   [3]: /blog/id/17
+   [2]: /2006/03/datarequestor/
+   [3]: /2005/03/type-ahead-search-for-select-elements
    [4]: /projects/files/Widgets/SliderSelect/sliderSelectExample.html
-   [5]: /blog/id/13
+   [5]: /2005/03/component-encapsulation-using-object-oriented-javascript
    [6]: http://en.wikipedia.org/wiki/State_machine
    [7]: http://evolt.org/article/Mission_Impossible_mouse_position/17/23335/index.html
    [8]: http://www.quirksmode.org/js/findpos.html

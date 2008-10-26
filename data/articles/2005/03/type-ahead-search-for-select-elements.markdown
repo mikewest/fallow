@@ -364,8 +364,8 @@ We’ll also set the currentIndex and currentFilters to 0 and “”, just to en
 
 And there you have it. All the code is packaged together in [this example file][5] for your perusal.
 
-[1]: /archive/event-handlers-and-other-distractions
-[2]: /archive/component-encapsulation-using-object-oriented-javascript
+[1]: /2005/03/event-handlers-and-other-distractions
+[2]: /2005/03/component-encapsulation-using-object-oriented-javascript
 [3]: http://alistapart.com/articles/scripttriggers/
 [4]: http://alistapart.com/articles/customdtd/
 [5]: /projects/files/EventHandler/typeAheadSelectExample.html

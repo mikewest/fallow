@@ -79,7 +79,7 @@ We pick a name ("PerfectTime" sounds catchy) to distinguish this class from
 others we might use in the future, and create the package [as per usual][7]
 aliasing `this` to avoid scoping issues, as per usual.
 
-[7]: http://mikewest.org/blog/id/13
+[7]: /2005/03/component-encapsulation-using-object-oriented-javascript
 
     function PerfectTime() {
         var self = this;

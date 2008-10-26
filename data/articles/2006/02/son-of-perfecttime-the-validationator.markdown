@@ -11,7 +11,7 @@ Tags:
 ...
 By far, the biggest bit of feedback I've gotten on ["Showing Perfect Time"][1] is the glaringly invalid attribute (`gmt_time`) in the structure I chose to use (from [Johan Sundström][2], for example).  I don't think that the attribute by itself is a huge deal, and [Peter-Paul Koch][3] makes [a convincing argument][4] for that position at [A List Apart][5].
 
-[1]: /blog/id/20/
+[1]: /2006/02/showing-perfect-time-unobtrusively
 [2]: http://ecmanaut.blogspot.com/2006/01/ajax-date-time-time-zones-best.html#c113978133722812093
 [3]: http://www.quirksmode.org/
 [4]: http://alistapart.com/articles/scripttriggers/ "JavaScript Triggers"

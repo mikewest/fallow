@@ -91,7 +91,7 @@ This would create a ZebraTables object definition for us that wouldn’t pollute
 
 An [example of this technique][4] is available. :)
 
-   [1]: /blog/id/12
+   [1]: /2005/03/event-handlers-and-other-distractions
    [2]: http://www.crockford.com/javascript/javascript.html
    [3]: http://www.crockford.com/javascript/private.html
    [4]: /projects/files/EventHandler/objectOrientedEventHandlingExample.html
