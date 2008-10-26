@@ -89,7 +89,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
             }
             .bio p {
                 display:    inline;
-                font:       2.231em/1.25 Baskerville,Times,'Times New Roman',serif;
+                font:       27px/1.35 Baskerville,Times,'Times New Roman',serif;
             }
                 .bio p a {
                     font-variant:   small-caps;
