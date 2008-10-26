@@ -65,8 +65,13 @@ module Fallow
 #
   class NotFound < Exception
   end
+  class RedirectTemp < Exception
+  end
+  class RedirectPerm < Exception
+  end
   class ServerError < Exception
   end
+  
   
 #
 # Constructor (for rackup application start)

@@ -97,11 +97,17 @@ module Fallow
       
       result = nil
       begin
-        result = dispatch( @@request )
-      rescue Fallow::NotFound
-        result = Fallow::ErrorPage.new.render( @@request, 404 )
-      rescue Fallow::ServerError
-        result = Fallow::ErrorPage.new.render( @@request, 500 )
+        begin
+          result = dispatch( @@request )
+        rescue Fallow::NotFound
+          result = Fallow::ErrorPage.new.render( @@request, 404 )
+        rescue Fallow::ServerError
+          result = Fallow::ErrorPage.new.render( @@request, 500 )
+        end
+      rescue Fallow::RedirectTemp => boom
+        result = Rack::Response.new( '', 302, { 'Location' => boom.message } ).finish
+      rescue Fallow::RedirectPerm => boom
+        result = Rack::Response.new( '', 301, { 'Location' => boom.message } ).finish
       rescue Exception => boom
         @@request['OMG!'] = boom.message
         @@request['Backtrace'] = boom.backtrace.inspect

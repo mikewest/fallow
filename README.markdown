@@ -9,6 +9,7 @@ TODO
 ----
 
 *   RSS feeds for tag clouds
-*   Tag cloud for `/tags/`
-*   Pagination for tags, archive, etc.
+*   Tag cloud for `/tags/` (Right now it's a 404)
+*   Archive landing page for `/archive/` (Right now it's a 302 to the current year)
+*   Pagination and navigation for tags, archive, etc.
 *   One-off pages (e.g. "About")

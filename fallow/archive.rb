@@ -21,7 +21,7 @@ module Fallow
 
     def render
       if @year.nil? && @month.nil?
-        raise Fallow::NotFound
+        raise Fallow::RedirectTemp, '/'+Time.now.strftime('%Y')+'/'
         # TODO: Archive landing page
       else
         articles = archived_items( @year, @month ).each {|item|
