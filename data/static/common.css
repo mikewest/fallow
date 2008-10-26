@@ -41,7 +41,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
                 margin:         0 auto;
             }
                 .header ul li:last-child a {
-                    background:     url('../feedicons/feed-14.png') no-repeat right center;
+                    background:     url('http://static.synergistically.de/feed-14.png') no-repeat right center;
                     padding-right:  1em;
                 }
             .header a {
