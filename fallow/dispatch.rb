@@ -21,9 +21,10 @@ module Fallow
 
       uri_component = /:([A-Za-z0-9_\-]+)/
       uri_components = {
-        'year'   => '(\d{4})',
-        'month'  => '(\d{2})',
-        'slug'   => '([0-9A-Za-z_\-]+)'
+        'year'  => '(\d{4})',
+        'month' => '(\d{2})',
+        'slug'  => '([0-9A-Za-z_\-]+)',
+        'tag'   => '([0-9A-Za-z_\-]+)',
       }
       url_patterns.each { |path|
         path.gsub!( uri_component ) { |match|
@@ -43,16 +44,13 @@ module Fallow
       match_group = nil
       @dispatch_patterns.each { |pattern_group|
         if !found && request.path_info.match( pattern_group[0] )
-
           match_group = $~
-          
           found       = pattern_group[1]
         end
       }
+      
       raise Fallow::ServerError if found.nil?
-
       match_group = match_group.to_a[1..-1]
-
       Rack::Response.new( found.call( match_group ), SUCCESS_CODE ).finish
     end
 
@@ -71,8 +69,18 @@ module Fallow
           Fallow::Article.new( year, month, slug ).render
         end
 
-        define_request_path(['/:year','/:year/:month']) do |request_data|
+        define_request_path(['/:year','/:year/:month','/archive']) do |request_data|
           Fallow::Archive.new
+        end
+        
+        define_request_path(['/tags/:tag','/tags']) do |request_data|
+          if request_data.nil?
+            tag = nil
+          else
+            tag = request_data[0]
+          end
+          
+          Fallow::Tags.new( tag ).render
         end
       
         define_request_path('') do |request_data|

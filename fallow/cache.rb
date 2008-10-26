@@ -61,7 +61,9 @@ module Fallow
     def Cache.get_recent_bookmarks( num )
       Cache.get_recent(:bookmarks, num)
     end
-
+    def Cache.get_tagged_items( tag )
+      Cache.get_tagged( tag )
+    end
 #
 #   Article Methods
 #
@@ -159,9 +161,58 @@ private
       Cache.db.execute( sql )
     end
     
-    def Cache.get_tag_id( tag )
+    def Cache.get_tagged( tag )
+      Cache.connect! unless Cache.connected?
+      
+      tag = Fallow.urlify( tag )
+      sql = <<-SQL
+          SELECT
+            title, published, path, summary as 'desc', '' as 'url', 'internal' as 'type'
+          FROM
+            articles a
+          WHERE
+            a.path IN (
+              SELECT
+                tm.path as 'path'
+              FROM
+                tags t
+                  JOIN
+                    tag_mappings tm
+                  ON
+                    t.tag_id = tm.tag_id
+              WHERE
+                t.normalized_tag = :tag
+            )
+        UNION
+          SELECT
+            title, published, path, desc, url, 'external' as 'type'
+          FROM
+            bookmarks b
+          WHERE
+            b.path IN (
+              SELECT
+                tm.path as 'path'
+              FROM
+                tags t
+                  JOIN
+                    tag_mappings tm
+                  ON
+                    t.tag_id = tm.tag_id
+              WHERE
+                t.normalized_tag = :tag
+            )
+          ORDER BY
+            published DESC
+      SQL
+      Cache.db.execute(
+        sql,
+        'tag'  => tag
+      )
+    end
+    
+    def Cache.get_tag_id( tag, create = true )
       row  = Cache.db.get_first_value( 'SELECT `tag_id` FROM `tags` WHERE `normalized_tag` = ?', tag )
-      if row.nil?
+      if row.nil? && create
         Cache.db.execute( 'INSERT INTO `tags` ( `normalized_tag` ) VALUES ( ? )', tag )
         tag_id = Cache.db.last_insert_row_id
       else

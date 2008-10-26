@@ -36,6 +36,7 @@ module Fallow
   #
   autoload :Article,    'fallow/article'
   autoload :Archive,    'fallow/archive'
+  autoload :Tags,       'fallow/tags'
   autoload :Homepage,   'fallow/homepage'
   autoload :ErrorPage,  'fallow/error'
 

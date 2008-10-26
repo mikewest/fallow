@@ -232,7 +232,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 /*****************************************************************************
  *  ARTICLE
  */
-    .article h2 {
+    .article h2, .content h2 {
         text-align: center;
         font:       2.692em/1.25 Baskerville,Times,'Times New Roman',serif;
     }
