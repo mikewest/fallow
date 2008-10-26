@@ -94,4 +94,4 @@ EXTERNALS_ROOT  = DATA_ROOT + '/externals'
 #   Wrapup Task
 #
 desc 'Reset Everything'
-task :reset => [:reset_git, :reset_db, :rethin]
+task :reset => [:reset_git, :rezip_statics, :reset_db, :populate, :rethin]
