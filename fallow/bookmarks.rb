@@ -5,7 +5,7 @@ module Fallow
     def Bookmarks.last_update
       timestamp = `ls #{DELICIOUS_ROOT} | sort | tail -n1 | sed -e 's#\.yaml##'`
       if timestamp != ''
-        timestamp = Time.at(timestamp.to_i - 12000)
+        timestamp = Time.at(timestamp.to_i)
       else
         timestamp = Time.at(0)
       end
