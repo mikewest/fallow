@@ -13,7 +13,7 @@ module Fallow
         
       else
         articles = tagged_items( @tag ).each {|item|
-          item['url'] = item['path'] if item['type'] == 'article'
+          item['url'] = item['path'] if item['type'] == 'internal'
           item['published'] = Time.at(item['published'].to_i).strftime('%B %d, %Y')
         }
 
