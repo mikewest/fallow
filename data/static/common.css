@@ -248,15 +248,18 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
         margin:     1em auto;
         font:       1.923em/1.25 Baskerville,Times,'Times New Roman',serif;
     }
-    .article p {
+    .article p, .article ul, .article ol {
         width:          43.286em;
         font:           1.077em/1.5 Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
         text-align:     justify;
         margin:         1em auto;
     }
-    .article em {
-        font-style:     italic;
-    }
+        .article ul li {
+            list-style: disc inside;
+        }
+        .article ol li {
+            list-style: decimal inside;
+        }
     .article code {
         font:       0.846em/1.5 Inconsolata,'Panic Sans',Monaco,'Courier',monospace;
     }
