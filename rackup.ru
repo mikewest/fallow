@@ -2,7 +2,9 @@
 
 require 'fallow'
 
-run Rack::Builder.new {
+app = Rack::Builder.new {
   use Rack::Lint 
-  Fallow.new 
+  run Fallow.new 
 }
+
+run app
