@@ -72,14 +72,17 @@ module Fallow
         Cache.db.execute('DELETE FROM `articles` WHERE `path` = ?', path)
         Cache.db.execute('DELETE FROM `tag_mappings` WHERE `path` = ?', path)
 
+        summary = Markdown.new( header['OneLine'], :smart ).to_html
+        title   = Markdown.new( header['Title'], :smart ).to_html
+
         Cache.db.execute(
           'INSERT OR IGNORE INTO `articles` (`path`, `published`, `modified`, `title`, `slug`, `summary`) VALUES (:path, :published, :modified, :title, :slug, :summary )',
           "path"      =>  path,
           "published" =>  header['Published'],
           "modified"  =>  header['Modified'],
-          "title"     =>  header['Title'],
+          "title"     =>  title,
           "slug"      =>  header['Slug'],
-          "summary"   =>  header['OneLine']
+          "summary"   =>  summary
         )
         unless header['Tags'].nil?
           header['Tags'].each {|tag|
@@ -93,39 +96,49 @@ module Fallow
     
     def Cache.update_bookmark( path, data )
       Cache.connect! unless Cache.connected?
+      begin
+        Cache.db.transaction
+          Cache.db.execute( 'DELETE FROM `bookmarks`    WHERE `path` = ?', path )
+          Cache.db.execute( 'DELETE FROM `tag_mappings` WHERE `path` = ?', path )
+        
+          title = Markdown.new( data['title'], :smart ).to_html
+          desc = Markdown.new( data['desc'], :smart ).to_html
+        
+          Cache.db.execute(
+            'INSERT OR IGNORE INTO `bookmarks` (`path`, `published`, `title`, `url`, `desc`) VALUES (:path, :published, :title, :url, :desc )',
+            "path"      =>  path,
+            "published" =>  data['published'],
+            "title"     =>  title,
+            "url"       =>  data['url'],
+            "desc"      =>  desc
+          )
+          unless data['tags'].nil?
+            data['tags'].each {|tag|
+              tag = Fallow.urlify( tag )
+              tag_id = Cache.get_tag_id( tag )
+              Cache.db.execute( 'INSERT OR IGNORE INTO `tag_mappings` (`tag_id`, `path`) VALUES ( ?, ? )', tag_id, path )
+            }
+          end
       
-      Cache.db.transaction
-        Cache.db.execute( 'DELETE FROM `bookmarks`    WHERE `path` = ?', path )
-        Cache.db.execute( 'DELETE FROM `tag_mappings` WHERE `path` = ?', path )
-      
-        Cache.db.execute(
-          'INSERT OR IGNORE INTO `bookmarks` (`path`, `published`, `title`, `url`, `desc`) VALUES (:path, :published, :title, :url, :desc )',
-          "path"      =>  path,
-          "published" =>  data['published'],
-          "title"     =>  data['title'],
-          "url"       =>  data['url'],
-          "desc"      =>  data['desc']
-        )
-        unless data['tags'].nil?
-          data['tags'].each {|tag|
-            tag = Fallow.urlify( tag )
-            tag_id = Cache.get_tag_id( tag )
-            Cache.db.execute( 'INSERT OR IGNORE INTO `tag_mappings` (`tag_id`, `path`) VALUES ( ?, ? )', tag_id, path )
-          }
-        end
-      
-      Cache.db.commit
-    end
+        Cache.db.commit
+      rescue Exception => boom
+        pp boom
+      end
+   end
     
 private
-    @@db              = nil
+    @@db  = nil
 
     def Cache.db
       @@db
     end
 
     def Cache.connect!
-      @@db = SQLite3::Database.new( DB_FILE )
+      begin
+        @@db = SQLite3::Database.new( DB_FILE )
+      rescue Exception => boom
+        pp boom
+      end
       @@db.type_translation = true
       @@db.results_as_hash  = true
     end

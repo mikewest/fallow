@@ -8,7 +8,7 @@ module Fallow
     end
 
     def render ( )
-      articles = recent_articles( 5 ).each {|article|
+      articles = recent_articles( 10 ).each {|article|
         article['url'] = article['path']
         article['published'] = Time.at(article['published']).strftime('%B %d, %Y at %H:%M')
         article['modified'] = Time.at(article['modified']).strftime('%B %d, %Y at %H:%M')

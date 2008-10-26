@@ -59,6 +59,14 @@ EXTERNALS_ROOT  = DATA_ROOT + '/externals'
   end
   
 #
+#   Static Tasks
+#
+  desc 'Prezip statics'
+  task :rezip_statics do
+    
+  end
+
+#
 #   Server Tasks
 #
   desc 'Reset Thin server'

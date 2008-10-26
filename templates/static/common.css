@@ -18,7 +18,13 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
             letter-spacing:     1px;
             color:              #4281ba;
         }
-            
+        em {
+            font-style: italic;
+        }
+        pre, code {
+            font-family: Inconsolata,'Panic Sans',Monaco,'Courier',monospace;
+        }
+        
 /*****************************************************************************
  *  HEADER
  */
@@ -136,6 +142,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
                         font:           1.143em/1 Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
                         font-variant:   small-caps;
                         text-transform: capitalize;
+                        width:          300px;
                     }
                     .recent-posts .meta {
                         float:          right;
@@ -228,6 +235,13 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
         text-align: center;
         font:       2.692em/1.25 Baskerville,Times,'Times New Roman',serif;
     }
+        .article p.published {
+            font-size:  1.5em/1 Baskerville,Times,'Times New Roman',serif;
+            width:      38em;
+            margin-top: 0px;
+            text-align:center;
+            color:#999;
+        }
     .article h3 {
         text-align: center;
         margin:     1em auto;
