@@ -142,9 +142,7 @@ private
         else 'articles'
       end
       
-      sql = <<-SQL
-        SELECT * FROM `#{table}` ORDER BY `published` DESC LIMIT #{num};
-      SQL
+      sql = "SELECT * FROM #{table} ORDER BY published DESC LIMIT #{num};"
       Cache.db.execute( sql )
     end
     
