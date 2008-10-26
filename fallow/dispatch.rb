@@ -70,7 +70,13 @@ module Fallow
         end
 
         define_request_path(['/:year','/:year/:month','/archive']) do |request_data|
-          Fallow::Archive.new
+          if request_data.nil?
+            year, month = [nil,nil]
+          else
+            year, month = request_data[0..1]
+          end
+
+          Fallow::Archive.new(year, month).render
         end
         
         define_request_path(['/tags/:tag','/tags']) do |request_data|

@@ -64,6 +64,9 @@ module Fallow
     def Cache.get_tagged_items( tag )
       Cache.get_tagged( tag )
     end
+    def Cache.get_archived_items( start_date, end_date )
+      Cache.get_archived( start_date.to_i, end_date.to_i )
+    end
 #
 #   Article Methods
 #
@@ -207,6 +210,33 @@ private
       Cache.db.execute(
         sql,
         'tag'  => tag
+      )
+    end
+    
+    def Cache.get_archived( start_date, end_date )
+      Cache.connect! unless Cache.connected?
+      
+      sql = <<-SQL
+          SELECT
+            title, published, path, summary as 'desc', '' as 'url', 'internal' as 'type'
+          FROM
+            articles a
+          WHERE
+            published BETWEEN :start AND :end
+        UNION
+          SELECT
+            title, published, path, desc, url, 'external' as 'type'
+          FROM
+            bookmarks b
+          WHERE
+            published BETWEEN :start AND :end
+        ORDER BY
+          published DESC
+      SQL
+      Cache.db.execute(
+        sql,
+        'start' => start_date,
+        'end'   => end_date
       )
     end
     
