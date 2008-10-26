@@ -232,7 +232,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 /*****************************************************************************
  *  ARTICLE
  */
-    .article h2, .content h2 {
+    .article h2, .archive h2 {
         text-align: center;
         font:       2.692em/1.25 Baskerville,Times,'Times New Roman',serif;
     }
@@ -301,18 +301,21 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
         .archive ol li {
             margin:     0 0 1.5em 0;
             clear:      both;
-            overflow:   auto;
+            overflow:   visible;
         }
-            .archive ol li.external {
-                background: #999;
+            .archive ol li.external a:first-child {
+                padding-left:   20px;
+                background:     url(http://www.google.com/s2/favicons?domain=delicious.com) top left no-repeat;
             }
             .archive ol li a:first-child {
                 float:          left;
                 margin-bottom:  0.25em;
+                margin-left:    -20px;
                 font:           1.143em/1.25 Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
                 font-variant:   small-caps;
                 text-transform: capitalize;
                 text-align:     left;
+                width:          490px;
             }
         .archive .meta {
             float:          right;
