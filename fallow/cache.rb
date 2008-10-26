@@ -73,7 +73,7 @@ module Fallow
         Cache.db.execute('DELETE FROM `tag_mappings` WHERE `path` = ?', path)
 
         summary = Markdown.new( header['OneLine'], :smart ).to_html
-        title   = Markdown.new( header['Title'], :smart ).to_html
+        title   = Markdown.new( header['Title'], :smart ).to_html.gsub(%r{<p>(.+)</p>}) { |match| $1 }
 
         Cache.db.execute(
           'INSERT OR IGNORE INTO `articles` (`path`, `published`, `modified`, `title`, `slug`, `summary`) VALUES (:path, :published, :modified, :title, :slug, :summary )',
@@ -101,7 +101,7 @@ module Fallow
           Cache.db.execute( 'DELETE FROM `bookmarks`    WHERE `path` = ?', path )
           Cache.db.execute( 'DELETE FROM `tag_mappings` WHERE `path` = ?', path )
         
-          title = Markdown.new( data['title'], :smart ).to_html
+          title = Markdown.new( data['title'], :smart ).to_html.gsub(%r{<p>(.+)</p>}) { |match| $1 }
           desc = Markdown.new( data['desc'], :smart ).to_html
         
           Cache.db.execute(
