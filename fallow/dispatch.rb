@@ -88,6 +88,10 @@ module Fallow
         result = Fallow::ErrorPage.new.render( @@request, 404 )
       rescue Fallow::ServerError
         result = Fallow::ErrorPage.new.render( @@request, 500 )
+      rescue Exception => boom
+        @@request['OMG!'] = boom.message
+        @@request['Backtrace'] = boom.backtrace.inspect
+        result = Fallow::ErrorPage.new.render( @@request, 500 )
       end
       result
     end
