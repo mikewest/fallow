@@ -4,7 +4,7 @@ Published:  1206694095
 Modified:   1206694095
 Title:      "Microformats on Kelkoo"
 Slug:       "microformats-on-kelkoo"
-OneLine:    ""
+OneLine:    "Ben Ward has a post up on YDN discussing the massive addition of microformats to the Kelkoo shopping site.  Interesting read."
 Tags:       
     - Yahoo
 

@@ -4,7 +4,7 @@ Published:  1204973899
 Modified:   1204974134
 Title:      "Accessibility Tips from Mike Davies"
 Slug:       "accessibility-tips-from-mike-davies"
-OneLine:    ""
+OneLine:    "Mike Davies, who has more accessibility knowledge in his little finger than most developers I know, has started a new site to share his wisdom with the rest of us.  I'm looking forward to seeing what he puts out there."
 Tags:       
     - Personal
     - Yahoo
