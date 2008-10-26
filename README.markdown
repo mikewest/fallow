@@ -8,7 +8,7 @@ I'm more or less teaching myself Ruby as I go, so look at this as nothing more t
 TODO
 ----
 
-*   Homepage, Archive, Tag pages
-    *   `getLatestXByY` in the caching class to support these
-
-*   Logging
+*   RSS feeds for tag clouds
+*   Tag cloud for `/tags/`
+*   Pagination for tags, archive, etc.
+*   One-off pages (e.g. "About")
