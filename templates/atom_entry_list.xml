@@ -1,0 +1,9 @@
+    <entry>
+        <title type='text'>%title%</title>
+        <link rel="alternate" href="%url%" />
+        <id>%id%</id>
+        <updated>%updated%</updated>
+        <content type='html'>
+%content%
+</content>
+    </entry>
