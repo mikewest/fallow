@@ -1,6 +1,6 @@
 module Fallow
   class Template
-    VALID_TEMPLATE_CHARS = '[A-Za-z0-9_]'
+    VALID_TEMPLATE_CHARS = '[A-Za-z0-9_\.]'
   
     def initialize( template_file = nil, template_root = TEMPLATE_ROOT )
       @template_root  = template_root
@@ -72,7 +72,8 @@ module Fallow
       }
     end
     def load_template_file( template_file )
-      template_file = @template_root + "/#{template_file}.html"
+      template_file = "/#{template_file}.html" unless template_file =~ %r{\.[a-z]+$}
+      template_file = @template_root + template_file
       if ( File.exist?( template_file ) )
         File.open( template_file ).read()
       else

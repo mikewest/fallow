@@ -10,5 +10,5 @@
         <uri>http://mikewest.org/</uri>
         <email>mike@mikewest.org</email>
     </author>
-@include_multiple 'atom_entry_list'
+@include_multiple 'atom_entry_list.xml'
 </feed>
