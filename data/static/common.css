@@ -303,10 +303,6 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
             clear:      both;
             overflow:   visible;
         }
-            .archive ol li.external a:first-child {
-                padding-left:   20px;
-                background:     url(http://www.google.com/s2/favicons?domain=delicious.com) top left no-repeat;
-            }
             .archive ol li a:first-child {
                 float:          left;
                 margin-bottom:  0.25em;
@@ -316,6 +312,13 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
                 text-transform: capitalize;
                 text-align:     left;
                 width:          490px;
+            }
+            .archive ol li.internal a:first-child {
+                font-size:      1.5em;
+            }
+            .archive ol li.external a:first-child {
+                padding-left:   20px;
+                background:     url(http://www.google.com/s2/favicons?domain=delicious.com) top left no-repeat;
             }
         .archive .meta {
             float:          right;
