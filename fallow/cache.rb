@@ -20,6 +20,7 @@ module Fallow
         
         CREATE TABLE IF NOT EXISTS `bookmarks` (
           `path`        TEXT PRIMARY KEY,
+          `hash`        TEXT,
           `published`   INTEGER,
           `title`       TEXT,
           `url`         TEXT,
@@ -110,8 +111,9 @@ module Fallow
           desc = Markdown.new( data['desc'], :smart ).to_html
         
           Cache.db.execute(
-            'INSERT OR IGNORE INTO `bookmarks` (`path`, `published`, `title`, `url`, `desc`) VALUES (:path, :published, :title, :url, :desc )',
+            'INSERT OR IGNORE INTO `bookmarks` (`path`, `published`, `title`, `url`, `desc`, `hash`) VALUES (:path, :published, :title, :url, :desc, :hash )',
             "path"      =>  path,
+            "hash"      =>  data['hash'],
             "published" =>  data['published'],
             "title"     =>  title,
             "url"       =>  data['url'],
@@ -170,7 +172,7 @@ private
       tag = Fallow.urlify( tag )
       sql = <<-SQL
           SELECT
-            title, published, path, summary as 'desc', '' as 'url', 'internal' as 'type'
+            title, published, path, summary as 'desc', '' as 'url', '' as 'hash', 'internal' as 'type'
           FROM
             articles a
           WHERE
@@ -188,7 +190,7 @@ private
             )
         UNION
           SELECT
-            title, published, path, desc, url, 'external' as 'type'
+            title, published, path, desc, url, hash, 'external' as 'type'
           FROM
             bookmarks b
           WHERE
@@ -218,14 +220,14 @@ private
       
       sql = <<-SQL
           SELECT
-            title, published, path, summary as 'desc', '' as 'url', 'internal' as 'type'
+            title, published, path, summary as 'desc', '' as 'url', '' as 'hash', 'internal' as 'type'
           FROM
             articles a
           WHERE
             published BETWEEN :start AND :end
         UNION
           SELECT
-            title, published, path, desc, url, 'external' as 'type'
+            title, published, path, desc, url, hash, 'external' as 'type'
           FROM
             bookmarks b
           WHERE
