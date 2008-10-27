@@ -1,7 +1,13 @@
 module Fallow
   class Article
-    def initialize ( year, month, slug )
-      @path       = "/#{year}/#{month}/#{slug}"
+    def initialize ( year, month = nil, slug = nil )
+      # One argument == path?
+      if month.nil? && slug.nil? && year =~ %r{^/\d{4}/\d{2}/[^/]+$}
+        @path     = year
+      else
+        @path     = "/#{year}/#{month}/#{slug}"
+      end
+      
       @filename   = ARTICLE_ROOT + "/#{@path}.markdown"
       @exists     = File.exist?( @filename )
       @header     = ''
@@ -11,6 +17,23 @@ module Fallow
     
     def exists?
       @exists
+    end
+    
+    def raw_data
+      return nil unless exists?
+      
+      require 'cgi'
+      
+      markdown = Markdown.new( @body, :smart )
+      @body_html = markdown.to_html
+
+      return {
+        'title'   =>  @header['Title'],
+        'url'     =>  ROOT_URL + @path,
+        'id'      =>  ROOT_URL + @path,
+        'updated' =>  Time.at(@header['Published']).xmlschema,
+        'content' =>  CGI.escapeHTML( @body_html )
+      }
     end
     
     def render( caching_enabled = true )

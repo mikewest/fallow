@@ -10,6 +10,7 @@ module Fallow
   #
   # Exciting configuration constants
   #
+  ROOT_URL        = 'http://mikewest.org'
   ROOT_DIR        = File.expand_path(File.dirname(__FILE__))
   DATA_ROOT       = ROOT_DIR + '/data'
   ARTICLE_ROOT    = DATA_ROOT + '/articles'
@@ -39,6 +40,7 @@ module Fallow
   autoload :Tags,       'fallow/tags'
   autoload :Homepage,   'fallow/homepage'
   autoload :ErrorPage,  'fallow/error'
+  autoload :Feed,       'fallow/feed'
 
 
 

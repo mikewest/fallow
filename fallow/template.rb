@@ -29,9 +29,10 @@ module Fallow
       #
       @template.gsub!( %r{^@include_multiple\s+['"](#{VALID_TEMPLATE_CHARS}+)['"]\s*(?:\{([^\}]+)\})?$}o ) { |match|
         subtemplate = load_template_file( $1 )
-        unless ( subtemplate.nil? || !replacements[:lists].has_key?( $1 ) )
+        list_name = $1.gsub(%r{\.[a-z]+$}, '')
+        unless ( subtemplate.nil? || !replacements[:lists].has_key?( list_name ) )
           replacement_string = []
-          replacements[:lists][$1].each { |item|
+          replacements[:lists][list_name].each { |item|
             replacement_string << process_single_replacements( subtemplate, item )
           }
           
@@ -72,8 +73,8 @@ module Fallow
       }
     end
     def load_template_file( template_file )
-      template_file = "/#{template_file}.html" unless template_file =~ %r{\.[a-z]+$}
-      template_file = @template_root + template_file
+      template_file = "#{template_file}.html" unless template_file =~ %r{\.[a-z]+$}
+      template_file = "#{@template_root}/#{template_file}"
       if ( File.exist?( template_file ) )
         File.open( template_file ).read()
       else

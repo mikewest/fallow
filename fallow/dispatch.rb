@@ -51,7 +51,9 @@ module Fallow
       
       raise Fallow::ServerError if found.nil?
       match_group = match_group.to_a[1..-1]
-      Rack::Response.new( found.call( match_group ), SUCCESS_CODE ).finish
+      content   = request.path_info.match(%r{\.xml}) ? 'application/xml' : 'text/html'
+      encoding  = 'UTF-8'
+      Rack::Response.new( found.call( match_group ), SUCCESS_CODE, { 'Content-Type' => "#{content}; charset=#{encoding}"} ).finish
     end
 
     # Main entry point into Fallow from the Rack-based server
@@ -87,6 +89,10 @@ module Fallow
           end
           
           Fallow::Tags.new( tag ).render
+        end
+
+        define_request_path('/atom.xml') do |request_data|
+          Fallow::Feed.new.render
         end
       
         define_request_path('') do |request_data|
