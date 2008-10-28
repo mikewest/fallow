@@ -39,6 +39,21 @@ EXTERNALS_ROOT  = DATA_ROOT + '/externals'
     Fallow::Bookmarks.update_cache!
   end
   
+  desc "Cache archive pages"
+  task :populate_archive do
+    # Don't cache current year, or year/month
+    now         = Time.now
+    year, month = Time.now.strftime('%Y'), Time.now.strftime('%m')
+    
+    directories = Dir[ ARTICLE_ROOT + '/**/' ]
+    directories.each { |dir|
+      if dir.match(%r{/(\d{4})/(?:(\d{2})/)?})
+        p "Publishing year: #{$1}, month: #{$2}" unless ( $1 == year ) && ( $2.nil? || $2 == month )
+        Fallow::Archive.new( $1, $2 ).render unless ( $1 == year ) && ( $2.nil? || $2 == month )
+      end
+    }
+  end
+  
   task :sync_delicious do
     Fallow::Bookmarks.sync!
   end
@@ -47,7 +62,7 @@ EXTERNALS_ROOT  = DATA_ROOT + '/externals'
     Fallow::Homepage.new.render()
   end
 
-  task :populate => [:reset_db, :populate_articles, :populate_delicious]
+  task :populate => [:reset_db, :populate_articles, :populate_delicious, :populate_archive]
   
 
 #
