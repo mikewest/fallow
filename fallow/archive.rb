@@ -1,10 +1,9 @@
 module Fallow
   class Archive
-    
+
     def archived_items( year, month )
-      if ( @month.nil? )
-        start_date  = Time.utc( year )
-        end_date    = Time.utc( year+1 )
+      if ( month.nil? )
+        start_date, end_date  = Time.utc( year ), Time.utc( year+1 )
       else
         start_date  = Time.utc( year, month )
         end_date    = Time.utc( year + (month==12 ? 1 : 0), month==12 ? 1 : month+1 )
@@ -13,13 +12,12 @@ module Fallow
     end
 
     def initialize( year = nil, month = nil )
-      @year   = year
-      @year   = @year.to_i unless @year.nil?
-      @month  = month
-      @month  = @month.to_i unless @month.nil?
+      @year, @month = year, month
+      @year         = @year.to_i unless @year.nil?
+      @month        = @month.to_i unless @month.nil?
     end
 
-    def render
+    def render( caching_enabled = true )
       if @year.nil? && @month.nil?
         raise Fallow::RedirectTemp, '/'+Time.now.strftime('%Y')+'/'
         # TODO: Archive landing page
@@ -42,9 +40,25 @@ module Fallow
             'archived_article'  =>  articles,
           }
         })
-      
+
+        persist if caching_enabled
+
         @page_html
       end
+    end
+
+private
+    def persist
+      @path = "/#{@year}"
+      @path += "/%02d" % [@month] unless @month.nil?
+
+      # Don't persist current year, or current year/month:
+      now = Time.now
+      return if @path == now.strftime('/%Y') || @path == now.strftime('/%Y/%M')
+
+      FileUtils.mkdir_p HTML_ROOT + @path
+      html_filename = HTML_ROOT + @path + '/index.html'
+      File.open( html_filename, 'w' ) { |f| f.write( @page_html ) }
     end
   end
 end
