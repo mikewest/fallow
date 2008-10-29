@@ -62,12 +62,19 @@ module Fallow
     def Cache.get_recent_bookmarks( num )
       Cache.get_recent(:bookmarks, num)
     end
+    
+    def Cache.get_related_tags( tag, count = 10 )
+      Cache.get_related(:tags, tag, count)
+    end
+    
     def Cache.get_tagged_items( tag )
       Cache.get_tagged( tag )
     end
+    
     def Cache.get_archived_items( start_date, end_date )
       Cache.get_archived( start_date.to_i, end_date.to_i )
     end
+    
 #
 #   Article Methods
 #
@@ -239,6 +246,41 @@ private
         sql,
         'start' => start_date,
         'end'   => end_date
+      )
+    end
+    
+    def Cache.get_related( type, index, count = 10 )
+      if type === :tags
+        sql = <<-SQL
+          SELECT
+              t.normalized_tag as tag
+          FROM
+              tag_mappings tm, tags t
+          WHERE
+              tm.path IN (
+                  SELECT
+                      tm.path
+                  FROM
+                      tag_mappings tm, tags t
+                  WHERE
+                      tm.tag_id = t.tag_id
+                      AND
+                      t.normalized_tag = :index
+              )
+              AND
+              t.normalized_tag != :index
+              AND
+              t.tag_id = tm.tag_id
+          GROUP BY tm.tag_id
+          ORDER BY COUNT(tm.path) DESC
+          LIMIT :count
+        SQL
+      end
+      
+      Cache.db.execute(
+        sql,
+        'index' =>  index.to_s,
+        'count' =>  count.to_i
       )
     end
     
