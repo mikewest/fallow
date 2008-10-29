@@ -292,6 +292,13 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 /*****************************************************************************
  *  Archive/Tag Pages
  */
+    div.archive h2+p {
+        width:      33.286em;
+        padding:    1em;
+        margin:     1em auto;
+        border:     1px solid #999;
+        background: #EEE;
+    }
     div.archive ol {
         width:          43.286em;
         font:           1.077em/1.5 Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
