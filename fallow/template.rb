@@ -28,20 +28,23 @@ module Fallow
       # Deal with `@include_multiple 'template'` replacements
       #
       @template.gsub!( %r{^@include_multiple\s+['"](#{VALID_TEMPLATE_CHARS}+)['"]\s*(?:\{([^\}]+)\})?$}o ) { |match|
-        subtemplate = load_template_file( $1 )
-        list_name = $1.gsub(%r{\.[a-z]+$}, '')
+        template, text = $1, $2
+        if ( ! text.nil? )
+          before, between, after = text.split( '|' )
+        else
+          before, between, after = '', '', ''
+        end
+
+        subtemplate = load_template_file( template )
+
+        list_name = template.gsub(%r{\.[a-z]+$}, '')
+
+
         unless ( subtemplate.nil? || !replacements[:lists].has_key?( list_name ) )
           replacement_string = []
           replacements[:lists][list_name].each { |item|
             replacement_string << process_single_replacements( subtemplate, item )
           }
-          
-          if ( ! $2.nil? )
-            before, between, after = $2.split( '|' )
-          else
-            before, between, after = '', '', ''
-          end
-          
 
           before + replacement_string.join( between ) + after
         else
