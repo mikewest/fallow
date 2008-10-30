@@ -49,11 +49,15 @@ module Fallow
         end
       }
       
-      raise Fallow::ServerError if found.nil?
-      match_group = match_group.to_a[1..-1]
-      content   = request.path_info.match(%r{\.xml}) ? 'application/xml' : 'text/html'
-      encoding  = 'UTF-8'
-      Rack::Response.new( found.call( match_group ), SUCCESS_CODE, { 'Content-Type' => "#{content}; charset=#{encoding}"} ).finish
+      if found.nil?
+      else
+        match_group = match_group.to_a[1..-1]
+        content   = request.path_info.match(%r{\.xml}) ? 'application/xml' : 'text/html'
+        encoding  = 'UTF-8'
+        body      = found.call( match_group )
+        headers   = { 'Content-Type' => "#{content}; charset=#{encoding}" }
+      end
+      Rack::Response.new( body, SUCCESS_CODE, headers ).finish
     end
 
     # Main entry point into Fallow from the Rack-based server
