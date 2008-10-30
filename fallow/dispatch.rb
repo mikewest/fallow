@@ -50,6 +50,7 @@ module Fallow
       }
       
       if found.nil?
+        body, headers = Fallow::AdHoc.new( request.path_info ).render
       else
         match_group = match_group.to_a[1..-1]
         content   = request.path_info.match(%r{\.xml}) ? 'application/xml' : 'text/html'

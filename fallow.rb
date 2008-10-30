@@ -13,6 +13,7 @@ module Fallow
   ROOT_URL        = 'http://mikewest.org'
   ROOT_DIR        = File.expand_path(File.dirname(__FILE__))
   DATA_ROOT       = ROOT_DIR + '/data'
+  ADHOC_ROOT      = DATA_ROOT + '/adhoc'
   ARTICLE_ROOT    = DATA_ROOT + '/articles'
   EXTERNALS_ROOT  = DATA_ROOT + '/externals'
   TEMPLATE_ROOT   = ROOT_DIR + '/templates'
@@ -35,6 +36,7 @@ module Fallow
   #
   #   Page types
   #
+  autoload :AdHoc,      'fallow/adhoc'
   autoload :Article,    'fallow/article'
   autoload :Archive,    'fallow/archive'
   autoload :Tags,       'fallow/tags'
