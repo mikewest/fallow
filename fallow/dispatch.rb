@@ -2,12 +2,17 @@ module Fallow
   class Dispatch
     @@request       = nil
     @@paths_defined = false
+    @@start         = nil
     def Dispatch.request
       @@request
     end
     def Dispatch.paths_defined?
       @@paths_defined
     end
+    def Dispatch.timer_comment
+      "<!-- Served uncached, via Fallow: #{Time.now - @@start} seconds.  Probably 1 database query. -->"
+    end
+    
     
     SUCCESS_CODE  = 200
 #
@@ -58,11 +63,13 @@ module Fallow
         body      = found.call( match_group )
         headers   = { 'Content-Type' => "#{content}; charset=#{encoding}" }
       end
+      body += Fallow::Dispatch.timer_comment
       Rack::Response.new( body, SUCCESS_CODE, headers ).finish
     end
 
     # Main entry point into Fallow from the Rack-based server
     def call ( env )
+      @@start   = Time.now
       @@request = Rack::Request.new( env )
 
       if !Dispatch.paths_defined?

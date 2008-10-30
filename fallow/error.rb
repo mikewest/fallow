@@ -36,6 +36,7 @@ module Fallow
         'error_message' =>  error_message,
         'debug_data'    =>  debug
       })
+      result  += Fallow::Dispatch.timer_comment
       Rack::Response.new( result, error_code ).finish
     end
     
