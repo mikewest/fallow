@@ -1,0 +1,18 @@
+--- 
+title: "Ryan Farrand: 'Git it, got it? Good.'"
+published: 1225139607
+hash: 85ceacef7b605270e6e82cf3ad0fb317
+url: http://www.killswitchcollective.com/articles/36_git_it_got_it_good
+tags: 
+- via:carlo
+- osx
+- git
+- versioncontrol
+- revisioncontrol
+- dvcs
+- ryanfarrand
+- farrand
+- workflow
+- programming
+- webdev
+desc: Ryan Farrand has put together some very nice tips indeed for `git` usage under OS X.  Good explanations of some `git config` setup that I hadn't done, and some interesting discussion of workflow.  Worth a skim.  [Via Carlo]
