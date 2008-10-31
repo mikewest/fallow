@@ -73,7 +73,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
             text-align:     justify;
             border-bottom:  0.077em solid #666;
         }
-            .bio img {
+            .bio img, .sidebar {
                 border:     0.077em solid #AAA;
                 background: #FFF;
                 padding:    0.2308em;
@@ -155,7 +155,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
                         .recent-posts .meta span {
                             display:    block;
                         }
-                    p {
+                    .recent-posts p {
                         clear:          both;
                     }
     /*************************************************************************
@@ -289,6 +289,20 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
             width:  auto;
             margin: 1em 11em;
         }
+
+    /*****************************************************************************
+     *  Images in articles
+     */
+        .article .sidebar {
+            float:  right;
+            width:  17.1538em;
+            margin: 0 0 0 0.7692em;
+        }
+/*****************************************************************************
+ *  AdHoc
+ */
+        /*  Nothing yet, but I'm sure I'll need this at some point. */
+
 /*****************************************************************************
  *  Archive/Tag Pages
  */

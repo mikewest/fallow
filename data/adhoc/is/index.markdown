@@ -1,4 +1,12 @@
-This is an adhoc page.
-----------------------
+Mike West is&hellip;
+--------------------
 
-This is a markdown document to test my ability to create adhoc pages.  I'm not quite sure how I'll determine whether or not a page is adhoc.  I suppose the simplest is to use the adhoc handler as a pre-404 default page.  Let's see how that works for me, shall we?
+<p><img src="http://mikewest.org/images/mike_big.jpg" alt="Mike West" class="sidebar"> I graduated from the University of Texas: Austin in May 2003, majoring in Philosophy with minors in Computer Science and German. In December, 2005, I moved to Germany to turn a long-distance relationship into just a relationship. After almost a year of building up my language skills, I settled down in Munich to begin work as a web developer with the great people at Yahoo! Deutschland in November, 2006.</p>
+
+I debated in high school, and have become very interested in Philosophy because of that experience. It’s the single most educational thing I’ve done in my entire life, and I’m grateful that I had that opportunity. I’m enthralled with discussions of ethics and political science, but never got too involved in more ethereal, metaphysical discourse. I like concrete applications, and I like to think that my heady philosophical discussions could be seen in terms of real world implications.
+
+I’ve been playing around on the web since 1995, and I’ve taught myself just about everything I’ve needed to know about programming for that medium. My Computer Science courses have given me a firm foundation in the theories that underlie coding of any sort, and PHP, Perl, Java and etc. have provided me with creative outlets to put those theories into concrete practice.
+
+I enjoy the process of working out solutions to complex problems. I spend hours planning projects, piecing together disparate needs and requirements into coherent wholes that attack the problem at hand. The process of planning out solutions, and formulating database structures, data structures, function relationships and everything else that goes into a system’s design is my favourite part of programming.
+
+I even enjoy running into ‘issues’. There’s a sort of sublime contentment that can be found in running into some messy bug that I completely overlooked in the planning phases (and these always come up. Always.) and then scrambling for a solution. That sort of ‘thinking on your feet’ is what makes me keep coming back to programming.
