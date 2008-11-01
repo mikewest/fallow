@@ -1,0 +1,91 @@
+user www-data www-data;
+worker_processes  4;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+    
+    sendfile            on;
+    keepalive_timeout   65;
+
+    # These are (apparently) good default values.
+    tcp_nopush        on;
+    tcp_nodelay       off;
+    
+    # output compression saves bandwidth 
+    gzip                on;
+    gzip_static         on;
+    gzip_http_version   1.0;
+    gzip_comp_level     2;
+    gzip_proxied        any;
+    gzip_types          text/plain text/html text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript image/x-icon image/png;
+    
+    include /usr/local/nginx/sites-enabled/*;
+}
+
+upstream example-com {
+    server unix:/tmp/thin.0.sock;
+}
+
+#
+#   Who uses "www" anymore?  No one, that's who.
+#
+server {
+    listen   80;
+    server_name  www.example.com;
+    rewrite ^/(.*) http://example.com/$1 permanent;
+}
+
+#
+#   Static server: max expiration, your own (much slower, and not edge-cached) akamai.
+#
+server {
+    listen   80;
+    server_name  static.example.com;
+    
+    root   /home/user/public_html/example.com/public/static/;
+
+    location / {
+        if (-f $request_filename) {
+            expires max;
+            break;
+        }
+    }
+}
+
+#
+#   
+#
+server {
+    listen   80;
+    server_name example.com;
+
+    access_log /home/user/public_html/example.com/log/access.log;
+    error_log /home/user/public_html/example.com/log/error.log;
+
+    root   /home/user/public_html/example.com/public/;
+    index  index.html;
+
+
+    location / {
+        rewrite ^/favicon.ico http://static.example.com/favicon.ico permanent;
+
+        if (-f $request_filename/index.html) {
+            rewrite (.*) $1/index.html break;
+        }
+
+        if (!-f $request_filename) {
+            proxy_set_header  X-Real-IP  $remote_addr;
+            proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $http_host;
+            proxy_redirect false;
+
+            proxy_pass http://example-com;
+            break;
+        }
+    }
+}

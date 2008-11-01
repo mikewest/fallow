@@ -6,6 +6,10 @@ ROOT_DIR        = File.expand_path(File.dirname(__FILE__))
 DATA_ROOT       = ROOT_DIR + '/data'
 ARTICLE_ROOT    = DATA_ROOT + '/articles'
 EXTERNALS_ROOT  = DATA_ROOT + '/externals'
+
+THIN_INSTANCES  = 3
+THIN_SOCKETS    = '/tmp/thin.sock'
+
 #
 #   Cache Tasks
 #
@@ -87,12 +91,12 @@ EXTERNALS_ROOT  = DATA_ROOT + '/externals'
   desc 'Reset Thin server'
   task :restart_thin => [:remove_logs] do
     sh 'killall thin;'
-    sh "thin start -R #{ROOT_DIR}/rackup.ru -s1 --socket /tmp/thin.sock;"
+    sh "thin start -R #{ROOT_DIR}/rackup.ru -s#{THIN_INSTANCES} --socket #{THIN_SOCKETS};"
   end
   
   desc 'Remove Thin logs'
   task :remove_logs do
-    sh 'rm ./log/thin.0.log;'
+    sh 'rm ./log/thin.*.log;'
   end
 
   task :rethin => [:restart_thin, :remove_logs]
@@ -102,7 +106,7 @@ EXTERNALS_ROOT  = DATA_ROOT + '/externals'
 #
   desc 'Dump the log'
   task :log do
-    sh 'cat ./log/thin.0.log'
+    sh 'cat ./log/thin.*.log'
   end
 
 #

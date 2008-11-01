@@ -1,0 +1,9 @@
+##############################################################################
+#   Fallow Configuration
+#   ====================
+
+module Fallow
+  class Bookmarks
+    @@auth = [ 'your_del.icio.us_username', 'your_del.icio.us_password']
+  end
+end
