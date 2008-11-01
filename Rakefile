@@ -7,8 +7,8 @@ DATA_ROOT       = ROOT_DIR + '/data'
 ARTICLE_ROOT    = DATA_ROOT + '/articles'
 EXTERNALS_ROOT  = DATA_ROOT + '/externals'
 
-THIN_INSTANCES  = 3
-THIN_SOCKETS    = '/tmp/thin.sock'
+THIN_INSTANCES  = 2
+THIN_SOCKETS    = '/tmp/mikewestorg.sock'
 
 #
 #   Cache Tasks
@@ -90,13 +90,14 @@ THIN_SOCKETS    = '/tmp/thin.sock'
 #
   desc 'Reset Thin server'
   task :restart_thin => [:remove_logs] do
-    sh 'killall thin;'
-    sh "thin start -R #{ROOT_DIR}/rackup.ru -s#{THIN_INSTANCES} --socket #{THIN_SOCKETS};"
+    `thin stop --pid #{ROOT_DIR}/pids/thin.0.pid`
+    `thin stop --pid #{ROOT_DIR}/pids/thin.1.pid`
+    sh "thin start -R #{ROOT_DIR}/rackup.ru -s#{THIN_INSTANCES} --socket #{THIN_SOCKETS} --log #{ROOT_DIR}/log/thin.log --pid #{ROOT_DIR}/pids/thin.pid"
   end
   
   desc 'Remove Thin logs'
   task :remove_logs do
-    sh 'rm ./log/thin.*.log;'
+    `rm #{ROOT_DIR}/log/thin.*.log;`
   end
 
   task :rethin => [:restart_thin, :remove_logs]
@@ -106,7 +107,7 @@ THIN_SOCKETS    = '/tmp/thin.sock'
 #
   desc 'Dump the log'
   task :log do
-    sh 'cat ./log/thin.*.log'
+    sh 'cat #{ROOT_DIR}/log/thin.*.log'
   end
 
 #

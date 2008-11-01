@@ -19,7 +19,7 @@ module Fallow
 
     def render( caching_enabled = true )
       if @year.nil? && @month.nil?
-        raise Fallow::RedirectTemp, '/'+Time.now.strftime('%Y')+'/'
+        raise Fallow::RedirectTemp, '/'+Time.now.strftime('%Y')
         # TODO: Archive landing page
       else
         recency = 0

@@ -20,7 +20,7 @@ module Fallow
   HTML_ROOT       = ROOT_DIR  + '/_document_root'
   
   PUBLIC_ROOT   = ''
-  STATIC_ROOT   = '/static'
+  STATIC_ROOT   = 'http://static.mikewest.org'
   
 
   ARCHIVE_ROOT  = PUBLIC_ROOT + '/archive'
