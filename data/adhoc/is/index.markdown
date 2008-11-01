@@ -1,7 +1,7 @@
 About Mike West
 ---------------
 
-<img src="/static/mikewest_is.jpg" class="sidebar" alt="This is a picture of me."> I'm a philosophy student cleverly disguised as an experienced and successful web developer, currently involved with the small team that builds and maintains the European news sites ([UK][], [FR][], [DE][], [ES][], and [IT][]) for <a href="http://yahoo.com/">Yahoo!</a> in Munich.  [mikewest.org][] is my home on the web, gathering my [writings and links][archive] together for posterity.
+<img src="http://static.mikewest.org/mikewest_is.jpg" class="sidebar" alt="This is a picture of me."> I'm a philosophy student cleverly disguised as an experienced and successful web developer, currently involved with the small team that builds and maintains the European news sites ([UK][], [FR][], [DE][], [ES][], and [IT][]) for <a href="http://yahoo.com/">Yahoo!</a> in Munich.  [mikewest.org][] is my home on the web, gathering my [writings and links][archive] together for posterity.
 
 Since it was relatively clear early on that it would be slightly more than difficult to make a living sitting under a tree while [reading Kant][kant], I've focused my energies on the web, building a (now defunct) online community of high school debaters, writing articles for [Digital Web][dw] and [A List Apart][ala], and releasing a variety of small [open source projects][github].
 
