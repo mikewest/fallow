@@ -74,12 +74,12 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
             border-bottom:  0.077em solid #666;
         }
             .bio img, .sidebar {
-                border:     0.077em solid #AAA;
+                border:     1px solid #AAA;
                 background: #FFF;
-                padding:    0.2308em;
-                margin:     0 0.7692em 0 0;
-                width:      34.1538em;
+                padding:    3px;
+                margin:     0 10px 0 0;
                 float:      left;
+                width:      34.1538em;
                 -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
             }
             .bio h2 {
@@ -87,6 +87,10 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
                 display:        inline;
                 margin-right:   0.15em;
             }
+                .bio h2 a {
+                    color:          #000;
+                    font-variant:   normal;
+                }
             .bio p {
                 display:    inline;
                 font:       27px/1.35 Baskerville,Times,'Times New Roman',serif;
