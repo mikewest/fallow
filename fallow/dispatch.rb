@@ -53,18 +53,24 @@ module Fallow
           found       = pattern_group[1]
         end
       }
+
+      content_type      = request.path_info.match(%r{\.xml}) ? 'application/xml' : 'text/html'
+      encoding          = 'UTF-8'
+      default_headers   = {
+        'Content-Type'  => "#{content_type}; charset=#{encoding}",
+        'Cache-Control' => 'max-age=3600, must-revalidate',
+        'Server'        => 'nginx + thin + rack + fallow'
+      }
       
       if found.nil?
-        body, headers = Fallow::AdHoc.new( request.path_info ).render
+        body, page_headers = Fallow::AdHoc.new( request.path_info ).render
       else
-        match_group = match_group.to_a[1..-1]
-        content   = request.path_info.match(%r{\.xml}) ? 'application/xml' : 'text/html'
-        encoding  = 'UTF-8'
-        body      = found.call( match_group )
-        headers   = { 'Content-Type' => "#{content}; charset=#{encoding}" }
+        match_group         = match_group.to_a[1..-1]
+        body, page_headers  = found.call( match_group )
+        page_headers        = {} if page_headers.nil?
       end
       body += Fallow::Dispatch.timer_comment
-      Rack::Response.new( body, SUCCESS_CODE, headers ).finish
+      Rack::Response.new( body, SUCCESS_CODE, default_headers.merge( page_headers ) ).finish
     end
 
     # Main entry point into Fallow from the Rack-based server
