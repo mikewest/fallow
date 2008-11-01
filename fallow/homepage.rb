@@ -8,12 +8,17 @@ module Fallow
     end
 
     def render ( )
+      recency = 0
+      
       articles = recent_articles( 10 ).each {|article|
+        recency = article['published'] if article['published'] > recency
         article['url'] = article['path']
         article['published'] = Time.at(article['published']).strftime('%B %d, %Y')
         article['modified'] = Time.at(article['modified']).strftime('%B %d, %Y')
       }
-      bookmarks = recent_bookmarks( 5 )
+      bookmarks = recent_bookmarks( 5 ).each{|bookmark|
+        recency = bookmark['published'] if bookmark['published'] > recency
+      }
 
       templater = Fallow::Template.new( 'homepage' )
       @page_html = templater.render({
@@ -23,7 +28,7 @@ module Fallow
         }
       })
       
-      @page_html
+      Fallow::Dispatch.cache_headers( @page_html, recency )
     end
   end
 end

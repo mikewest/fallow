@@ -26,7 +26,9 @@ module Fallow
         # TODO: This should display a tag cloud
       else
         total_articles = 0
+        recency = 0
         articles = tagged_items( @tag ).each {|item|
+          recency = item['published'].to_i if item['published'].to_i > recency
           item['url'] = item['path'] if item['type'] == 'internal'
           item['published'] = Time.at(item['published'].to_i).strftime('%B %d, %Y')
           total_articles += 1
@@ -46,7 +48,7 @@ module Fallow
           }
         })
       
-        @page_html
+        Fallow::Dispatch.cache_headers( @page_html, recency )
       end
     end
   end

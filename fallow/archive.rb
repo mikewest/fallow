@@ -22,7 +22,9 @@ module Fallow
         raise Fallow::RedirectTemp, '/'+Time.now.strftime('%Y')+'/'
         # TODO: Archive landing page
       else
+        recency = 0
         articles = archived_items( @year, @month ).each {|item|
+          recency = item['published'].to_i if item['published'].to_i > recency
           item['url'] = item['path'] if item['type'] == 'internal'
           item['published'] = Time.at(item['published'].to_i).strftime('%B %d, %Y')
         }
@@ -43,7 +45,7 @@ module Fallow
 
         persist if caching_enabled
 
-        @page_html
+        Fallow::Dispatch.cache_headers( @page_html, recency )
       end
     end
 

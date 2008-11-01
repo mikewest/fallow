@@ -14,8 +14,10 @@ module Fallow
           'atom_entry_list'  =>  []
         }
       }
-      
+
+      recency = 0      
       articles = recent_articles( 10 ).each {|article|
+        recency = article['published'] if article['published'] > recency
         current = Fallow::Article.new( article['path'] ).raw_data
         template_data['last_updated'] = current['updated'] if template_data['last_updated'].nil?
         template_data[:lists]['atom_entry_list'] << current
@@ -24,7 +26,7 @@ module Fallow
       templater = Fallow::Template.new( 'atom.xml' )
       @page_html = templater.render( template_data )
       
-      @page_html
+      Fallow::Dispatch.cache_headers( @page_html, recency )
     end
   end
 end

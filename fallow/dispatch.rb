@@ -140,6 +140,15 @@ module Fallow
       result
     end
     
+    def Dispatch.cache_headers( body, timestamp )
+      [
+        body,
+        {
+          'Last-Modified' =>  Time.at( timestamp ).httpdate
+        }
+      ]
+    end
+    
     private :dispatch, :define_request_path
   end
 end
