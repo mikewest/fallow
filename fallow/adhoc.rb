@@ -10,7 +10,8 @@ module Fallow
       templater = Fallow::Template.new( 'adhoc' )
       @page_html = templater.render({
         'title'     =>  @title,
-        'body'      =>  @body_html
+        'body'      =>  @body_html,
+        'adhoc_id'  =>  Fallow.urlify( @path )
       })
       
       persist if caching_enabled
