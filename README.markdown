@@ -10,8 +10,6 @@ Blockers
 --------
 *   Design adhoc pages
 *   Populate adhoc pages for '/is/' and '/resume/'.  The latter might just be a redirect to a pdf on 'static.*' for the moment.
-*   Solid nginx configuration
-*   Solid thin configuration
 *   Cronjobs for del.icio.us aggregation
 
 TODO Eventually
