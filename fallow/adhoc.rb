@@ -21,7 +21,8 @@ module Fallow
 
     def exists?
       @filename   = ADHOC_ROOT + "#{@path}"
-      @filename  += 'index.markdown' if @filename.match(%r{/$})
+      @filename  += '/index.markdown' if @filename.match(%r{([^\.]|/$)})
+      @filename.gsub!(%r{/+}, '/')
       
       @exists     = File.exist?( @filename )
     end
@@ -40,7 +41,7 @@ private
     end
 
     def persist
-      stripped_path = @path.gsub(%r{/[^/]+?$}, '')
+      stripped_path = @path.gsub(%r{/([^/]+\.[^/]+)?$}, '')
       indexed_path  = ( @path.match( %r{[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+$} ) ) ? @path : @path+'/index.html'
       indexed_path.gsub!(%r{/+}, '/')
       

@@ -47,7 +47,9 @@ module Fallow
 private
 
     def redirect?
-      if @path.match(%r{^/archive})
+      if @path.match(%r{^/resume})
+        raise Fallow::RedirectTemp, "#{STATIC_ROOT}/resume.pdf"
+      elsif @path.match(%r{^/archive})
         case @path
           when '/archive/auto-configuring-proxy-settings-with-a-pac-file': '/2007/01/auto-configuring-proxy-settings-with-a-pac-file/'
           when '/archive/microformats-on-kelkoo': '/2008/03/microformats-on-kelkoo/'
