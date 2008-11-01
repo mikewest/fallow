@@ -1,3 +1,4 @@
 *.sqlite3
 *.conf
 .DS_Store
+_*
