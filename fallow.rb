@@ -12,12 +12,12 @@ module Fallow
   #
   ROOT_URL        = 'http://mikewest.org'
   ROOT_DIR        = File.expand_path(File.dirname(__FILE__))
-  DATA_ROOT       = ROOT_DIR + '/data'
+  DATA_ROOT       = ROOT_DIR  + '/data'
   ADHOC_ROOT      = DATA_ROOT + '/adhoc'
   ARTICLE_ROOT    = DATA_ROOT + '/articles'
   EXTERNALS_ROOT  = DATA_ROOT + '/externals'
-  TEMPLATE_ROOT   = ROOT_DIR + '/templates'
-  HTML_ROOT       = ROOT_DIR + '/../public'
+  TEMPLATE_ROOT   = ROOT_DIR  + '/templates'
+  HTML_ROOT       = ROOT_DIR  + '/_document_root'
   
   PUBLIC_ROOT   = ''
   STATIC_ROOT   = '/static'
