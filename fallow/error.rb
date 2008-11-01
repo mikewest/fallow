@@ -12,23 +12,27 @@ module Fallow
 
       error_messages = {
         403 => "<p>Oi!  Quit poking around in these here <em>forbidden</em> pages!</p>",
-        404 => "<p>You've found a nonexistant page!  That's a sign of luck in many cultures, you know... Just not <em>this</em> one.  Too bad!</p><p>Why not head off to the <a href='/'>homepage</a> to try again?</p>",
-        500 => "<p>Oh my, a server error!  That's not good at all.  It either means that you're being naughty, or I'm being a crap programmer.  Odds are high for both.</p>"
+        404 => "<p>You&rsquo;ve found a nonexistant page!  That&rsquo;s a sign of luck in many cultures, you know... Just not <em>this</em> one.  Too bad!  In an ideal world, I'd try to figure out what it is that you were expecting to find by intelligently parsing the URL for keywords and such, but I haven&rsquo;t gotten around to writing that code yet.  Sorry!</p>",
+        500 => "<p>Oh my, a server error!  That&rsquo;s not good at all.  It either means that you&rsquo;re being naughty, or I&rsquo;m being a crap programmer.  Odds are high for both.</p>"
       }
-      error_message = error_messages.has_key?( error_code ) ? error_messages[ error_code ] : error_messages[ 500 ]
+      error_message   = error_messages.has_key?( error_code ) ? error_messages[ error_code ] : error_messages[ 500 ]
+      error_message  += '<p>But hey! Since you&rsquo;re here, why not visit <a href="/">the homepage</a> to see what I&rsquo;ve been up to recently, or <a href="/archive/">the archive</a> for older articles and links?</p>'
 
-
-      debug = '<h3>Environment</h3><ul>'
-      request.env.each { |key,value|
-        debug += "<li><strong>#{key.to_s}</strong> => #{value.to_s}</li>"
-      }
-      debug += '</ul>'
+      if request.GET.has_key?('debug')
+        debug = '<h3>Environment</h3><ul>'
+        request.env.each { |key,value|
+          debug += "<li><strong>#{key.to_s}</strong> => #{value.to_s}</li>"
+        }
+        debug += '</ul>'
       
-      debug += '<h3>Fallow State</h3><ul>'
-      Fallow.constants.each { |const|
-        debug += "<li><strong>#{const}</strong> => #{Fallow.const_get(const)}</li>"
-      }
-      debug += '</ul>'
+        debug += '<h3>Fallow State</h3><ul>'
+        Fallow.constants.each { |const|
+          debug += "<li><strong>#{const}</strong> => #{Fallow.const_get(const)}</li>"
+        }
+        debug += '</ul>'
+      else
+        debug = '<!-- No debug data.  Soz. -->'
+      end
       
       templater = Fallow::Template.new( 'error' )
       result = templater.render({
