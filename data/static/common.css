@@ -239,7 +239,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 /*****************************************************************************
  *  ARTICLE
  */
-    .article h2, .archive h2 {
+    .article h2, .archive h2, .tag-cloud h2 {
         text-align: center;
         font:       2.692em/1.25 Baskerville,Times,'Times New Roman',serif;
     }
@@ -355,6 +355,20 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
             color:          #666;
             font-size:      0.786em;
         }
+
+/*****************************************************************************
+ *  TAG CLOUD
+ */
+    .tag-cloud ol li {
+        display:    inline;
+    }
+        .tag-cloud ol li a {
+            padding:    0.5em;
+        }
+    .tag-cloud .not-popular     { font-size: 1em; }
+    .tag-cloud .popular         { font-size: 1.5em; }
+    .tag-cloud .very-popular    { font-size: 2em; }
+    .tag-cloud .ultra-popular   { font-size: 2.5em; }
 
 /*****************************************************************************
  *  FOOTER

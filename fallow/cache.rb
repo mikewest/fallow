@@ -62,7 +62,9 @@ module Fallow
     def Cache.get_recent_bookmarks( num )
       Cache.get_recent(:bookmarks, num)
     end
-    
+    def Cache.get_tag_cloud_data()
+      Cache.get_tag_counts()
+    end
     def Cache.get_related_tags( tag, count = 10 )
       Cache.get_related(:tags, tag, count)
     end
@@ -250,6 +252,8 @@ private
     end
     
     def Cache.get_related( type, index, count = 10 )
+      Cache.connect! unless Cache.connected?
+      
       if type === :tags
         sql = <<-SQL
           SELECT
@@ -282,6 +286,22 @@ private
         'index' =>  index.to_s,
         'count' =>  count.to_i
       )
+    end
+    
+    def Cache.get_tag_counts()
+      Cache.connect! unless Cache.connected?
+      
+      sql = <<-SQL
+        SELECT
+          t.normalized_tag as tag, COUNT(tm.path) as tag_count
+        FROM
+          tag_mappings tm, tags t
+        WHERE
+          t.tag_id = tm.tag_id
+        GROUP BY tm.tag_id
+        ORDER BY tag ASC
+      SQL
+      Cache.db.execute( sql )
     end
     
     def Cache.get_tag_id( tag, create = true )

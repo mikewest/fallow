@@ -53,7 +53,7 @@ module Fallow
     url = the_string.clone
     url.downcase!
     url.gsub!(/\s+/, '-')
-    url.gsub!(/[^a-z0-9_\-]/, '')
+    url.gsub!(/[^a-z0-9_\-\[\]\!\#\@üäöÜÄÖÓ\:]/u, '')
     url
   end
 
