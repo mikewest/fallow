@@ -9,7 +9,7 @@ module Fallow
       unless related_tags.empty?
         tags = []
         related_tags.each {|tag|
-          tags << { 'tag' => tag['tag'], 'uritag' => URI.encode( tag['tag'] ) }
+          tags << { 'tag' => tag['tag'], 'uritag' => URI.encode( Fallow.urlify( tag['tag'] ) ) }
         }
       else
         tags = nil
@@ -45,7 +45,7 @@ module Fallow
           }
         })
       else
-        @tag = URI.decode( @tag )
+        @tag = Fallow.urlify( URI.decode( @tag ) )
         total_articles = 0
         
         recency = 0

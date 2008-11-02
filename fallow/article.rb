@@ -42,7 +42,7 @@ module Fallow
       unless @header['Tags'].nil?
         tags = []
         @header['Tags'].each {|tag|
-          tags << { 'tag' => Fallow.urlify( tag ), 'uritag' => URI.encode( tag ) }
+          tags << { 'tag' => Fallow.urlify( tag ), 'uritag' => URI.encode( Fallow.urlify( tag ) ) }
         }
         tags = { 'tag' => tags }
       else
