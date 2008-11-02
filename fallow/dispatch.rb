@@ -29,7 +29,7 @@ module Fallow
         'year'  => '(\d{4})',
         'month' => '(\d{2})',
         'slug'  => '([0-9A-Za-z_\-]+)',
-        'tag'   => '([0-9A-Za-z_\-\%\[\]\:\!]+)',
+        'tag'   => '([0-9A-Za-z_\-\%\[\]\:\!\@]+)',
       }
       url_patterns.each { |path|
         path.gsub!( uri_component ) { |match|
