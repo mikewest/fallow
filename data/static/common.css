@@ -378,7 +378,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
           padding:      0.5em 0;
           border-top:   1px solid #999;
       }
-        .footer p {
+        .footer p, .footer address {
             margin:         0 auto;
             width:          24.833em;
             padding-left:   38.5em;
@@ -387,10 +387,10 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
             font:           0.923em/1.5 Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
             overflow:       auto;
         }
-        .footer p a {
+        .footer p a, .footer address a {
             color:              #CCC;
             text-decoration:    underline;
         }
-            .footer p + p {
+            .footer p + p, .footer p + address {
                 text-align: right;
             }
