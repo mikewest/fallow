@@ -7,7 +7,8 @@ Slug:       "dns-made-easy-is-actually-pretty-easy"
 OneLine:    "In a spontaneous burst of productivity, spawned mostly by my complete and utter failure as a sysadmin, I moved my parent's email account off my server.  DNS Made Easy made this a trivial task."
 Tags:       
     - Personal
-
+    - DNS
+    - DNSMadeEasy
 ...
 In a spontaneous burst of productivity, spawned mostly by my complete and utter failure as a sysadmin, I moved my parent's email account off my server, and onto Google's [Apps for your Domain][apps] platform.
 

@@ -55,6 +55,7 @@ private
         '/'
       elsif @path.match(%r{^/archive})
         case @path
+          when '/archive/gently-abandoning-dead-to-me-projects': '/2008/10/gently-abandoning-dead-to-me-projects'
           when '/archive/auto-configuring-proxy-settings-with-a-pac-file': '/2007/01/auto-configuring-proxy-settings-with-a-pac-file'
           when '/archive/microformats-on-kelkoo': '/2008/03/microformats-on-kelkoo'
           when '/archive/accessibility-tips-from-mike-davies': '/2008/03/accessibility-tips-from-mike-davies'
