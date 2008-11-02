@@ -2,3 +2,5 @@
 *.conf
 .DS_Store
 _*
+log
+pids
