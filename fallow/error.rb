@@ -47,12 +47,47 @@ module Fallow
 private
 
     def redirect?
+#
+#   Resume
+#
       if @path.match(%r{^/resume})
         raise Fallow::RedirectTemp, "#{STATIC_ROOT}/resume.pdf"
+#
+#   About
+#
+      elsif @path.match(%r{^/about}) || @path.match(%r{^/contact}) || @path.match(%r{^/bio})
+        '/is'
+#
+#   PerfectTime
+#
+      elsif @path.match(%r{^/projects/files/Perfect})
+        'https://github.com/mikewest/perfecttime/tree'
+#
+#    Old Feed URL
+#
       elsif @path.match(%r{^/rss})
         'http://feeds.mikewest.org/just_posts'
+#
+#    Index.php
+#
       elsif @path.match(%r{^/index})
         '/'
+#
+#   Old File Downloads
+#
+      elsif @path.match(%r{^/file_download/(\d+)})
+        case $1.to_i
+          when 1:     'https://github.com/mikewest/datarequestor/tree'
+          when 2:     '/resume'
+          when 3..4:  'https://github.com/mikewest/mcw_templates/tree'
+          when 5..8:  '/'
+          when 9..10: 'https://github.com/mikewest/datarequestor/tree'
+        end
+                      
+
+#
+#   Old articles
+#
       elsif @path.match(%r{^/archive})
         case @path
           when '/archive/gently-abandoning-dead-to-me-projects': '/2008/10/gently-abandoning-dead-to-me-projects'
@@ -159,7 +194,13 @@ private
           when 21:  '/2006/02/son-of-perfecttime-the-validationator'
           else nil
         end
+#
+#   DataRequestor
+#
+      elsif @path.match(/datarequestor/i)
+        'https://github.com/mikewest/datarequestor/tree'
       end
+      
     end
   end
 end
