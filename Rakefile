@@ -1,6 +1,7 @@
 require 'rake/clean'
 require 'find'
 require 'fallow'
+require 'uri'
 
 ROOT_DIR        = File.expand_path(File.dirname(__FILE__))
 DATA_ROOT       = ROOT_DIR + '/data'
