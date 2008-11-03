@@ -7,7 +7,7 @@ module Fallow
       Fallow::Cache.get_recent_bookmarks( num )
     end
 
-    def render ( )
+    def render ( caching_enabled = true)
       recency = 0
       
       articles = recent_articles( 10 ).each {|article|
@@ -28,7 +28,17 @@ module Fallow
         }
       })
       
+      persist if caching_enabled
+
       Fallow::Dispatch.cache_headers( @page_html, recency )
     end
+    
+private
+
+    def persist
+      html_filename = HTML_ROOT + '/index.html'
+      File.open( html_filename, 'w' ) { |f| f.write( @page_html ) }
+    end
+    
   end
 end

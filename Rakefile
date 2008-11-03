@@ -27,6 +27,12 @@ THIN_SOCKETS    = '/tmp/mikewestorg.sock'
  
   task :reset_db => [ :drop, :init ]
 
+  desc "Render and cache Homepage"
+  task :populate_homepage do
+    puts "Rendering homepage"
+    Fallow::Homepage.new().render
+  end
+
   desc "Render and cache articles."
   task :populate_articles => [:reset_db] do
     puts "Rendering and caching articles."
@@ -67,8 +73,9 @@ THIN_SOCKETS    = '/tmp/mikewestorg.sock'
     Fallow::Homepage.new.render()
   end
 
-  task :populate => [:reset_db, :populate_articles, :populate_delicious, :populate_archive]
+  task :populate => [:reset_db, :populate_articles, :populate_delicious, :populate_archive, :populate_homepage]
   
+  task :update_bookmarks => [:sync_delicious, :populate_archive, :populate_homepage]
 
 #
 #   Git Tasks
