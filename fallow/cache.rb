@@ -26,6 +26,14 @@ module Fallow
           `url`         TEXT,
           `desc`        TEXT
         );
+        
+        CREATE TABLE IF NOT EXISTS `flickr_sets` (
+          `path`        TEXT PRIMARY KEY,
+          `published`   INTEGER,
+          `title`       TEXT,
+          `url`         TEXT,
+          `img`         TEXT
+        );
       
         CREATE TABLE IF NOT EXISTS `tags` (
           `tag_id`          INTEGER PRIMARY KEY,
@@ -47,6 +55,7 @@ module Fallow
       sql = <<-SQL
         DROP TABLE IF EXISTS `articles`;
         DROP TABLE IF EXISTS `bookmarks`;
+        DROP TABLE IF EXISTS `flickr`;
         DROP TABLE IF EXISTS `tags`;
         DROP TABLE IF EXISTS `tag_mappings`;
       SQL
@@ -140,7 +149,11 @@ module Fallow
       rescue Exception => boom
         pp boom
       end
-   end
+    end
+   
+    def Cache.update_flickr_set( path, data )
+      Cache.connect! unless Cache.connected?
+    end
     
 private
     @@db  = nil
