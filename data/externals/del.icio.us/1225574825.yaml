@@ -1,0 +1,22 @@
+--- 
+title: Mike West's Open-source-contribution-tracking Calendar
+published: 1225574825
+hash: be85c28f3dc1e46b96c3426a15f8e700
+url: http://calendaraboutnothing.com/~mikewest
+tags: 
+- github
+- repository
+- calendaraboutnothing
+- opensource
+- commit
+- calendar
+- versioncontrol
+- vcs
+- git
+- productivity
+- gtd
+- justdoit
+desc: |-
+  Calendaraboutnothing generates a "Sinefeld calendar" based on your commits to public repositories on GitHub.  The idea is simple: each day that I make a commit to some public repository, I get a big, red X on the calendar.  If I make commits every day for a week, then I've got a _chain_ of big, red X's.  The goal is simple: "Don't break the chain." Just _do_ something simple and small every day.  The chain becomes a reward in itself.  In theory.  :)  I suspect this would really appeal to my dad.
+  
+  I've set it as my homepage... we'll see how the next week or two go.
