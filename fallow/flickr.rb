@@ -1,6 +1,6 @@
 module Fallow
   class Flickr
-#    FLICKR_ROOT = EXTERNALS_ROOT + '/flickr'
+    FLICKR_ROOT = EXTERNALS_ROOT + '/flickr'
     
     @@thumb_url = 'http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}_s.jpg'
     
@@ -16,25 +16,37 @@ module Fallow
           req = Net::HTTP::Get.new("/services/rest/?api_key=#{@@auth[0]}&user_id=#{@@user_id}&method=flickr.photosets.getList", 'User-Agent' => 'Fallow/0.01a')
           http.request(req)
         end
-        flickr = REXML::Document.new( res.body )
+        flickrsets = REXML::Document.new( res.body )
       rescue  Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, 
               EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, 
               Net::ProtocolError, REXML::ParseException
-        flickr = REXML::Document.new('')
+        flickrsets = REXML::Document.new('')
       end
       
-      flickr.elements.each('photosets/photoset') do |post|
-        attributes  = post.attributes
-        unix_time   = Time.parse(attributes['time']).to_i
+      flickrsets.elements.each('rsp/photosets/photoset') do |set|
+        attributes  = set.attributes
         photoset    = {
-          'id'      =>  attributes['id'],
-          'primary' =>  attributes['primary'],
-          'secret'  =>  attributes['secret'],
-          'server'  =>  attributes['server'],
-          'farm'    =>  attributes['farm']
+          'id'          =>  attributes['id'],
+          'primary'     =>  attributes['primary'],
+          'secret'      =>  attributes['secret'],
+          'server'      =>  attributes['server'],
+          'farm'        =>  attributes['farm'],
+          'title'       =>  set.elements['title'].text,
+          'description' =>  set.elements['description'].text
         }
-        Bookmarks.persist( "/del.icio.us/#{unix_time}", bookmark, true )
+        Flickr.persist( "/flickr/#{attributes['id']}", photoset, true )
       end
+    end
+
+private
+    def Flickr.persist( path, data, to_disk = false)
+#      Fallow::Cache.update_bookmark( path, data )
+      
+      if to_disk
+        filename = EXTERNALS_ROOT + path + '.yaml'
+        File.open( filename, 'w' ) { |f| f.write( data.to_yaml ) }
+      end
+    end
+
   end
 end
-
