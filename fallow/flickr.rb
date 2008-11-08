@@ -1,10 +1,8 @@
 module Fallow
   class Flickr
-    FLICKR_ROOT = EXTERNALS_ROOT + '/flickr'
-    
-    @@thumb_url = 'http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}_s.jpg'
-    
-    def Flickr.get_set_list
+    FLICKR_ROOT           = EXTERNALS_ROOT  + '/flickr'
+
+    def Flickr.get_set_list!
       require 'net/https'
       require 'rexml/document'
       Kernel::load( ROOT_DIR + '/fallow.conf' )
@@ -25,22 +23,28 @@ module Fallow
       
       flickrsets.elements.each('rsp/photosets/photoset') do |set|
         attributes  = set.attributes
+        
+        photo       = Flickr.get_photo_data( attributes['primary'], attributes['secret'], attributes['id'] )
+        
         photoset    = {
+          'path'        =>  "/flickr/#{attributes['id']}",
           'id'          =>  attributes['id'],
           'primary'     =>  attributes['primary'],
           'secret'      =>  attributes['secret'],
           'server'      =>  attributes['server'],
           'farm'        =>  attributes['farm'],
           'title'       =>  set.elements['title'].text,
-          'description' =>  set.elements['description'].text
+          'desc'        =>  set.elements['description'].text,
+          'published'   =>  photo['published'],
+          'url'         =>  "http://www.flickr.com/photos/#{@@friendly_name}/sets/#{attributes['id']}"
         }
-        Flickr.persist( "/flickr/#{attributes['id']}", photoset, true )
+        Flickr.persist( photoset['path'], photoset, true )
       end
     end
 
 private
     def Flickr.persist( path, data, to_disk = false)
-#      Fallow::Cache.update_bookmark( path, data )
+      Fallow::Cache.update_flickr_set( path, data )
       
       if to_disk
         filename = EXTERNALS_ROOT + path + '.yaml'
@@ -48,5 +52,41 @@ private
       end
     end
 
+    def Flickr.get_photo_data( photo_id, photo_secret, set_id = nil )
+      http = Net::HTTP.new('api.flickr.com', 80)
+      begin
+        res = http.start do |http|
+          req = Net::HTTP::Get.new("/services/rest/?method=flickr.photos.getInfo&api_key=#{@@auth[0]}&photo_id=#{photo_id}&secret=#{photo_secret}", 'User-Agent' => 'Fallow/0.01a')
+          http.request( req )
+        end
+        photo = REXML::Document.new( res.body )
+      rescue Exception
+        photo = REXML::Document.new('')
+      end
+
+      to_return = {}
+      photo.elements.each("rsp/photo") do |p|
+        atts = p.attributes
+        
+        unless ( set_id.nil? )
+          # Get photo URL
+          (farm, server, id, secret) = atts['farm'], atts['server'], atts['id'], atts['secret']
+          http = Net::HTTP.new("farm#{farm}.static.flickr.com", 80)
+          begin
+            res = http.start do |http|
+              req = Net::HTTP::Get.new("/#{server}/#{id}_#{secret}_t.jpg", 'User-Agent' => 'Fallow/0.01a')
+              http.request( req )
+            end
+            FileUtils.mkdir_p FLICKR_ROOT + "/thumbnails/"
+            filename = FLICKR_ROOT + "/thumbnails/#{set_id}.jpg"
+            File.open( filename, 'w' ) { |f| f.write( res.body ) }
+          end
+        end
+        
+        # Return published date
+        to_return['published']  = p.elements['dates'].attributes['posted']
+      end
+      to_return
+    end
   end
 end

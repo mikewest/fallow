@@ -26,13 +26,17 @@ module Fallow
           `url`         TEXT,
           `desc`        TEXT
         );
-        
+
         CREATE TABLE IF NOT EXISTS `flickr_sets` (
           `path`        TEXT PRIMARY KEY,
           `published`   INTEGER,
-          `title`       TEXT,
           `url`         TEXT,
-          `img`         TEXT
+          `id`          INTEGER,
+          `secret`      TEXT,
+          `farm`        INTEGER,
+          `primary`     INTEGER,
+          `title`       TEXT,
+          `desc`        TEXT
         );
       
         CREATE TABLE IF NOT EXISTS `tags` (
@@ -55,7 +59,7 @@ module Fallow
       sql = <<-SQL
         DROP TABLE IF EXISTS `articles`;
         DROP TABLE IF EXISTS `bookmarks`;
-        DROP TABLE IF EXISTS `flickr`;
+        DROP TABLE IF EXISTS `flickr_sets`;
         DROP TABLE IF EXISTS `tags`;
         DROP TABLE IF EXISTS `tag_mappings`;
       SQL
@@ -153,6 +157,29 @@ module Fallow
    
     def Cache.update_flickr_set( path, data )
       Cache.connect! unless Cache.connected?
+      begin
+        Cache.db.transaction
+          Cache.db.execute( 'DELETE FROM `flickr_sets` WHERE `path` = ?', path )
+
+          title = Markdown.new( data['title'], :smart ).to_html.gsub(%r{<p>(.+)</p>}) { |match| $1 }
+          desc = (data['desc'].nil?) ? '' : Markdown.new( data['desc'], :smart ).to_html
+
+          Cache.db.execute(
+            'INSERT OR IGNORE INTO `flickr_sets` (`path`, `published`, `title`, `url`, `desc`, `id`, `secret`, `farm`, `primary`) VALUES ( :path, :published, :title, :url, :desc, :id, :secret, :farm, :primary )',
+            "path"      =>  path,
+            "published" =>  data['published'].to_i,
+            "title"     =>  title,
+            "url"       =>  data['url'],
+            "desc"      =>  desc,
+            "id"        =>  data['id'].to_i,
+            "secret"    =>  data['secret'],
+            "farm"      =>  data['farm'].to_i,
+            "primary"   =>  data['primary'].to_i
+          )
+        Cache.db.commit
+      # rescue Exception => boom
+      #   pp boom
+      end
     end
     
 private

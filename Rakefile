@@ -70,7 +70,7 @@ THIN_SOCKETS    = '/tmp/mikewestorg.sock'
   end
   
   task :sync_flickr do
-    Fallow::Flickr.get_set_list
+    Fallow::Flickr.get_set_list!
   end
   
   task :homepage do
