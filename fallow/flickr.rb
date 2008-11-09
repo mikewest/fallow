@@ -74,7 +74,7 @@ private
           http = Net::HTTP.new("farm#{farm}.static.flickr.com", 80)
           begin
             res = http.start do |http|
-              req = Net::HTTP::Get.new("/#{server}/#{id}_#{secret}_t.jpg", 'User-Agent' => 'Fallow/0.01a')
+              req = Net::HTTP::Get.new("/#{server}/#{id}_#{secret}_s.jpg", 'User-Agent' => 'Fallow/0.01a')
               http.request( req )
             end
             FileUtils.mkdir_p FLICKR_ROOT + "/thumbnails/"

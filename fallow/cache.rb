@@ -75,6 +75,9 @@ module Fallow
     def Cache.get_recent_bookmarks( num )
       Cache.get_recent(:bookmarks, num)
     end
+    def Cache.get_recent_photosets( num )
+      Cache.get_recent(:photosets, num)
+    end
     def Cache.get_tag_cloud_data()
       Cache.get_tag_counts()
     end
@@ -208,6 +211,7 @@ private
       table = case type
         when :articles: 'articles'
         when :bookmarks: 'bookmarks'
+        when :photosets: 'flickr_sets'
         else 'articles'
       end
       
