@@ -33,6 +33,7 @@ module Fallow
           'secret'      =>  attributes['secret'],
           'server'      =>  attributes['server'],
           'farm'        =>  attributes['farm'],
+          'photos'      =>  attributes['photos'],
           'title'       =>  set.elements['title'].text,
           'desc'        =>  set.elements['description'].text,
           'published'   =>  photo['published'],

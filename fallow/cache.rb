@@ -177,7 +177,8 @@ module Fallow
             "id"        =>  data['id'].to_i,
             "secret"    =>  data['secret'],
             "farm"      =>  data['farm'].to_i,
-            "primary"   =>  data['primary'].to_i
+            "primary"   =>  data['primary'].to_i,
+            "photos"    =>  data['photos'].to_i
           )
         Cache.db.commit
       # rescue Exception => boom
