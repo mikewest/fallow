@@ -177,12 +177,12 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
                         margin: 0 0 1em;
                     }
                         .diversions .photos li img {
-                            width:          4.5em;
-                            height:         4.5em;
+                            width:          63px;
+                            height:         63px;
                             background:     #FFF;
-                            padding:        0.071em;
-                            border:         0.071em solid #333;
-                            margin-right:   0.714em;
+                            padding:        1px;
+                            border:         1px solid #333;
+                            margin-right:   10px;
                         }
                             .diversions .photos li:nth-child(3n) img {
                                 margin-right:   0;
@@ -354,6 +354,26 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
             font-style:     italic;
             color:          #666;
             font-size:      0.786em;
+        }
+    .archive ol li.flickr {
+        position:   relative;
+        overflow:   hidden;
+        min-height: 67px;
+    }
+        .archive ol li.flickr img {
+            width:      63px;
+            border:     1px solid #333;
+            margin:     0pt 1em 1em 0pt;
+            padding:    1px;
+            position:   absolute;
+            top:        0;
+            left:       0;
+        }
+        .archive ol li.flickr p, .archive ol li.flickr a {
+            margin-left:    77px;
+        }
+        .archive ol li.flickr a {
+            width:  400px;
         }
 
 /*****************************************************************************

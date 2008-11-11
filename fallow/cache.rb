@@ -286,6 +286,13 @@ private
             bookmarks b
           WHERE
             published BETWEEN :start AND :end
+        UNION
+          SELECT
+            title, published, path, desc, url, id as 'hash', 'flickr' as 'type'
+          FROM
+            flickr_sets f
+          WHERE
+            published BETWEEN :start AND :end
         ORDER BY
           published DESC
       SQL
