@@ -6,4 +6,8 @@ module Fallow
   class Bookmarks
     @@auth = [ 'your_del.icio.us_username', 'your_del.icio.us_password']
   end
+  class Flickr
+    @@userID    = 'your flickr user id'
+    @@auth      = [ 'your flickr api key', 'your flickr shared secret' ]
+  end
 end

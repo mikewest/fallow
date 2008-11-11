@@ -85,7 +85,10 @@ module Fallow
       end
     end
     
-    def process_single_replacements( text, replacements = {})
+    def process_single_replacements( text, replacements = {} )
+      text = process_conditionals( text, replacements )
+      
+      
       replaced = text.gsub( %r{%([^%]+?)(?:\{([^%]+)\})?%} ) { |match|
         if ( replacements.has_key?( $1 ) )
           replacements[$1]
@@ -98,6 +101,22 @@ module Fallow
         end
       }
       replaced
+    end
+    
+    def process_conditionals( text, replacements = {} )
+      replaced = text.gsub( /^@if\s*\(([^)]+)\)\s*\{([^}]+)\}/ ) { |match|
+        replace = false
+        
+        conditional = $1
+        replacement = $2
+        
+        if ( conditional.match( /%([^%]+)%\s*==\s*(\S+)/ ) )
+          Fallow.log("$1: #{$1}, $2: #{$2}")
+          replace = ( replacements.has_key?( $1 ) && replacements[$1] == $2)
+        end
+
+        replacement if replace
+      }
     end
   
     private :compile, :load_template_file, :process_single_replacements

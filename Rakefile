@@ -69,6 +69,10 @@ THIN_SOCKETS    = '/tmp/mikewestorg.sock'
     Fallow::Bookmarks.sync!
   end
   
+  task :sync_flickr do
+    Fallow::Flickr.get_set_list!
+  end
+  
   task :homepage do
     Fallow::Homepage.new.render()
   end

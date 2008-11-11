@@ -6,6 +6,9 @@ module Fallow
     def recent_bookmarks( num = 5 )
       Fallow::Cache.get_recent_bookmarks( num )
     end
+    def recent_photosets( num = 9 )
+      Fallow::Cache.get_recent_photosets( num )
+    end
 
     def render ( caching_enabled = true)
       recency = 0
@@ -19,12 +22,16 @@ module Fallow
       bookmarks = recent_bookmarks( 5 ).each{|bookmark|
         recency = bookmark['published'] if bookmark['published'] > recency
       }
+      photosets = recent_photosets( 9 ).each{|set|
+        recency = set['published'] if set['published'] > recency
+      }
 
       templater = Fallow::Template.new( 'homepage' )
       @page_html = templater.render({
         :lists          =>  {
           'recent_writing'  =>  articles,
-          'recent_link'     =>  bookmarks
+          'recent_link'     =>  bookmarks,
+          'recent_photo'    =>  photosets
         }
       })
       

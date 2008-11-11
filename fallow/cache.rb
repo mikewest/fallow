@@ -26,6 +26,18 @@ module Fallow
           `url`         TEXT,
           `desc`        TEXT
         );
+
+        CREATE TABLE IF NOT EXISTS `flickr_sets` (
+          `path`        TEXT PRIMARY KEY,
+          `published`   INTEGER,
+          `url`         TEXT,
+          `id`          INTEGER,
+          `secret`      TEXT,
+          `farm`        INTEGER,
+          `primary`     INTEGER,
+          `title`       TEXT,
+          `desc`        TEXT
+        );
       
         CREATE TABLE IF NOT EXISTS `tags` (
           `tag_id`          INTEGER PRIMARY KEY,
@@ -47,6 +59,7 @@ module Fallow
       sql = <<-SQL
         DROP TABLE IF EXISTS `articles`;
         DROP TABLE IF EXISTS `bookmarks`;
+        DROP TABLE IF EXISTS `flickr_sets`;
         DROP TABLE IF EXISTS `tags`;
         DROP TABLE IF EXISTS `tag_mappings`;
       SQL
@@ -61,6 +74,9 @@ module Fallow
     end
     def Cache.get_recent_bookmarks( num )
       Cache.get_recent(:bookmarks, num)
+    end
+    def Cache.get_recent_photosets( num )
+      Cache.get_recent(:photosets, num)
     end
     def Cache.get_tag_cloud_data()
       Cache.get_tag_counts()
@@ -140,7 +156,35 @@ module Fallow
       rescue Exception => boom
         pp boom
       end
-   end
+    end
+   
+    def Cache.update_flickr_set( path, data )
+      Cache.connect! unless Cache.connected?
+      begin
+        Cache.db.transaction
+          Cache.db.execute( 'DELETE FROM `flickr_sets` WHERE `path` = ?', path )
+
+          title = Markdown.new( data['title'], :smart ).to_html.gsub(%r{<p>(.+)</p>}) { |match| $1 }
+          desc = (data['desc'].nil?) ? '' : Markdown.new( data['desc'], :smart ).to_html
+
+          Cache.db.execute(
+            'INSERT OR IGNORE INTO `flickr_sets` (`path`, `published`, `title`, `url`, `desc`, `id`, `secret`, `farm`, `primary`) VALUES ( :path, :published, :title, :url, :desc, :id, :secret, :farm, :primary )',
+            "path"      =>  path,
+            "published" =>  data['published'].to_i,
+            "title"     =>  title,
+            "url"       =>  data['url'],
+            "desc"      =>  desc,
+            "id"        =>  data['id'].to_i,
+            "secret"    =>  data['secret'],
+            "farm"      =>  data['farm'].to_i,
+            "primary"   =>  data['primary'].to_i,
+            "photos"    =>  data['photos'].to_i
+          )
+        Cache.db.commit
+      # rescue Exception => boom
+      #   pp boom
+      end
+    end
     
 private
     @@db  = nil
@@ -168,6 +212,7 @@ private
       table = case type
         when :articles: 'articles'
         when :bookmarks: 'bookmarks'
+        when :photosets: 'flickr_sets'
         else 'articles'
       end
       
@@ -239,6 +284,13 @@ private
             title, published, path, desc, url, hash, 'external' as 'type'
           FROM
             bookmarks b
+          WHERE
+            published BETWEEN :start AND :end
+        UNION
+          SELECT
+            title, published, path, desc, url, id as 'hash', 'flickr' as 'type'
+          FROM
+            flickr_sets f
           WHERE
             published BETWEEN :start AND :end
         ORDER BY

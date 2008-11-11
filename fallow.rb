@@ -39,6 +39,7 @@ module Fallow
   autoload :AdHoc,      'fallow/adhoc'
   autoload :Article,    'fallow/article'
   autoload :Archive,    'fallow/archive'
+  autoload :Flickr,     'fallow/flickr'
   autoload :Tags,       'fallow/tags'
   autoload :Homepage,   'fallow/homepage'
   autoload :ErrorPage,  'fallow/error'

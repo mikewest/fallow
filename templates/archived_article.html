@@ -1,5 +1,8 @@
 <li class="%type%">
-    <a href="%url%">%title%</a>
+    <a href="%url%">
+@if ( %type% == flickr ) { <img src="%STATIC_ROOT%/flickr_thumbnails/%hash%.jpg" alt=""> }
+        %title%
+    </a>
     <div class="meta">
         <span class="published">%published%</span>
     </div>
