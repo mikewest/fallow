@@ -4,5 +4,13 @@ version: "0.5"
 components: 
 - !ditz.rubyforge.org,2008-03-06/component 
   name: Fallow
-releases: []
-
+releases: 
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: v0.2
+  status: :unreleased
+  release_time: 
+  log_events: 
+  - - 2008-11-13 19:36:15.251660 Z
+    - Mike West <mike@mikewest.org>
+    - created
+    - ""

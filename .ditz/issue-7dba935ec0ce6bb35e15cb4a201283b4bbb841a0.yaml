@@ -3,10 +3,10 @@ title: Add archive links to article page
 desc: Article page should link to 'recent articles' by using the archive pages as a stopgap while I determine how to display recent/related articles.
 type: :task
 component: Fallow
-release: 
+release: v0.2
 reporter: Mike West <mike@mikewest.org>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2008-11-13 16:08:46.511779 Z
 references: []
 
@@ -15,4 +15,16 @@ log_events:
 - - 2008-11-13 16:08:47.295803 Z
   - Mike West <mike@mikewest.org>
   - created
+  - ""
+- - 2008-11-13 19:36:32.043584 Z
+  - Mike West <mike@mikewest.org>
+  - assigned to release v0.2 from unassigned
+  - ""
+- - 2008-11-13 19:38:21.323126 Z
+  - Mike West <mike@mikewest.org>
+  - changed status from unstarted to in_progress
+  - ""
+- - 2008-11-13 19:48:42.462870 Z
+  - Mike West <mike@mikewest.org>
+  - closed with disposition fixed
   - ""

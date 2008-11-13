@@ -3,7 +3,7 @@ title: Archive navigation
 desc: "Similar to #1, archive pages should have links to \"previous/next month/year\"."
 type: :feature
 component: Fallow
-release: 
+release: v0.2
 reporter: Mike West <mike@mikewest.org>
 status: :unstarted
 disposition: 
@@ -15,4 +15,8 @@ log_events:
 - - 2008-11-13 16:01:58.984855 Z
   - Mike West <mike@mikewest.org>
   - created
+  - ""
+- - 2008-11-13 19:37:42.027159 Z
+  - Mike West <mike@mikewest.org>
+  - assigned to release v0.2 from unassigned
   - ""
