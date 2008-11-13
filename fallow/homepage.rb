@@ -39,6 +39,11 @@ module Fallow
 
       Fallow::Dispatch.cache_headers( @page_html, recency )
     end
+
+    def Homepage.unpersist
+      html_filename = HTML_ROOT + '/index.html'
+      File.unlink( html_filename )
+    end
     
 private
 

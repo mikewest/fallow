@@ -45,6 +45,7 @@ module Fallow
           'tags'      =>  attributes['tag'].split(' ')
         }
         Bookmarks.persist( "/del.icio.us/#{unix_time}", bookmark, true )
+        Fallow::Homepage.unpersist
       end
     end
     

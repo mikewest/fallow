@@ -88,6 +88,7 @@ private
       FileUtils.mkdir_p HTML_ROOT + @path
       html_filename = HTML_ROOT + @path + '/index.html'
       File.open( html_filename, 'w' ) { |f| f.write( @page_html ) }
+      Fallow::Homepage.unpersist
     end
     
 
