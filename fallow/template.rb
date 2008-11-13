@@ -111,7 +111,6 @@ module Fallow
         replacement = $2
         
         if ( conditional.match( /%([^%]+)%\s*==\s*(\S+)/ ) )
-          Fallow.log("$1: #{$1}, $2: #{$2}")
           replace = ( replacements.has_key?( $1 ) && replacements[$1] == $2)
         end
 
