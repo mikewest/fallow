@@ -53,10 +53,12 @@ module Fallow
       @body_html = markdown.to_html
       
       templater = Fallow::Template.new( 'article' )
+      published = Time.at(@header['Published'])
       @page_html = templater.render({
         'article_title' =>  @header['Title'],
         'article_body'  =>  @body_html,
-        'published'     =>  Time.at(@header['Published']).strftime('%B %d, %Y at %H:%M'),
+        'published'     =>  published.strftime('%B %d, %Y at %H:%M'),
+        'archive_url'   =>  published.strftime('/%Y/%m'),
         :lists          =>  tags
       })
       
