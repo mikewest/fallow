@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: RSS feeds for tag pages.
+desc: There's no reason a tag page shouldn't have an RSS feed.
+type: :feature
+component: Fallow
+release: 
+reporter: Mike West <mike@mikewest.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-11-13 16:01:10.501954 Z
+references: []
+
+id: c94819228e6cfa577e650c1a2e41b965c73b3eb5
+log_events: 
+- - 2008-11-13 16:01:11.333955 Z
+  - Mike West <mike@mikewest.org>
+  - created
+  - ""

@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Twitter integration
+desc: I want to display tweets on the homepage.
+type: :task
+component: Fallow
+release: 
+reporter: Mike West <mike@mikewest.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-11-13 16:06:20.263083 Z
+references: []
+
+id: e7a4b52944b532c35f06e2588dfda3e1f6f1cee4
+log_events: 
+- - 2008-11-13 16:06:21.078986 Z
+  - Mike West <mike@mikewest.org>
+  - created
+  - ""

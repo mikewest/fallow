@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: GitHub commit integration
+desc: I want to list GitHub commits on the mikewest.org homepage, along with twitter/flickr/etc.
+type: :task
+component: Fallow
+release: 
+reporter: Mike West <mike@mikewest.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-11-13 16:05:44.068904 Z
+references: []
+
+id: 2b14ad6e9a56ca977437f2fb7b9cdff3f72afc40
+log_events: 
+- - 2008-11-13 16:05:45.164613 Z
+  - Mike West <mike@mikewest.org>
+  - created
+  - ""

@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Link to del.icio.us info page from archive/homepage
+desc: The del.icio.us URL detail page is interesting; I should link to it.
+type: :task
+component: Fallow
+release: 
+reporter: Mike West <mike@mikewest.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-11-13 16:07:20.610359 Z
+references: []
+
+id: 970f131845726469d645c20b7cb026051f719a2d
+log_events: 
+- - 2008-11-13 16:07:21.106576 Z
+  - Mike West <mike@mikewest.org>
+  - created
+  - ""

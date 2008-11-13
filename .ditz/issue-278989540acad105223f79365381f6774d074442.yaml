@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Archive navigation
+desc: "Similar to #1, archive pages should have links to \"previous/next month/year\"."
+type: :feature
+component: Fallow
+release: 
+reporter: Mike West <mike@mikewest.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-11-13 16:01:58.112631 Z
+references: []
+
+id: 278989540acad105223f79365381f6774d074442
+log_events: 
+- - 2008-11-13 16:01:58.984855 Z
+  - Mike West <mike@mikewest.org>
+  - created
+  - ""

@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Include tags on archive pages (e.g. "This article tagged with X, Y, Z") to increase findability.
+desc: ""
+type: :task
+component: Fallow
+release: 
+reporter: Mike West <mike@mikewest.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-11-13 16:08:02.013189 Z
+references: []
+
+id: e4ef5860db1830e509025948b1b3d2fe0e6914a5
+log_events: 
+- - 2008-11-13 16:08:02.685013 Z
+  - Mike West <mike@mikewest.org>
+  - created
+  - ""

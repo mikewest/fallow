@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Archive landing page for `/archive`
+desc: Right now `/archive` redirects to the current year's archive.  I'd like to have something that displays a list of the years and months in which articles exist, along with a count.  A calendar is _way_ overboard.  Just need something simple.
+type: :task
+component: Fallow
+release: 
+reporter: Mike West <mike@mikewest.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-11-13 16:00:27.947671 Z
+references: []
+
+id: 4b42c64e09b6f4000073dfbe05951961f30f5477
+log_events: 
+- - 2008-11-13 16:00:32.787813 Z
+  - Mike West <mike@mikewest.org>
+  - created
+  - ""
