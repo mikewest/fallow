@@ -42,7 +42,7 @@ module Fallow
 
     def Homepage.unpersist
       html_filename = HTML_ROOT + '/index.html'
-      File.unlink( html_filename )
+      File.exists?( html_filename ) && File.unlink( html_filename )
     end
     
 private
