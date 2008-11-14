@@ -24,6 +24,10 @@ module Fallow
       flickrsets.elements.each('rsp/photosets/photoset') do |set|
         attributes  = set.attributes
         
+        next if Flickr.set_exists?( attributes['id'] )
+        
+Fallow.log( 'Processing Set #' + attributes['id'] )
+
         photo       = Flickr.get_photo_data( attributes['primary'], attributes['secret'], attributes['id'] )
         
         photoset    = {
@@ -44,6 +48,12 @@ module Fallow
     end
 
 private
+    def Flickr.set_exists?( set_id )
+      filename = FLICKR_ROOT + "/#{set_id}.yaml"
+      imgname  = FLICKR_ROOT + "/thumbnails/#{set_id}.jpg"
+      File.exist?( filename ) && File.exist?( imgname )
+    end
+
     def Flickr.persist( path, data, to_disk = false)
       Fallow::Cache.update_flickr_set( path, data )
       
