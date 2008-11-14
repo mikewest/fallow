@@ -38,6 +38,13 @@ module Fallow
           `title`       TEXT,
           `desc`        TEXT
         );
+        
+        CREATE TABLE IF NOT EXISTS `tweets` (
+          `path`        TEXT PRIMARY KEY,
+          `published`   INTEGER,
+          `desc`        TEXT,
+          `url`         TEXT
+        );
       
         CREATE TABLE IF NOT EXISTS `tags` (
           `tag_id`          INTEGER PRIMARY KEY,
@@ -60,6 +67,7 @@ module Fallow
         DROP TABLE IF EXISTS `articles`;
         DROP TABLE IF EXISTS `bookmarks`;
         DROP TABLE IF EXISTS `flickr_sets`;
+        DROP TABLE IF EXISTS `tweets`;
         DROP TABLE IF EXISTS `tags`;
         DROP TABLE IF EXISTS `tag_mappings`;
       SQL
