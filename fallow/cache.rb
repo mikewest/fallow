@@ -40,10 +40,12 @@ module Fallow
         );
         
         CREATE TABLE IF NOT EXISTS `tweets` (
-          `path`        TEXT PRIMARY KEY,
-          `published`   INTEGER,
-          `desc`        TEXT,
-          `url`         TEXT
+          `path`          TEXT PRIMARY KEY,
+          `published`     INTEGER,
+          `desc`          TEXT,
+          `url`           TEXT,
+          `reply_to_id`   INTEGER,
+          `reply_to_user` INTEGER
         );
       
         CREATE TABLE IF NOT EXISTS `tags` (
@@ -85,6 +87,9 @@ module Fallow
     end
     def Cache.get_recent_photosets( num )
       Cache.get_recent(:photosets, num)
+    end
+    def Cache.get_recent_tweets( num )
+      Cache.get_recent(:tweets, num)
     end
     def Cache.get_tag_cloud_data()
       Cache.get_tag_counts()
@@ -194,6 +199,27 @@ module Fallow
       end
     end
     
+    def Cache.update_tweet( path, data )
+      Cache.connect! unless Cache.connected?
+      begin
+        Cache.db.transaction
+          Cache.db.execute( 'DELETE FROM `tweets` WHERE `path` = ?', path )
+
+          Cache.db.execute(
+            'INSERT OR IGNORE INTO `tweets` (`path`, `published`, `desc`, `url`, `reply_to_id`, `reply_to_user` ) VALUES ( :path, :published, :desc, :url, :id, :user )',
+            "path"      =>  path,
+            "published" =>  data['published'],
+            "url"       =>  data['url'],
+            "desc"      =>  data['desc'],
+            "id"        =>  data['reply_to_id'],
+            "user"      =>  data['reply_to_user']
+          )
+        Cache.db.commit
+      # rescue Exception => boom
+      #   pp boom
+      end
+    end
+    
 private
     @@db  = nil
 
@@ -218,9 +244,10 @@ private
     def Cache.get_recent( type, num )
       Cache.connect! unless Cache.connected?
       table = case type
-        when :articles: 'articles'
-        when :bookmarks: 'bookmarks'
-        when :photosets: 'flickr_sets'
+        when :articles:   'articles'
+        when :bookmarks:  'bookmarks'
+        when :photosets:  'flickr_sets'
+        when :tweets:     'tweets'
         else 'articles'
       end
       

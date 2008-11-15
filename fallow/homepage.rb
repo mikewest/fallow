@@ -9,6 +9,10 @@ module Fallow
     def recent_photosets( num = 9 )
       Fallow::Cache.get_recent_photosets( num )
     end
+    def recent_tweets( num = 5 )
+      Fallow::Cache.get_recent_tweets( num )
+    end
+
 
     def render ( caching_enabled = true)
       recency = 0
@@ -25,13 +29,19 @@ module Fallow
       photosets = recent_photosets( 9 ).each{|set|
         recency = set['published'] if set['published'] > recency
       }
+      tweets = recent_tweets( 5 ).each{|tweet|
+        recency = tweet['published'] if tweet['published'] > recency
+        tweet['published'] = Time.at(tweet['published']).strftime('%B %d, %Y')
+      }
+      
 
       templater = Fallow::Template.new( 'homepage' )
       @page_html = templater.render({
         :lists          =>  {
           'recent_writing'  =>  articles,
           'recent_link'     =>  bookmarks,
-          'recent_photo'    =>  photosets
+          'recent_photo'    =>  photosets,
+          'recent_tweet'    =>  tweets
         }
       })
       
