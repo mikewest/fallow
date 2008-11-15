@@ -65,6 +65,14 @@ THIN_SOCKETS    = '/tmp/mikewestorg.sock'
     }
   end
   
+  task :populate_twitter do
+    Fallow::Twitter.update_cache!
+  end
+  
+  task :sync_twitter do
+    Fallow::Twitter.get_tweets!
+  end
+  
   task :sync_delicious do
     Fallow::Bookmarks.sync!
   end
@@ -77,7 +85,7 @@ THIN_SOCKETS    = '/tmp/mikewestorg.sock'
     Fallow::Homepage.new.render()
   end
 
-  task :populate => [:reset_db, :populate_articles, :populate_delicious, :populate_archive, :populate_homepage]
+  task :populate => [:reset_db, :populate_articles, :populate_delicious, :populate_twitter, :populate_archive, :populate_homepage]
   
   task :update_bookmarks => [:sync_delicious, :populate_archive, :populate_homepage]
 

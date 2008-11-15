@@ -5,8 +5,8 @@ type: :task
 component: Fallow
 release: v0.2
 reporter: Mike West <mike@mikewest.org>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2008-11-13 16:06:20.263083 Z
 references: []
 
@@ -19,4 +19,8 @@ log_events:
 - - 2008-11-13 19:38:01.571201 Z
   - Mike West <mike@mikewest.org>
   - assigned to release v0.2 from unassigned
+  - ""
+- - 2008-11-15 19:44:26.198808 Z
+  - Mike West <mike@mikewest.org>
+  - closed with disposition fixed
   - ""
