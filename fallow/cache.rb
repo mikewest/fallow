@@ -31,10 +31,10 @@ module Fallow
           `path`        TEXT PRIMARY KEY,
           `published`   INTEGER,
           `url`         TEXT,
-          `id`          NUMBER,
+          `id`          TEXT,
           `secret`      TEXT,
-          `farm`        NUMBER,
-          `primary`     NUMBER,
+          `farm`        INTEGER,
+          `primary`     TEXT,
           `title`       TEXT,
           `desc`        TEXT
         );
@@ -187,11 +187,10 @@ module Fallow
             "title"     =>  title,
             "url"       =>  data['url'],
             "desc"      =>  desc,
-            "id"        =>  data['id'].to_i,
+            "id"        =>  data['id'],
             "secret"    =>  data['secret'],
             "farm"      =>  data['farm'].to_i,
-            "primary"   =>  data['primary'].to_i
-#            "photos"    =>  data['photos'].to_i
+            "primary"   =>  data['primary']
           )
         Cache.db.commit
       # rescue Exception => boom
