@@ -3,7 +3,7 @@ title: GitHub commit integration
 desc: I want to list GitHub commits on the mikewest.org homepage, along with twitter/flickr/etc.
 type: :task
 component: Fallow
-release: v0.2
+release: v0.3
 reporter: Mike West <mike@mikewest.org>
 status: :unstarted
 disposition: 
@@ -19,4 +19,8 @@ log_events:
 - - 2008-11-13 19:37:52.483125 Z
   - Mike West <mike@mikewest.org>
   - assigned to release v0.2 from unassigned
+  - ""
+- - 2008-11-16 18:52:12.171269 Z
+  - Mike West <mike@mikewest.org>
+  - assigned to release v0.3 from v0.2
   - ""
