@@ -17,7 +17,7 @@ module Fallow
   ARTICLE_ROOT    = DATA_ROOT + '/articles'
   EXTERNALS_ROOT  = DATA_ROOT + '/externals'
   TEMPLATE_ROOT   = ROOT_DIR  + '/templates'
-  HTML_ROOT       = ROOT_DIR  + '/_document_root'
+  HTML_ROOT       = ROOT_DIR  + '/../public'
   
   PUBLIC_ROOT   = ''
   STATIC_ROOT   = 'http://static.mikewest.org'

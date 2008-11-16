@@ -112,7 +112,7 @@ module Fallow
       Find.find( TWITTER_ROOT ) do |tweet|
         if File.file?(tweet) && tweet.match(%r{/(\d+).yaml$})
           puts "Rendering /twitter/#{$1}\n"
-          Tweet.from_file( tweet ).persist
+          Tweet.from_file( tweet ).persist( false )
         end
       end
     end

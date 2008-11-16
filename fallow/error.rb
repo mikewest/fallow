@@ -62,6 +62,13 @@ private
 #
       elsif @path.match(%r{^/projects/files/Perfect})
         'https://github.com/mikewest/perfecttime/tree'
+
+#
+#   DataRequestor
+#
+      elsif @path.match(/datarequestor/i) || @path.match(%r{^/projects})
+        'https://github.com/mikewest/datarequestor/tree'
+
 #
 #    Old Feed URL
 #
@@ -194,13 +201,6 @@ private
           when 21:  '/2006/02/son-of-perfecttime-the-validationator'
           else nil
         end
-#
-#   DataRequestor
-#
-      elsif @path.match(/datarequestor/i)
-        'https://github.com/mikewest/datarequestor/tree'
-      end
-      
     end
   end
 end
