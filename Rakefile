@@ -69,6 +69,10 @@ THIN_SOCKETS    = '/tmp/mikewestorg.sock'
     Fallow::Twitter.update_cache!
   end
   
+  task :populate_flickr do
+    Fallow::Flickr.update_cache!
+  end
+  
   task :sync_twitter do
     Fallow::Twitter.get_tweets!
   end
@@ -85,9 +89,9 @@ THIN_SOCKETS    = '/tmp/mikewestorg.sock'
     Fallow::Homepage.new.render()
   end
 
-  task :populate => [:reset_db, :populate_articles, :populate_delicious, :populate_twitter, :populate_archive, :populate_homepage]
+  task :populate => [:reset_db, :populate_articles, :populate_delicious, :populate_twitter, :populate_flickr, :populate_archive, :populate_homepage]
   
-  task :update_bookmarks => [:sync_delicious, :populate_archive, :populate_homepage]
+  task :sync => [:sync_delicious, :sync_flickr, :sync_twitter]
 
 #
 #   Git Tasks
@@ -121,6 +125,11 @@ THIN_SOCKETS    = '/tmp/mikewestorg.sock'
   end
 
   task :rethin => [:restart_thin, :remove_logs]
+
+  desc 'Start lobster locally'
+  task :lobster do
+    `rackup -Ilib #{ROOT_DIR}/rackup.ru`
+  end
 
 #
 #   Log Tasks

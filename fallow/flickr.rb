@@ -26,8 +26,6 @@ module Fallow
         
         next if Flickr.set_exists?( attributes['id'] )
         
-Fallow.log( 'Processing Set #' + attributes['id'] )
-
         photo       = Flickr.get_photo_data( attributes['primary'], attributes['secret'], attributes['id'] )
         
         photoset    = {
@@ -44,6 +42,19 @@ Fallow.log( 'Processing Set #' + attributes['id'] )
           'url'         =>  "http://www.flickr.com/photos/#{@@friendly_name}/sets/#{attributes['id']}"
         }
         Flickr.persist( photoset['path'], photoset, true )
+      end
+    end
+    
+    def Flickr.update_cache!
+      require 'find'
+      Find.find( FLICKR_ROOT ) do |set|
+        if File.file?(set) && set.match(%r{/(\d+).yaml$})
+          puts "Rendering /flickr/#{$1}\n"
+
+          data = File.open( set ) { |yf| YAML::load( yf ) }
+
+          Flickr.persist( "/flickr/#{$1}", data, false )
+        end
       end
     end
 
