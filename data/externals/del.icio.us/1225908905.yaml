@@ -1,0 +1,20 @@
+--- 
+title: Emiller's Guide to Nginx Module Development
+published: 1225908905
+hash: 0c459e4c6d2decbf003109110a9bad02
+url: http://emiller.info/nginx-modules-guide.html
+tags: 
+- howto
+- programming
+- c
+- http
+- nginx
+- webdev
+- tutorial
+- server
+- module
+- extension
+- development
+- evanmiller
+- miller
+desc: This looks like a fantastic guide to development of modules for the Nginx HTTP server.  I'm thinking about diving into a module (which would involve trying to actually be a "programmer" with C and structs and etc. that I vaguely remember from college), and this will be a valuable resource.

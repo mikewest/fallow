@@ -1,0 +1,16 @@
+--- 
+title: "Ars Technica: 'Battered, but not broken: understanding the WPA crack'"
+published: 1226444175
+hash: 1814d0c04f195da3fc6bf5bafd5fdd19
+url: http://arstechnica.com/articles/paedia/wpa-cracked.ars/1
+tags: 
+- wpa
+- wifi
+- encryption
+- security
+- paranoid
+- tkip
+- arstechnica
+- wireless
+- crack
+desc: Ars Technica has a great writeup of the recent Tews/Beck attack on WPA-encrypted wireless networks' protections against replaying packets.  Very solid explanation of the technique (even _I_ could understand it!) and a good outline of what this actually means for your personal network security (very little, _now_, but possibly something substantial with further research).
