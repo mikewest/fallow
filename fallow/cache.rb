@@ -31,10 +31,10 @@ module Fallow
           `path`        TEXT PRIMARY KEY,
           `published`   INTEGER,
           `url`         TEXT,
-          `id`          INTEGER,
+          `id`          NUMBER,
           `secret`      TEXT,
-          `farm`        INTEGER,
-          `primary`     INTEGER,
+          `farm`        NUMBER,
+          `primary`     NUMBER,
           `title`       TEXT,
           `desc`        TEXT
         );
@@ -44,8 +44,8 @@ module Fallow
           `published`     INTEGER,
           `desc`          TEXT,
           `url`           TEXT,
-          `reply_to_id`   INTEGER,
-          `reply_to_user` INTEGER
+          `reply_to_id`   NUMBER,
+          `reply_to_user` NUMBER
         );
       
         CREATE TABLE IF NOT EXISTS `tags` (
