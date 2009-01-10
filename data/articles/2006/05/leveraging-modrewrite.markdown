@@ -88,7 +88,7 @@ This practice is actually a good ongoing maintenance idea.  In his recent [Djang
 [txp]: http://textpattern.com/  "TextPattern"
 [gone]: http://diveintomark.org/archives/2003/03/27/http_error_410_gone "Mark Pilgrim - HTTP Error 410: Gone"
 [hive]: http://hivelogic.com/articles/2006/04/30/preventing_svn_exposure "Hivelogic - Preventing SVN Exposure"
-[cheat]: http://www.ilovejackdaniels.com/cheat-sheets/mod_rewrite-cheat-sheet/ "Dave Child - `mod_rewrite` Cheat Sheet"
+[cheat]: http://www.addedbytes.com/cheat-sheets/mod_rewrite-cheat-sheet/ "Dave Child - `mod_rewrite` Cheat Sheet"
 [django-google]: http://video.google.com/videoplay?docid=-70449010942275062 "Jacob Kaplan-Moss talks about Django at Google"
 [jacob]: http://www.jacobian.org/ "Jacob Kaplan-Moss' Website"
 [me]: /is/ "Mike West's Bio/Resume"
