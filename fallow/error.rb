@@ -187,7 +187,7 @@ private
           when '/archive/component-encapsulation-using-object-oriented-javascript': '/2005/03/component-encapsulation-using-object-oriented-javascript'
           when '/archive/slidable-select-widgets-explained': '/2005/03/slidable-select-widgets-explained'
           when '/archive/son-of-perfecttime-the-validationator': '/2006/02/son-of-perfecttime-the-validationator'
-        else nil
+          else nil
         end
       elsif @path.match(%r{^/blog/id/(\d+)})
         case $1.to_i
@@ -201,6 +201,7 @@ private
           when 21:  '/2006/02/son-of-perfecttime-the-validationator'
           else nil
         end
+      end
     end
   end
 end
